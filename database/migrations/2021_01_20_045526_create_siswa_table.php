@@ -19,7 +19,7 @@ class CreateSiswaTable extends Migration
             $table->string('no_induk')->unique();
             $table->string('nama')->index();
             $table->enum('kelamin', ['l', 'p']);
-            $table->integer('id_kelas');
+            $table->bigInteger('id_kelas')->unsigned();
             $table->foreign('id_kelas')->references('id')->on('kelas')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
