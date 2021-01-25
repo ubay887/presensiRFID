@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\AuthController;
+use Facade\FlareClient\View;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ViewController::class, 'login']);
 Route::post('/', [AuthController::class, 'auth']);
+
+Route::get('/dashboard', [ViewController::class, 'dashboard']);

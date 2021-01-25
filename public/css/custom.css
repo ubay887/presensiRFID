@@ -1,0 +1,23 @@
+/**
+ *
+ * You can write your CSS code here, DO NOT touch the default JavaScript file
+ * because it will make it harder for you to update.
+ * 
+ */
+
+/*# sourceMappingURL=custom.css.map */
+* {
+    font-family: 'Open Sans',
+        sans-serif;
+}
+.ph{
+    margin: 0;
+    margin-left: 8px;
+    font-size: 15px;
+}
+
+body.sidebar-mini .main-sidebar .sidebar-menu>li>a .ph {
+    margin: auto;
+    padding-left: 4px;
+    font-size: 20px;
+}
