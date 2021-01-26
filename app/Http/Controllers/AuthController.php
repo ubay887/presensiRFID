@@ -14,7 +14,7 @@ class AuthController extends Controller
         $password = $request->pass;
 
         if (Auth::attempt(array('username' => $username, 'password' => $password), $remember) || $request->validate(['username' => 'email:rfc,dns']) && Auth::attempt(array('email' => $username, 'password' => $password), $remember)) {
-            //user sent their email 
+            //user sent their email or username
             return redirect()->intended('dashboard');
         }
         return back()->withInput($request->only('username', 'pass'));

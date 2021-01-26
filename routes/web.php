@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\AuthController;
-use Facade\FlareClient\View;
 use Illuminate\Support\Facades\Route;
 
 /*
