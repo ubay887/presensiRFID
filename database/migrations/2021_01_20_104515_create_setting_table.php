@@ -23,7 +23,6 @@ class CreateSettingTable extends Migration
             $table->time('jam_pulang_2')->nullable();
             $table->time('jam_pulang_3')->nullable();
             $table->string('token', 100)->nullable();
-            $table->string('key_api', 100)->nullable();
             $table->tinyInteger('sw')->nullable();
             $table->tinyInteger('sw_2')->nullable();
             $table->timestamps();

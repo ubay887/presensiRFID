@@ -10,6 +10,6 @@ class ViewController extends Controller
         return view('login');
     }
     public function dashboard(){
-        return view("template.master");
+        return view("pages.dashboard");
     }
 }

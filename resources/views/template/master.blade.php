@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Blank Page &mdash; Stisla</title>
+    <title>@yield('title')</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -23,7 +23,7 @@
 
 <body>
     <div id="app">
-        <div class="main-wrapper">
+        <div class="main-wrapper main-wrapper-1">
             @include('template.main.navbar')
             @include('template.main.sidebar')
 
@@ -33,17 +33,23 @@
                     <div class="section-header">
                         <h1>@yield('judul')</h1>
                         <div class="section-header-breadcrumb">
-                            <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                            <div class="breadcrumb-item"><a href="#">Layout</a></div>
-                            <div class="breadcrumb-item">Default Layout</div>
+                            @yield('breadcrumb')
                         </div>
                     </div>
 
                     <div class="section-body">
-                        @yield('isi')
+                        @yield('main')
                     </div>
                 </section>
             </div>
+            <footer class="main-footer">
+                <div class="footer-left">
+                    Copyright &copy 2021 <div class="bullet"></div> Develop By <a href="https://github.com/dioselvinus">Dio Selvinus Silalebit</a>
+                </div>
+                <div class="footer-right">
+
+                </div>
+            </footer>
         </div>
     </div>
 

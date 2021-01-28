@@ -15,7 +15,7 @@ class CreateAksesRuanganTable extends Migration
     {
         Schema::create('akses_ruangan', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('Waktu')->nullable(false)->useCurrent();
+            $table->timestamp('waktu')->nullable(false)->useCurrent();
             $table->bigInteger('id_siswa')->unsigned();
             $table->foreign('id_siswa')->references('id')->on('siswa')->onDelete('cascade')->onUpdate('cascade');
             $table->string('nama');

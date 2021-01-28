@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             'id_chat' => '794749920',
             'name' => 'dio selvinus silalebit',
             'email' => 'diselvinus@gmail.com',
-            'gambar' => 'img/no-avatar.png',
+            'gambar' => 'photos/no-avatar.png',
             'password' => Hash::make('admin')
         ]);
     }
