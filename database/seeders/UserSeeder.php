@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'username' => 'admin',
             'id_chat' => '794749920',
-            'name' => 'dio selvinus silalebit',
+            'name' => 'dio selvinus',
             'email' => 'diselvinus@gmail.com',
             'gambar' => 'photos/no-avatar.png',
             'password' => Hash::make('admin')

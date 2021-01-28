@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/components.css') }}">
+    @stack('css')
 </head>
 
 <body>
@@ -44,7 +45,8 @@
             </div>
             <footer class="main-footer">
                 <div class="footer-left">
-                    Copyright &copy 2021 <div class="bullet"></div> Develop By <a href="https://github.com/dioselvinus">Dio Selvinus Silalebit</a>
+                    Copyright &copy 2021 <div class="bullet"></div> Develop By <a
+                        href="https://github.com/dioselvinus">Dio Selvinus Silalebit</a>
                 </div>
                 <div class="footer-right">
 
@@ -67,7 +69,7 @@
     <script src="{{ asset('js/stisla.js') }}"></script>
 
     <!-- JS Libraies -->
-
+    @stack('js')
     <!-- Template JS File -->
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>

@@ -1,4 +1,4 @@
-<div class="main-sidebar">
+<div class="main-sidebar position-fixed">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
             <a href="{{ url('/dashboard') }}">E - presensi</a>
@@ -66,7 +66,8 @@
         </ul>
 
         <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-            <a href="" class="btn btn-primary btn-lg btn-block btn-icon-split">
+            <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSKkVNQtcLFLDpVMxlhznwZFvXLbTqjLMlRcXxfQWGtmwPpHVDXBjBLHlwLrQglwTjRhHPMM"
+                class="btn btn-primary btn-lg btn-block btn-icon-split">
                 <i class="fas fa-rocket"></i> Email Developer
             </a>
         </div>

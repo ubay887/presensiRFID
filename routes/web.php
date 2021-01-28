@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ValueController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ Route::get('/', [ViewController::class, 'login']);
 Route::post('/', [AuthController::class, 'auth']);
 
 Route::get('/dashboard', [ViewController::class, 'dashboard']);
+Route::get('/profile', [ViewController::class, 'profile']);
+Route::get('/dashboard/api/value', [ValueController::class, 'dashboardValue'])->name('api.dashboard');

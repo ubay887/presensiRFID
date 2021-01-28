@@ -18,7 +18,7 @@
                         <h4 class="card-db-title">Total Anggota</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3">666</p>
+                        <p class="card-db-text mb-3" id="totalanggota"></p>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                         <h4 class="card-db-title">Total Hadir</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3">666</p>
+                        <p class="card-db-text mb-3" id="totalhadir"></p>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                         <h4 class="card-db-title">Total Check In</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3">666</p>
+                        <p class="card-db-text mb-3" id="totalcheckin"></p>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                         <h4 class="card-db-title">Total Terlambat</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3">666</p>
+                        <p class="card-db-text mb-3" id="totalterlambat"></p>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                         <h4 class="card-db-title">Total Ruangan</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3">666</p>
+                        <p class="card-db-text mb-3" id="totalruangan"></p>
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                         <h4 class="card-db-title">Total Tidak Hadir</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3">666</p>
+                        <p class="card-db-text mb-3" id="totaltdkhadir"></p>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@
                         <h4 class="card-db-title">Total Check Out</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3">666</p>
+                        <p class="card-db-text mb-3" id="totalcheckout"></p>
                     </div>
                 </div>
             </div>
@@ -126,10 +126,43 @@
                         <h4 class="card-db-title">Total Izin Pulang</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3">666</p>
+                        <p class="card-db-text mb-3" id="totalizinplg"></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+@push('js')
+    <script>
+        $(document).ready(function() {
+            var valueDashboard = function() {
+                $.ajax({
+                    url: "{{ route('api.dashboard') }}",
+                    type: "GET",
+                    dataType: "json",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(data) {
+                        $('#totalanggota').html(data.anggota)
+                        $('#totalhadir').html(data.hadir)
+                        $('#totalcheckin').html(data.total_checkin)
+                        $('#totalterlambat').html(data.terlambat)
+                        $('#totalruangan').html(data.ruangan)
+                        $('#totaltdkhadir').html(data.tidakhadir)
+                        $('#totalcheckout').html(data.total_checkout)
+                        $('#totalizinplg').html(data.izin_pulang)
+                    },
+                    error: function(data) {
+                        console.log(data)
+                    }
+                });
+            }
+            setInterval(function() {
+                valueDashboard();
+            }, 100);
+        })
+
+    </script>
+@endpush

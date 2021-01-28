@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class setting extends Model
 {
+    protected $table = 'setting';
     use HasFactory;
 }

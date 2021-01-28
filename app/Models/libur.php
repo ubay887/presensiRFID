@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class libur extends Model
 {
+    protected $table = 'libur';
     use HasFactory;
 }

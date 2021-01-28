@@ -12,4 +12,8 @@ class ViewController extends Controller
     public function dashboard(){
         return view("pages.dashboard");
     }
+    public function profile()
+    {
+        return view("pages.profile");
+    }
 }
