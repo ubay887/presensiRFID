@@ -16,4 +16,8 @@ class ViewController extends Controller
     {
         return view("pages.profile");
     }
+    public function changepass()
+    {
+        return view("pages.changepass");
+    }
 }

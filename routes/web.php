@@ -22,3 +22,4 @@ Route::post('/', [AuthController::class, 'auth']);
 Route::get('/dashboard', [ViewController::class, 'dashboard']);
 Route::get('/profile', [ViewController::class, 'profile']);
 Route::get('/dashboard/api/value', [ValueController::class, 'dashboardValue'])->name('api.dashboard');
+Route::get('/profile/changepassword', [ViewController::class, 'changepass']);
