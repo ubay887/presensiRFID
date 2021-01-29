@@ -22,7 +22,7 @@
                     <div class="row">
                         <div class="form-group col-md-4 col-12">
                             <label>Current password</label>
-                            <input type="text" class="form-control" value="" required
+                            <input type="password" class="form-control" value="" required
                                 name="currentpass">
                             <div class="invalid-feedback">
                                 Please fill in the Id Chat
@@ -30,14 +30,14 @@
                         </div>
                         <div class="form-group col-md-4 col-12">
                             <label>New password</label>
-                            <input type="text" class="form-control" value="" required name="newpass">
+                            <input type="password" class="form-control" value="" required name="newpass">
                             <div class="invalid-feedback">
                                 Please fill in the first name
                             </div>
                         </div>
                         <div class="form-group col-md-4 col-12">
                             <label>Confirm password</label>
-                            <input type="text" class="form-control" value="" required name="confirmpass">
+                            <input type="password" class="form-control" value="" required name="confirmpass">
                             <div class="invalid-feedback">
                                 Please fill in the last name
                             </div>
