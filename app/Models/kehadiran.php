@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class kehadiran extends Model
 {
     protected $table = 'kehadiran';
-    use HasFactory;
+    protected $guarded = [];
+      public function siswa()
+    {
+        return $this->belongsTo(siswa::class, 'id');
+    }
 }

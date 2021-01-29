@@ -14,4 +14,16 @@ class siswa extends Model
         'email',
         'password',
     ];
+    protected $guarded = [];
+    public function akses_ruangan()
+    {
+        return $this->hasMany(akses_ruangan::class, 'id_siswa', 'id');
+    }
+    public function kehadiran()
+    {
+        return $this->hasMany(kehadiran::class, 'id_siswa', 'id');
+    }
+    public function kelas(){
+        return $this->belongsTo(kelas::class,'id');
+    }
 }

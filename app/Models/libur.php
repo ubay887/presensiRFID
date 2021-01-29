@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class libur extends Model
 {
     protected $table = 'libur';
+    protected $guarded = [];
     use HasFactory;
 }
