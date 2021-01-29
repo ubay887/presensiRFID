@@ -47,7 +47,7 @@
 
                 </div>
                 <div class="card-footer text-right">
-                    <a href="{{ url('/profile/changepassword') }}" class="btn text-white"
+                    <a href="{{ url('/profile') }}" class="btn text-white"
                         style="background-color: #FB160A">Back</a>
                     <button type="submit" class="btn text-white" style="background-color: #4CEA67">Save Changes</button>
                 </div>
