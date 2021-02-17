@@ -16,7 +16,7 @@
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link">
+                <a href="{{ url('/anggota') }}" class="nav-link">
                     <i class="ph ph-users-bold"></i>
                     <span>Anggota</span>
                 </a>
