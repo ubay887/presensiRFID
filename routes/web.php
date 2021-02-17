@@ -22,5 +22,7 @@ Route::post('/', [AuthController::class, 'auth']);
 Route::get('/dashboard', [ViewController::class, 'dashboard']);
 Route::get('/profile', [ViewController::class, 'profile']);
 Route::get('/anggota', [ViewController::class, 'anggota']);
+Route::get('/presensi', [ViewController::class, 'presensi']);
+Route::get('/ruangan', [ViewController::class, 'ruangan']);
 Route::get('/dashboard/api/value', [ValueController::class, 'dashboardValue'])->name('api.dashboard');
 Route::get('/profile/changepassword', [ViewController::class, 'changepass']);

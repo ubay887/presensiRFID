@@ -26,4 +26,12 @@ class ViewController extends Controller
     {
         return view("pages.anggota");
     }
+    public function presensi()
+    {
+        return view("pages.presensi");
+    }
+    public function ruangan()
+    {
+        return view("pages.ruangan");
+    }
 }

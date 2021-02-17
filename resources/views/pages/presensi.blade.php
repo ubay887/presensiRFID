@@ -1,12 +1,12 @@
 @extends('template.master')
-@section('title', 'E - Presensi | Data Anggota')
-@section('judul', 'Data Anggota')
+@section('title', 'E - Presensi | Data Presensi')
+@section('judul', 'Data Presensi')
 @section('breadcrumb')
 <div class="breadcrumb-item">
     <a href="{{ url('/dashboard') }}">Dashboard</a>
 </div>
 <div class="breadcrumb-item active">
-    Data Anggota
+    Data Presnsi
 </div>
 @endsection
 @section('main')
