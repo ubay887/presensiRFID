@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 
 class ViewController extends Controller
 {
-    public function login(){
+    public function login()
+    {
         return view('login');
     }
-    public function dashboard(){
+    public function dashboard()
+    {
         return view("pages.dashboard");
     }
     public function profile()
@@ -19,5 +21,9 @@ class ViewController extends Controller
     public function changepass()
     {
         return view("pages.changepass");
+    }
+    public function anggota()
+    {
+        return view("pages.anggota");
     }
 }
