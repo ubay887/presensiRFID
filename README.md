@@ -36,3 +36,14 @@ presensiRFID adalah sebuah web berbasis framework laravel untuk mengurus presens
 - [Dio Selvinus Silalebit](https://github.com/dioselvinus) - Team Leader
 - [Dana Satria](https://github.com/Danasatria) - Team Requirement Analysis
 - [Muchammad Yafik Ramadhani Ilham](https://github.com/yafikramadhan) - Custom Design Stisla
+
+
+<!-- MARKDOWN LINKS -->
+[contributors-shield]: https://img.shields.io/github/contributors/Project-prokerin/presensiRFID.svg?style=for-the-badge
+[contributors-url]: https://github.com/Project-prokerin/presensiRFID/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Project-prokerin/presensiRFID?style=for-the-badge
+[forks-url]: https://github.com/Project-prokerin/presensiRFID/network/members
+[stars-shield]: https://img.shields.io/github/stars/Project-prokerin/presensiRFID?style=for-the-badge
+[stars-url]: https://github.com/Project-prokerin/presensiRFID/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Project-prokerin/presensiRFID?style=for-the-badge
+[issues-url]: https://github.com/Project-prokerin/presensiRFID/issues
