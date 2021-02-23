@@ -14,6 +14,7 @@ class KelasSeeder extends Seeder
      */
     public function run()
     {
+        // TODO: MENAMBAHKAN FK GURU
         DB::table('kelas')->insert([
             ['kelas' => 'X RPL 1'],
             ['kelas' => 'XI RPL 1'],

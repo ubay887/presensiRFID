@@ -15,21 +15,18 @@ class CreateKehadiranTable extends Migration
     {
         Schema::create('kehadiran', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_siswa')->unsigned();
-            $table->foreign('id_siswa')->references('id')->on('siswa')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('no_induk', 20);
-            $table->foreign('no_induk')->references('no_induk')->on('siswa')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('nama', 20);
-            $table->foreign('nama')->references('nama')->on('siswa')->onDelete('cascade')->onUpdate('cascade');
-            $table->date('tanggal')->nullable(false);
-            $table->time('jam_masuk')->nullable();
-            $table->time('check_in')->nullable();
-            $table->time('late_in')->nullable();
-            $table->time('jam_pulang')->nullable();
-            $table->time('check_out')->nullable();
-            $table->time('early_out')->nullable();
-            $table->string('ket', 20)->nullable();
-            $table->string('stat', 20)->nullable();
+            $table->string('nipd', 20)->unsigned();
+            $table->foreign('nipd')->references('nipd')->on('siswa')->onDelete('no action')->onUpdate('no action');
+            $table->string('nama')->unsigned();
+            $table->foreign('nama')->references('nama')->on('siswa')->onDelete('no action')->onUpdate('no action');
+            $table->string('foto_tapping');
+            $table->date('tanggal');
+            $table->time('jam_masuk');
+            $table->time('jam_pulang');
+            $table->time('check_in');
+            $table->time('late_in');
+            $table->string('ket', 20);
+            $table->string('stat', 20);
         });
     }
 

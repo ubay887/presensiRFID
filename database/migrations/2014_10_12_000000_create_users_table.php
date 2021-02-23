@@ -15,13 +15,10 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('id_chat', 20)->nullable();
-            $table->string('name');
-            $table->string('username');
-            $table->string('email')->unique();
-            $table->string('gambar')->nullable();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            // FIXME: FK NGGAK BISA DIATAS TABEL YANG DIJADIIN REFRENSI 
+            $table->foreignId('id_admin')->constrained('admin')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_guru')->constrained('guru')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_siswa')->constrained('siswa')->onUpdate('cascade')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });

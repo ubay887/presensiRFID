@@ -1,5 +1,5 @@
 @extends('template.master')
-@section('title', 'E - Presensi | dashboard')
+@section('title', 'dashboard')
 @section('judul', 'Dashboard')
 @section('breadcrumb')
     <div class="breadcrumb-item active">

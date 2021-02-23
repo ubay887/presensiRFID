@@ -1,5 +1,5 @@
 @extends('template.master')
-@section('title', 'E - Presensi | Data Ruangan')
+@section('title', 'Data Ruangan')
 @section('judul', 'Data Akses Ruangan')
 @section('breadcrumb')
 <div class="breadcrumb-item">

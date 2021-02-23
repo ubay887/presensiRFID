@@ -1,7 +1,7 @@
 <div class="main-sidebar position-fixed">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{ url('/dashboard') }}">E - presensi</a>
+            <a href="{{ url('/dashboard') }}">{{config('app.name')}}</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="{{ url('/dashboard') }}">
