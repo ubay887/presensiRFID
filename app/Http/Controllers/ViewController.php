@@ -34,4 +34,8 @@ class ViewController extends Controller
     {
         return view("pages.ruangan");
     }
+    public function grafik()
+    {
+        return view("pages.grafik");
+    }
 }
