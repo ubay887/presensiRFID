@@ -38,4 +38,8 @@ class ViewController extends Controller
     {
         return view("pages.grafik");
     }
+    public function jammasuk()
+    {
+        return view("pages.jammasuk");
+    }
 }
