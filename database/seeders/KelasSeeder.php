@@ -14,11 +14,22 @@ class KelasSeeder extends Seeder
      */
     public function run()
     {
-        // TODO: MENAMBAHKAN FK GURU
         DB::table('kelas')->insert([
-            ['kelas' => 'X RPL 1'],
-            ['kelas' => 'XI RPL 1'],
-            ['kelas' => 'XII RPL 1']
+            [
+                
+                'kelas' => 'X RPL 1',
+                'id_guru' => '1'
+            ],
+            [
+                
+                'kelas' => 'XI RPL 1',
+                'id_guru' => '1'
+            ],
+            [
+                
+                'kelas' => 'XII RPL 1',
+                'id_guru' => '1'
+            ]
         ]);
     }
 }

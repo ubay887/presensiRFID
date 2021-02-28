@@ -17,7 +17,7 @@ class AdminSeeder extends Seeder
     {
         DB::table('admin')->insert([
             'username' => 'admin',
-            'id_chat' => '794749920',
+            'idchat' => '794749920',
             'nama' => 'dio selvinus silalebit',
             'foto' => 'photos/default/no-avatar.png',
             'password' => Hash::make('admin')

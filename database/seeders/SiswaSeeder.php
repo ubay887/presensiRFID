@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 class SiswaSeeder extends Seeder
 {
     /**
@@ -13,6 +14,14 @@ class SiswaSeeder extends Seeder
      */
     public function run()
     {
-        // TODO: MEMBUAT DATA SISWA
+        $faker = Faker::create();
+        DB::table('siswa')->insert([
+            'nipd' => $faker->randomNumber(),
+            'tanggal_lahir' => $faker->dateTime($max = 'now', $timezone = null),
+            'foto' => 'photos/default/no-avatar.png',
+            'nama' => 'parallax',
+            'kelamin' => 'l',
+            'id_kelas' => '1',
+        ]);
     }
 }

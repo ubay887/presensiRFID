@@ -21,6 +21,7 @@ class CreateGuruTable extends Migration
             $table->enum('kelamin', ['l', 'p']);
             $table->string('role');
             $table->string('email')->unique();
+            $table->string('username');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->timestamps();

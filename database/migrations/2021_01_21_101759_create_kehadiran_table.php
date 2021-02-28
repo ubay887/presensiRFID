@@ -14,17 +14,14 @@ class CreateKehadiranTable extends Migration
     public function up()
     {
         Schema::create('kehadiran', function (Blueprint $table) {
-            $table->id();
-            $table->string('nipd', 20)->unsigned();
-            $table->foreign('nipd')->references('nipd')->on('siswa')->onDelete('no action')->onUpdate('no action');
-            $table->string('nama')->unsigned();
-            $table->foreign('nama')->references('nama')->on('siswa')->onDelete('no action')->onUpdate('no action');
-            $table->string('foto_tapping');
+            $table->string('nipd', 20);
+            $table->string('nama');
             $table->date('tanggal');
             $table->time('jam_masuk');
             $table->time('jam_pulang');
-            $table->time('check_in');
-            $table->time('late_in');
+            $table->time('tap_masuk');
+            $table->string('foto_tapping');
+            $table->time('tap_keluar');
             $table->string('ket', 20);
             $table->string('stat', 20);
         });

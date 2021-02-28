@@ -30,7 +30,6 @@ presensiRFID adalah sebuah web berbasis framework laravel untuk mengurus presens
 - [fontawesome icon](https://fontawesome.com/)
 - [phospor icon](https://github.com/phosphor-icons/phosphor-icons)
 - [bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
-- [bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
 
 ## Team project
 - [Dio Selvinus Silalebit](https://github.com/dioselvinus) - Team Leader
