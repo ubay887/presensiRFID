@@ -9,10 +9,13 @@ class siswa extends Model
 {
     use HasFactory;
     protected $table = 'siswa';
+    protected $guard = 'siswa';
     protected $fillable = [
-        'name',
-        'email',
+        'nama',
+        'kelamin',
         'password',
+        'tanggal_lahir',
+        'nipd',
     ];
     protected $guarded = [];
     public function akses_ruangan()

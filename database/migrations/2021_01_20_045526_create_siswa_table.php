@@ -22,6 +22,7 @@ class CreateSiswaTable extends Migration
             $table->string('nama');
             $table->enum('kelamin', ['l', 'p']);
             $table->foreignId('id_kelas')->constrained('kelas')->onDelete('cascade')->onUpdate('cascade');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

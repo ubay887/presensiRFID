@@ -3,7 +3,7 @@
 @section('judul', 'Grafik Presensi')
 @section('breadcrumb')
 <div class="breadcrumb-item">
-    <a href="{{ url('/dashboard') }}">Dashboard</a>
+    <a href="{{ url('guru/dashboard') }}">Dashboard</a>
 </div>
 <div class="breadcrumb-item active">
     Grafik

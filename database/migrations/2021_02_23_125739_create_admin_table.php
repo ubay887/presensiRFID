@@ -20,6 +20,7 @@ class CreateAdminTable extends Migration
             $table->string('foto');
             $table->string('password');
             $table->string('idchat',20)->unique()->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

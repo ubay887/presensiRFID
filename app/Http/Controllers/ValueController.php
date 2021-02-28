@@ -15,13 +15,12 @@ class ValueController extends Controller
 
         $anggota = siswa::all()->count();
         $ruangan = ruangan::all()->count();
-        $hadir = kehadiran::where('TANGGAL', '=', $date)->where('KET', '=', 'HADIR')->count();
+        $hadir = kehadiran::where('TANGGAL', '=', $date)->where('ket', '=', 'HADIR')->count();
         $tidakhadir = kehadiran::where('TANGGAL', '=', $date)
             ->where(function ($query) {
-                $query->where('KET', '=', 'ALFA')
-                    ->orWhere('KET', '=', 'SAKIT')
-                    ->orWhere('KET', '=', 'IZIN')
-                    ->orWhere('KET', '=', 'BOLOS');
+                $query->where('ket', '=', 'alfa')
+                    ->orWhere('ket', '=', 'sakit')
+                    ->orWhere('ket', '=', 'izin');
             })->count();
         $terlambat = kehadiran::where('TANGGAL', '=', $date)->whereTime('CHECK_IN', '>', 'JAM_MASUK')
             ->Where('CHECK_IN', '!=', 'empty')->count();
