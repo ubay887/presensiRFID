@@ -80,7 +80,7 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown @if (Request::is('admin/anggota')) active @endif">
-                    <a href="{{ url('guru/anggota') }}" class="nav-link">
+                    <a href="{{ url('admin/anggota') }}" class="nav-link">
                         <i class="ph ph-users-bold"></i>
                         <span>Anggota</span>
                     </a>

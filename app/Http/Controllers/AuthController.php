@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthController extends Controller
 {
@@ -12,7 +14,7 @@ class AuthController extends Controller
         $remember = $request->remember == 'on' ? true : false;
         $username = $request->username; //the input field has name='username' in form
         $password = $request->pass;
-        
+
         if (Auth::guard('admin')->attempt(array('username' => $username, 'password' => $password), $remember)) {
             $request->session()->regenerate();
             return redirect()->intended('admin\dashboard');
@@ -21,10 +23,11 @@ class AuthController extends Controller
             //guru sent their email or username
             $request->session()->regenerate();
             return redirect()->intended('guru\dashboard');
-        }            
+        }
         return back()->withInput($request->only('username', 'pass'));
     }
-    public function postLogout(){
+    public function postLogout()
+    {
         auth()->guard('admin')->logout();
         auth()->guard('guru')->logout();
         session()->flush();

@@ -1,0 +1,171 @@
+[33mcommit 69662a916356945aa32c556f70e7eb3a3fbd9086[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: dio selvinus silalebit <dioselvinus@users.noreply.github.com>
+Date:   Sun Feb 28 20:48:07 2021 +0700
+
+    membuat multi login
+
+[33mcommit 16c5232f93c9a8db55b6c4a5a8863270a7509a87[m
+Author: dio selvinus silalebit <dioselvinus@users.noreply.github.com>
+Date:   Sun Feb 28 18:24:45 2021 +0700
+
+    benerin database sehingga bisa di migrate
+
+[33mcommit e2d3fe3937a891c04d2ed1d27f019838c3f912d3[m
+Author: Yafik <mhmmdyfik@gmail.com>
+Date:   Sat Feb 27 22:30:20 2021 +0700
+
+    Add Modal, Etc
+
+[33mcommit 85dd8bf14023daa637ac4b0d13226494ff9b9e27[m
+Author: Yafik <mhmmdyfik@gmail.com>
+Date:   Tue Feb 23 20:22:49 2021 +0700
+
+    Add Grafik Pages
+
+[33mcommit 653bab30b16ddf15eca53c1a56b0538ce59043eb[m
+Author: dio selvinus silalebit <dioselvinus@users.noreply.github.com>
+Date:   Tue Feb 23 20:14:18 2021 +0700
+
+    membuat database baru belum selesai
+
+[33mcommit 26978c3d5a8e8a4d2f4f7bbc4a6a9f8763f1043e[m
+Author: Yafik Ramadhan <68360939+yafikramadhan@users.noreply.github.com>
+Date:   Thu Feb 18 11:55:18 2021 +0700
+
+    Update README.md
+
+[33mcommit cd868fa2cab5255a9c53368e5df14df2d1771283[m
+Author: Yafik Ramadhan <68360939+yafikramadhan@users.noreply.github.com>
+Date:   Thu Feb 18 11:19:59 2021 +0700
+
+    Update README.md
+
+[33mcommit 774fbf1cbbc1858244dd32542ee8fac6eb201d82[m
+Author: Yafik Ramadhan <68360939+yafikramadhan@users.noreply.github.com>
+Date:   Thu Feb 18 11:18:16 2021 +0700
+
+    Update README.md
+
+[33mcommit 61b18a367cdbbddebeeb57ac89df3c22fa250260[m
+Author: Yafik <mhmmdyfik@gmail.com>
+Date:   Thu Feb 18 11:01:45 2021 +0700
+
+    Update Anggota, and Library Datatables
+
+[33mcommit fc98db4b872dae6235ad732f38108590cac90cb9[m
+Author: Yafik <mhmmdyfik@gmail.com>
+Date:   Wed Feb 17 21:50:24 2021 +0700
+
+    Layout Test
+
+[33mcommit 03a31b89119b0c9d1617b6d06eab155eee5c70ca[m
+Author: Yafik <mhmmdyfik@gmail.com>
+Date:   Wed Feb 17 17:20:30 2021 +0700
+
+    Anggota Pages
+
+[33mcommit 13fffbf0ecbe491b0960c7fc61f22631115771dd[m
+Author: Yafik Ramadhan <68360939+yafikramadhan@users.noreply.github.com>
+Date:   Wed Feb 17 16:23:21 2021 +0700
+
+    Anggota Pages
+
+[33mcommit 6686ae66e343917d381371fb2960c54636e894f0[m
+Author: Yafik Ramadhan <68360939+yafikramadhan@users.noreply.github.com>
+Date:   Wed Feb 17 16:22:31 2021 +0700
+
+    Add files via upload
+
+[33mcommit a524b4e1f8803234c86f198158d1b70567c18b7d[m
+Author: Yafik Ramadhan <68360939+yafikramadhan@users.noreply.github.com>
+Date:   Wed Feb 17 16:21:20 2021 +0700
+
+    Anggota Pages
+
+[33mcommit 6f835d5434181ad4af6328b0c52a1ef60b4005e4[m
+Author: rafie.aydin1@gmail.com <rafie.aydin1@gmail.com>
+Date:   Fri Jan 29 21:03:15 2021 +0700
+
+    bantu relasi model
+
+[33mcommit 20067a67b599a04a4a130ba04a756400607d1c43[m
+Author: Danasatria <68360967+Danasatria@users.noreply.github.com>
+Date:   Fri Jan 29 20:32:22 2021 +0700
+
+    Update changepass.blade.php
+
+[33mcommit f69e1a718386437cf2b41ce3889813f40ec86a5d[m
+Author: Danasatria <68360967+Danasatria@users.noreply.github.com>
+Date:   Fri Jan 29 20:26:06 2021 +0700
+
+    Update change password
+
+[33mcommit f4b800042e76dc3542a006365819cc9d89bf4957[m
+Author: Danasatria <68360967+Danasatria@users.noreply.github.com>
+Date:   Fri Jan 29 20:10:38 2021 +0700
+
+    Tambah change password
+
+[33mcommit ef352754b4471d9ba9dad0bf62cf43ca3e9f40ca[m
+Author: dio selvinus silalebit <dioselvinus@users.noreply.github.com>
+Date:   Fri Jan 29 05:18:18 2021 +0700
+
+    Update README.md
+
+[33mcommit b4bd0145926c5fdcb0227c4f35c7eced756c2232[m
+Author: dio selvinus silalebit <dioselvinus@users.noreply.github.com>
+Date:   Fri Jan 29 04:14:44 2021 +0700
+
+    membuat logic dashboard dan membuat tampilan profile
+    
+    - membuat logic dashboard menggunakan ajax
+    - membuat tampilan profile
+
+[33mcommit 28c30b1dcc4e86763f70d7e06d99ba5ebedd0046[m
+Author: dio selvinus silalebit <dioselvinus@users.noreply.github.com>
+Date:   Thu Jan 28 23:35:17 2021 +0700
+
+    perbaikan migrate,menghapus file tidak penting, membuat dashboard dan model
+    
+    - membuat beberapa model kosong
+    - menghapus file stisla public yang tidak penting
+    - membuat tampilan dashboard
+    -membuat beberapa model kosong
+
+[33mcommit b6a11ff0e39b0c2c85d47e46e4dfa35b003166d3[m
+Author: dio selvinus silalebit <dioselvinus@users.noreply.github.com>
+Date:   Tue Jan 26 21:54:22 2021 +0700
+
+    menyelesaikan template
+    
+    - meprebaiki error hamburger menu yang tidak muncul
+    - menyelesaikan template yang akan dipakai nanti
+
+[33mcommit e1057762ebcce3a358b9912ec7b551aa5ee6e990[m
+Author: dio selvinus silalebit <dioselvinus@users.noreply.github.com>
+Date:   Mon Jan 25 23:02:16 2021 +0700
+
+    meperbaiki logic login serta membuat template sederhana
+    
+    - template menggunakan stisla
+    - icon menggunakan phospor
+    - mengganti font web ke OpenSans
+    - add some bugs. i'll fixed that
+
+[33mcommit be1a1bc6e639f7228fa3fe319a460dba32cd10fd[m
+Author: dio selvinus silalebit <dioselvinus@users.noreply.github.com>
+Date:   Sat Jan 23 16:45:16 2021 +0700
+
+    perbaikan schema dan pembuatan login
+    
+    - meperbaiki schema agar bisa dimigrate
+    - membuat tampilan login dan logic agar bisa masuk melalui username ataupun email
+
+[33mcommit 01c4970821e134c57558a821553167a2761ef33b[m
+Author: dio selvinus silalebit <dioselvinus@users.noreply.github.com>
+Date:   Thu Jan 21 18:09:24 2021 +0700
+
+    Initial commit
+    
+    - membuat migration
+    - membuat seeder

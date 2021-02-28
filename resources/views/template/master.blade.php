@@ -25,7 +25,7 @@
         <div class="main-wrapper main-wrapper-1">
             @include('template.main.navbar')
             @include('template.main.sidebar')
-
+            
             <!-- Main Content -->
             <div class="main-content">
                 <section class="section">
@@ -64,6 +64,9 @@
 
     <!-- JS Libraies -->
     @stack('js')
+    @include('sweetalert::alert')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{asset('js/logout.js')}}"></script>
     <!-- Template JS File -->
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>

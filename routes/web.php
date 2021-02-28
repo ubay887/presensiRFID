@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\ViewController;
-use App\Http\Controllers\ViewGuruController;
-use App\Http\Controllers\ViewAdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ValueController;
+use App\Http\Controllers\ViewGuruController;
+use App\Http\Controllers\ViewAdminController;
+use App\Http\Controllers\ValueAdminController;
+use App\Http\Controllers\EditAdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,4 +37,8 @@ Route::middleware('auth:guru')->group(function () {
 });
 Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/dashboard', [ViewAdminController::class, 'dashboard']);
+    Route::get('/admin/profile', [ViewAdminController::class, 'profile']);
+    Route::get('/admin/anggota', [ViewAdminController::class, 'anggota']);
+    Route::post('/admin/profile/update', [EditAdminController::class, 'update']);
+    Route::get('/admin/dashboard/value', [ValueAdminController::class, 'valueDashboard'])->name('value.dashboard');
 });
