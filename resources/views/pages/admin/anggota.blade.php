@@ -19,7 +19,14 @@
                     <button href="#" class="btn btn-info" data-toggle="modal" data-target="#modal2"><i
                             class="ph-pedestrian-bold"></i> Data Subject</button>
                 </div>
-                <div class="col text-right">
+                <div class="col text-right d-flex justify-content-between">
+                    <div class="input-group rounded w-50 mx-auto">
+                        <input id="searchdata" class="form-control shadow-none rounded-pill"
+                            placeholder="Masukkan Keyword..." autocomplete="off" type="text">
+                        <span class="input-group-text border-0" id="search-addon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
                     <div class="btn-group">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -37,12 +44,12 @@
                     <table id="example" class="table table-striped dataTable no-footer" style="width:100%">
                         <thead>
                             <tr>
-                                <th scope="col">No</th>
+                                <th scope="col-1">No</th>
                                 <th scope="col">ID Card</th>
                                 <th scope="col">ID Chat</th>
                                 <th scope="col">No. Induk</th>
                                 <th scope="col">Nama</th>
-                                <th scope="col">L/P</th>
+                                <th scope="col-1">L/P</th>
                                 <th scope="col">Kelas</th>
                                 <th scope="col">Terdaftar</th>
                                 <th scope="col">Opsi</th>
@@ -55,7 +62,7 @@
                                 <td>6666</td>
                                 <td>6666</td>
                                 <td>Jeff</td>
-                                <td>Laki - laki</td>
+                                <td>L</td>
                                 <td>Bisnis</td>
                                 <td>20 Maret 1998</td>
                                 <td class="text-center">
@@ -73,7 +80,7 @@
                                 <td>6666</td>
                                 <td>6666</td>
                                 <td>Naz</td>
-                                <td>Laki - laki</td>
+                                <td>L</td>
                                 <td>Bisnis</td>
                                 <td>20 Maret 1998</td>
                                 <td class="text-center">
@@ -91,7 +98,7 @@
                                 <td>6666</td>
                                 <td>6666</td>
                                 <td>Zelda</td>
-                                <td>Laki - laki</td>
+                                <td>L</td>
                                 <td>Bisnis</td>
                                 <td>20 Maret 1998</td>
                                 <td class="text-center">
@@ -109,7 +116,7 @@
                                 <td>6666</td>
                                 <td>6666</td>
                                 <td>Zelda</td>
-                                <td>Laki - laki</td>
+                                <td>L</td>
                                 <td>Bisnis</td>
                                 <td>20 Maret 1998</td>
                                 <td class="text-center">
@@ -127,7 +134,7 @@
                                 <td>6666</td>
                                 <td>6666</td>
                                 <td>Zelda</td>
-                                <td>Laki - laki</td>
+                                <td>L</td>
                                 <td>Bisnis</td>
                                 <td>20 Maret 1998</td>
                                 <td class="text-center">
@@ -145,7 +152,7 @@
                                 <td>6666</td>
                                 <td>6666</td>
                                 <td>Zelda</td>
-                                <td>Laki - laki</td>
+                                <td>L</td>
                                 <td>Bisnis</td>
                                 <td>20 Maret 1998</td>
                                 <td class="text-center">
@@ -163,7 +170,7 @@
                                 <td>6666</td>
                                 <td>6666</td>
                                 <td>Zelda</td>
-                                <td>Laki - laki</td>
+                                <td>L</td>
                                 <td>Bisnis</td>
                                 <td>20 Maret 1998</td>
                                 <td class="text-center">
@@ -181,7 +188,7 @@
                                 <td>6666</td>
                                 <td>6666</td>
                                 <td>Zelda</td>
-                                <td>Laki - laki</td>
+                                <td>L</td>
                                 <td>Bisnis</td>
                                 <td>20 Maret 1998</td>
                                 <td class="text-center">
@@ -199,7 +206,7 @@
                                 <td>6666</td>
                                 <td>6666</td>
                                 <td>Zelda</td>
-                                <td>Laki - laki</td>
+                                <td>L</td>
                                 <td>Bisnis</td>
                                 <td>20 Maret 1998</td>
                                 <td class="text-center">
@@ -217,7 +224,7 @@
                                 <td>6666</td>
                                 <td>6666</td>
                                 <td>Zelda</td>
-                                <td>Laki - laki</td>
+                                <td>L</td>
                                 <td>Bisnis</td>
                                 <td>20 Maret 1998</td>
                                 <td class="text-center">
@@ -235,7 +242,7 @@
                                 <td>6666</td>
                                 <td>6666</td>
                                 <td>Zelda</td>
-                                <td>Laki - laki</td>
+                                <td>L</td>
                                 <td>Bisnis</td>
                                 <td>20 Maret 1998</td>
                                 <td class="text-center">
@@ -352,7 +359,19 @@
     <script type="text/javascript" src=" https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js  "></script>
     <script>
         $(document).ready(function() {
-            $('#example').DataTable();
+            var table = $('#example').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+                "dom": 'rt<"row"<"col-lg-3 pr-0"i><"col-lg-6 text-center p-0"l><"col-lg-3 pl-0"p>>'
+            })
+            $('#searchdata').on('keyup', function() {
+                table.search(this.value).draw();
+            });
         });
         $('#modal').appendTo('body');
         $('#modal2').appendTo('body');
@@ -362,5 +381,11 @@
 @push('css')
     <link rel="stylesheet" type="text/css" href=" https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css  " />
     <style>
+        #search-addon {
+            margin-left: -40px;
+            z-index: 3;
+            background: transparent;
+        }
+
     </style>
 @endpush
