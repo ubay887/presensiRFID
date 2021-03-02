@@ -17,6 +17,7 @@ class CreateSiswaTable extends Migration
             $table->id();
             $table->string('idchat',20)->unique()->nullable();
             $table->string('nipd',20)->unique();
+            $table->string('tagid')->unique();
             $table->date('tanggal_lahir');
             $table->string('foto')->nullable();
             $table->string('nama');

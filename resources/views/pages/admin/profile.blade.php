@@ -37,7 +37,7 @@
                             <input type="text" class="form-control" value="{{ Auth::guard('admin')->user()->nama }}"
                                 required name="fullname">
                             <div class="invalid-feedback">
-                                Please fill in the first name
+                                Please fill in the full name
                             </div>
                         </div>
                         <div class="form-group col-md-4 col-12">

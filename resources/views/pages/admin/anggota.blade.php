@@ -56,204 +56,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>6969</td>
-                                <td>6666</td>
-                                <td>6666</td>
-                                <td>Jeff</td>
-                                <td>L</td>
-                                <td>Bisnis</td>
-                                <td>20 Maret 1998</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
-                                    <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                    <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>6969</td>
-                                <td>6666</td>
-                                <td>6666</td>
-                                <td>Naz</td>
-                                <td>L</td>
-                                <td>Bisnis</td>
-                                <td>20 Maret 1998</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
-                                    <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                    <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>6969</td>
-                                <td>6666</td>
-                                <td>6666</td>
-                                <td>Zelda</td>
-                                <td>L</td>
-                                <td>Bisnis</td>
-                                <td>20 Maret 1998</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
-                                    <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                    <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>6969</td>
-                                <td>6666</td>
-                                <td>6666</td>
-                                <td>Zelda</td>
-                                <td>L</td>
-                                <td>Bisnis</td>
-                                <td>20 Maret 1998</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
-                                    <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                    <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>6969</td>
-                                <td>6666</td>
-                                <td>6666</td>
-                                <td>Zelda</td>
-                                <td>L</td>
-                                <td>Bisnis</td>
-                                <td>20 Maret 1998</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
-                                    <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                    <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>6969</td>
-                                <td>6666</td>
-                                <td>6666</td>
-                                <td>Zelda</td>
-                                <td>L</td>
-                                <td>Bisnis</td>
-                                <td>20 Maret 1998</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
-                                    <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                    <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>6969</td>
-                                <td>6666</td>
-                                <td>6666</td>
-                                <td>Zelda</td>
-                                <td>L</td>
-                                <td>Bisnis</td>
-                                <td>20 Maret 1998</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
-                                    <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                    <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>6969</td>
-                                <td>6666</td>
-                                <td>6666</td>
-                                <td>Zelda</td>
-                                <td>L</td>
-                                <td>Bisnis</td>
-                                <td>20 Maret 1998</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
-                                    <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                    <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>6969</td>
-                                <td>6666</td>
-                                <td>6666</td>
-                                <td>Zelda</td>
-                                <td>L</td>
-                                <td>Bisnis</td>
-                                <td>20 Maret 1998</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
-                                    <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                    <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>6969</td>
-                                <td>6666</td>
-                                <td>6666</td>
-                                <td>Zelda</td>
-                                <td>L</td>
-                                <td>Bisnis</td>
-                                <td>20 Maret 1998</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
-                                    <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                    <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>6969</td>
-                                <td>6666</td>
-                                <td>6666</td>
-                                <td>Zelda</td>
-                                <td>L</td>
-                                <td>Bisnis</td>
-                                <td>20 Maret 1998</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
-                                    <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                    <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title=""
-                                        data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                </td>
-                            </tr>
+                            @foreach ($siswa as $user)
+                                <tr>
+                                    <th>{{$loop->iteration}}</th>
+                                    <td>{{$user->idchat}}</td>
+                                    <td>6666</td>
+                                    <td>6666</td>
+                                    <td>Naz</td>
+                                    <td>L</td>
+                                    <td>Bisnis</td>
+                                    <td>20 Maret 1998</td>
+                                    <td class="text-center">
+                                        <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top"
+                                            title="" data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
+                                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top"
+                                            title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
+                                        <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top"
+                                            title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

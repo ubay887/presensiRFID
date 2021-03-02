@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\guru;
+use App\Models\siswa;
 
 class ViewAdminController extends Controller
 {
@@ -16,6 +18,6 @@ class ViewAdminController extends Controller
     }
     public function anggota()
     {
-        return view("pages.admin.anggota");
+        return view("pages.admin.anggota",['siswa'=>siswa::all(),]);
     }
 }

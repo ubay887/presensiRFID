@@ -18,7 +18,7 @@
                         <h4 class="card-db-title">Total Anggota</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3" id="totalanggota"></p>
+                        <p class="card-db-text mb-3" id="totalanggota">-</p>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                         <h4 class="card-db-title">Total Hadir</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3" id="totalhadir"></p>
+                        <p class="card-db-text mb-3" id="totalhadir">-</p>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                         <h4 class="card-db-title">Total Check In</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3" id="totalcheckin"></p>
+                        <p class="card-db-text mb-3" id="totalcheckin">-</p>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                         <h4 class="card-db-title">Total Terlambat</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3" id="totalterlambat"></p>
+                        <p class="card-db-text mb-3" id="totalterlambat">-</p>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                         <h4 class="card-db-title">Total Ruangan</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3" id="totalruangan"></p>
+                        <p class="card-db-text mb-3" id="totalruangan">-</p>
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                         <h4 class="card-db-title">Total Tidak Hadir</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3" id="totaltdkhadir"></p>
+                        <p class="card-db-text mb-3" id="totaltdkhadir">-</p>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@
                         <h4 class="card-db-title">Total Check Out</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3" id="totalcheckout"></p>
+                        <p class="card-db-text mb-3" id="totalcheckout">-</p>
                     </div>
                 </div>
             </div>
@@ -126,7 +126,7 @@
                         <h4 class="card-db-title">Total Izin Pulang</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3" id="totalizinplg"></p>
+                        <p class="card-db-text mb-3" id="totalizinplg">-</p>
                     </div>
                 </div>
             </div>
@@ -138,7 +138,7 @@
         $(document).ready(function() {
             var valueDashboard = function() {
                 $.ajax({
-                    url: "{{ route('api.dashboard') }}",
+                    url: "{{ route('value.guru.dashboard') }}",
                     type: "GET",
                     dataType: "json",
                     headers: {

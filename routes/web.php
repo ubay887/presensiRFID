@@ -33,7 +33,7 @@ Route::middleware('auth:guru')->group(function () {
     Route::get('/guru/ruangan', [ViewGuruController::class, 'ruangan']);
     Route::get('/guru/grafik', [ViewGuruController::class, 'grafik']);
     Route::get('/guru/jammasuk', [ViewGuruController::class, 'jammasuk']);
-    Route::get('/guru/dashboard/api/value', [ValueController::class, 'dashboardValue'])->name('api.dashboard');
+    Route::get('/guru/dashboard/api/value', [ValueController::class, 'dashboardValue'])->name('value.guru.dashboard');
     Route::get('/guru/profile/changepass', [ViewGuruController::class, 'changepass']);
 });
 Route::middleware('auth:admin')->group(function () {
