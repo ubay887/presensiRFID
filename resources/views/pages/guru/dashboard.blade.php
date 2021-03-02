@@ -56,6 +56,21 @@
         </div>
         <div class="col-12 col-md-6 col-lg-3 px-1">
             <div class="card card-statistic-1 rounded shadow-sm">
+                <div class="card-icon" style="background-color:#FF1493;">
+                    <i class="ph-identification-card-bold text-white ph-2x"></i>
+                </div>
+                <div class="card-wrap">
+                    <div class="card-header pt-4">
+                        <h4 class="card-db-title">Total Semua Kelas</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-db-text mb-3" id="totalpemberitahuan">-</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 px-1">
+            <div class="card card-statistic-1 rounded shadow-sm">
                 <div class="card-icon" style="background-color:#32CD32;">
                     <i class="ph-user-bold text-white ph-2x"></i>
                     <i class="ph-clock-bold text-white ph-lg"></i>
@@ -66,21 +81,6 @@
                     </div>
                     <div class="card-body">
                         <p class="card-db-text mb-3" id="totalterlambat">-</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 px-1">
-            <div class="card card-statistic-1 rounded shadow-sm">
-                <div class="card-icon" style="background-color:#FF1493;">
-                    <i class="ph-buildings-bold text-white ph-2x"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header pt-4">
-                        <h4 class="card-db-title">Total Ruangan</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-db-text mb-3" id="totalruangan">-</p>
                     </div>
                 </div>
             </div>
@@ -119,14 +119,14 @@
         <div class="col-12 col-md-6 col-lg-3 px-1">
             <div class="card card-statistic-1 rounded shadow-sm">
                 <div class="card-icon" style="background-color:#DAA520;">
-                    <i class="ph-note-pencil text-white ph-2x"></i>
+                    <i class="ph-chat-circle-text-bold text-white ph-2x"></i>
                 </div>
                 <div class="card-wrap">
                     <div class="card-header pt-4">
-                        <h4 class="card-db-title">Total Izin Pulang</h4>
+                        <h4 class="card-db-title">Total Quotes</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3" id="totalizinplg">-</p>
+                        <p class="card-db-text mb-3" id="totalquotes">-</p>
                     </div>
                 </div>
             </div>

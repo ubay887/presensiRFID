@@ -17,19 +17,17 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!------ Include the above in your HEAD tag ---------->
 
-    <title>E-Presensi Doorlock</title>
+    <title>{{ config('app.name') }}</title>
 </head>
 
 <body>
-
-
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
                 <form class="login100-form validate-form" action="{{ url('/') }}" method="POST">
                     @csrf
                     <span class="login100-form-title">
-                        Login E-Presensi
+                        Login {{ config('app.name') }}
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate="email atau username salah">

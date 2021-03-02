@@ -1,14 +1,14 @@
 <div class="main-sidebar position-fixed">
     <aside id="sidebar-wrapper">
+        @if (Auth::guard('guru')->user())
         <div class="sidebar-brand">
-            <a href="{{ url('/dashboard') }}">{{ config('app.name') }}</a>
+            <a href="{{ url('guru/dashboard') }}">{{ config('app.name') }}</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{ url('/dashboard') }}">
+            <a href="{{ url('guru/dashboard') }}">
                 <img src="{{ asset('photos/logo_epresensi.png') }}" alt="Epresensi" width="50px">
             </a>
         </div>
-        @if (Auth::guard('guru')->user())
             <ul class="sidebar-menu">
                 <li class="nav-item dropdown @if (Request::is('guru/dashboard')) active @endif">
                     <a href="{{ url('guru/dashboard') }}" class="nav-link">
@@ -66,6 +66,14 @@
                 </li>
             </ul>
         @elseif (Auth::guard('admin')->user())
+        <div class="sidebar-brand">
+            <a href="{{ url('admin/dashboard') }}">{{ config('app.name') }}</a>
+        </div>
+        <div class="sidebar-brand sidebar-brand-sm">
+            <a href="{{ url('admin/dashboard') }}">
+                <img src="{{ asset('photos/logo_epresensi.png') }}" alt="Epresensi" width="50px">
+            </a>
+        </div>
             <ul class="sidebar-menu">
                 <li class="nav-item dropdown @if (Request::is('admin/dashboard')) active @endif">
                     <a href="{{ url('admin/dashboard') }}" class="nav-link">
