@@ -22,6 +22,10 @@ class ViewGuruController extends Controller
     {
         return view("pages.guru.anggota");
     }
+    public function datasubjek()
+    {
+        return view("pages.guru.datasubjek");
+    }
     public function presensi()
     {
         return view("pages.guru.presensi");

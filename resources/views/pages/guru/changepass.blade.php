@@ -1,12 +1,15 @@
 @extends('template.master')
-@section('title', 'profile')
-@section('judul', 'Profile')
+@section('title', 'Change Password')
+@section('judul', 'Change Password')
 @section('breadcrumb')
     <div class="breadcrumb-item">
         <a href="{{ url('guru/dashboard') }}">Dashboard</a>
     </div>
+    <div class="breadcrumb-item">
+        <a href="{{ url('guru/profile') }}">Profile</a>
+    </div>
     <div class="breadcrumb-item active">
-        Profile
+        Change Password
     </div>
 @endsection
 @section('main')
@@ -47,9 +50,9 @@
 
                 </div>
                 <div class="card-footer text-right">
-                    <a href="{{ url('/profile') }}" class="btn text-white"
-                        style="background-color: #FB160A">Back</a>
-                    <button type="submit" class="btn text-white" style="background-color: #4CEA67">Save Changes</button>
+                    <a href="{{ url('/guru/profile') }}" class="btn btn-secondary mr-2"
+                        >Back</a>
+                    <button type="submit" class="btn btn-success">Save Changes</button>
                 </div>
             </form>
         </div>

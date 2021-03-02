@@ -16,7 +16,7 @@
         <div class="row mt-3 ml-3">
             <div class="col-10">
                 <button href="#" class="btn btn-success mr-3" data-toggle="modal" data-target="#modal"><i class="ph-user-plus-bold"></i> Tambah Data</button>
-                <button href="#" class="btn btn-info" data-toggle="modal" data-target="#modal2"><i class="ph-pedestrian-bold"></i> Data Subject</button>
+                <a href="{{ url('guru/datasubjek') }}" class="btn btn-info"><i class="ph-pedestrian-bold"></i> Data Subject</a>
             </div>
             <div class="col">
                 <div class="dropdown">
@@ -32,7 +32,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="example" class="table table-striped dataTable no-footer" style="width:100%">
+                <table id="example" class="table table-striped dataTable no-footer text-center" style="width:100%">
                     <thead>
                         <tr>
                             <th scope="col">No</th>

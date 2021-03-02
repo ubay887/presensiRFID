@@ -70,7 +70,7 @@
 
             </div>
             <div class="card-footer text-right">
-                <a href="{{ url('/profile/changepassword') }}" class="btn btn-primary mr-2">Change Password</a>
+                <a href="{{ url('/guru/profile/changepass') }}" class="btn btn-primary mr-2">Change Password</a>
                 <button type="submit" class="btn btn-success">Save Changes</button>
             </div>
         </form>
