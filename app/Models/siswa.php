@@ -18,15 +18,7 @@ class siswa extends Model
         'nipd',
     ];
     protected $guarded = [];
-    public function akses_ruangan()
-    {
-        return $this->hasMany(akses_ruangan::class, 'id_siswa', 'id');
-    }
-    public function kehadiran()
-    {
-        return $this->hasMany(kehadiran::class, 'id_siswa', 'id');
-    }
-    public function kelas(){
-        return $this->belongsTo(kelas::class,'id');
+    public function idKelas(){
+        return $this->belongsTo(kelas::class,'id_kelas');
     }
 }

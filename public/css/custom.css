@@ -10,18 +10,21 @@
     font-family: 'Open Sans',
         sans-serif;
 }
-.ph{
+
+.ph {
     margin: 0;
     margin-left: 8px;
     font-size: 15px;
 }
-.card-db-text{
+
+.card-db-text {
     font-size: 20px;
     font-weight: 700;
     margin: 0;
     color: #3C3C3C;
 }
-.card-db-title{
+
+.card-db-title {
     font-size: 13px;
     margin: 0;
     font-weight: 600;
@@ -32,4 +35,8 @@ body.sidebar-mini .main-sidebar .sidebar-menu>li>a .ph {
     margin: auto;
     padding-left: 4px;
     font-size: 20px;
+}
+
+.img-table {
+    width: 50px;
 }

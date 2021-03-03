@@ -18,4 +18,8 @@ class guru extends Authenticable
         'nama', 'email', 'kelamin', 'email_verfied_at', 'password', 'username'
     ];
     protected $hidden = ['password'];
+    public function idWaliKelas()
+    {
+        return $this->hasOne(kelas::class, 'id_guru');
+    }
 }

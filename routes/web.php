@@ -40,6 +40,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/dashboard', [ViewAdminController::class, 'dashboard']);
     Route::get('/admin/profile', [ViewAdminController::class, 'profile']);
     Route::get('/admin/anggota', [ViewAdminController::class, 'anggota']);
+    Route::get('/admin/guru', [ViewAdminController::class, 'guru']);
     Route::post('/admin/profile/update', [EditAdminController::class, 'update']);
     Route::get('/admin/dashboard/value', [ValueAdminController::class, 'valueDashboard'])->name('value.dashboard');
 });
