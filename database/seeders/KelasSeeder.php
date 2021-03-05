@@ -17,18 +17,18 @@ class KelasSeeder extends Seeder
         DB::table('kelas')->insert([
             [
                 
-                'kelas' => 'X RPL 1',
+                'kelas' => 'X Rekayasa Perangkat Lunak 1',
                 'id_guru' => '1'
             ],
             [
                 
-                'kelas' => 'XI RPL 1',
-                'id_guru' => '1'
+                'kelas' => 'XI Rekayasa Perangkat Lunak 1',
+                'id_guru' => '2'
             ],
             [
                 
-                'kelas' => 'XII RPL 1',
-                'id_guru' => '1'
+                'kelas' => 'XII Rekayasa Perangkat Lunak 1',
+                'id_guru' => '3'
             ]
         ]);
     }

@@ -18,6 +18,10 @@ class ViewAdminController extends Controller
     }
     public function anggota()
     {
-        return view("pages.admin.anggota",['siswa'=>siswa::all(),]);
+        return view("pages.admin.anggota", ['siswa' => siswa::all(),]);
+    }
+    public function guru()
+    {
+        return view("pages.admin.guru", ['guru' => guru::all(),]);
     }
 }
