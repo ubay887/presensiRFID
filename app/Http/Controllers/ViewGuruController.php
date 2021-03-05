@@ -42,4 +42,8 @@ class ViewGuruController extends Controller
     {
         return view("pages.guru.jammasuk");
     }
+    public function harilibur()
+    {
+        return view("pages.guru.harilibur");
+    }
 }
