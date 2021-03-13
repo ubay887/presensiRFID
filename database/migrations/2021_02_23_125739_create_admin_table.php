@@ -21,6 +21,7 @@ class CreateAdminTable extends Migration
             $table->string('password');
             $table->string('idchat',20)->unique()->nullable();
             $table->rememberToken();
+            $table->timestamp('last_login_at')->nullable();
             $table->timestamps();
         });
     }

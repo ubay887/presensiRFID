@@ -30,6 +30,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ViewController::class, 'login'])->middleware('guest:guru')->middleware('guest:admin');
 Route::post('/', [AuthController::class, 'postLogin'])->name('login');
 Route::get('/logout', [AuthController::class, 'postLogout']);
+Route::get('/time', [AuthController::class, 'valueAuth'])->name('value.auth');
 
 Route::middleware('auth:guru')->group(function () {
     // main route guru

@@ -23,9 +23,9 @@
                     <div class="input-group rounded w-50 mx-auto">
                         <input id="searchdata" class="form-control shadow-none rounded-pill"
                             placeholder="Masukkan Keyword..." autocomplete="off" type="text">
-                        <span class="input-group-text border-0" id="search-addon">
+                        <label for="searchdata" class="input-group-text border-0" id="search-addon">
                             <i class="fas fa-search"></i>
-                        </span>
+                        </label>
                     </div>
                     <div class="btn-group">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
