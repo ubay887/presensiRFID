@@ -81,19 +81,19 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('admin/guru')) active @endif">
+                <li class="nav-item dropdown @if (Request::is('admin/guru','admin/guru/*')) active @endif">
                     <a href="{{ url('admin/guru') }}" class="nav-link">
                         <i class="ph ph-user-gear-bold"></i>
                         <span>Guru</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('admin/anggota')) active @endif">
+                <li class="nav-item dropdown @if (Request::is('admin/anggota','admin/anggota/*')) active @endif">
                     <a href="{{ url('admin/anggota') }}" class="nav-link">
                         <i class="ph ph-users-bold"></i>
                         <span>Anggota</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('admin/quotes')) active @endif">
+                <li class="nav-item dropdown @if (Request::is('admin/quotes','admin/qutes/*')) active @endif">
                     <a href="{{ url('admin/quotes') }}" class="nav-link">
                         <i class="ph ph-chat-circle-text-bold"></i>
                         <span>Quotes</span>
@@ -116,7 +116,7 @@
 
         <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
             <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSKkVNQtcLFLDpVMxlhznwZFvXLbTqjLMlRcXxfQWGtmwPpHVDXBjBLHlwLrQglwTjRhHPMM"
-                class="btn btn-primary btn-lg btn-block btn-icon-split">
+                class="btn btn-primary btn-lg btn-block btn-icon-split" target="_blank">
                 <i class="fas fa-rocket"></i> Email Developer
             </a>
         </div>

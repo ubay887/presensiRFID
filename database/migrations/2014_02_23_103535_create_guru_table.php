@@ -24,6 +24,7 @@ class CreateGuruTable extends Migration
             $table->string('username');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('password_crypt');
             $table->rememberToken();
             $table->timestamps();
         });

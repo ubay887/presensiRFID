@@ -1,12 +1,12 @@
 @extends('template.master')
-@section('title', 'Data Guru')
-@section('judul', 'Data Guru')
+@section('title', 'Data Anggota')
+@section('judul', 'Data Anggota')
 @section('breadcrumb')
     <div class="breadcrumb-item">
         <a href="{{ url('admin/dashboard') }}">Dashboard</a>
     </div>
     <div class="breadcrumb-item active">
-        Data guru
+        Data Anggota
     </div>
 @endsection
 @section('main')
@@ -47,37 +47,14 @@
                                 <th scope="col-1">No</th>
                                 <th scope="col">Gambar</th>
                                 <th scope="col">Nama</th>
-                                <th scope="col">Role</th>
+                                <th scope="col">No. Induk</th>
                                 <th scope="col-1">L/P</th>
-                                <th scope="col">Wali kelas</th>
+                                <th scope="col">Kelas</th>
                                 <th scope="col">Opsi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($guru as $user)
-                                <tr role="row">
-                                    <th>{{$loop->iteration}}</th>
-                                    <td><img class="img-table mx-auto" src="{{asset($user->foto)}}" alt="{{$user->nama}}"></td>
-                                    <td>{{$user->nama}}</td>
-                                    <td>{{$user->role}}</td>
-                                    <td>{{$user->kelamin}}</td>
-                                    <td>
-                                        @if ($user->idWaliKelas)
-                                            {{$user->idWaliKelas->kelas}}
-                                        @else
-                                            none
-                                        @endif
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top"
-                                            title="" data-original-title="Detail"><i class="ph-clipboard-bold"></i></i></a>
-                                        {{-- <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top"
-                                            title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a> --}}
-                                        <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top"
-                                            title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                    </td>
-                                </tr>
-                            @endforeach
+                            <td>{{ $id->nama }}</td>
                         </tbody>
                     </table>
                 </div>

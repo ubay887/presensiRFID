@@ -64,9 +64,9 @@
                                     <td>{{$user->idKelas->kelas}}</td>
                                     <td class="text-center">
                                         <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top"
-                                            title="" data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
-                                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top"
-                                            title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
+                                            title="" data-original-title="Record"><i class="ph-record"></i></a>
+                                        <a href="{{url('/admin/anggota/'.$user->id.'/detail')}}" class="btn btn-primary" data-toggle="tooltip" data-placement="top"
+                                            title="" data-original-title="Detail"><i class="ph-clipboard-bold"></i></i></a>
                                         <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top"
                                             title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
                                     </td>

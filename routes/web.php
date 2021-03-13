@@ -4,9 +4,12 @@ use App\Http\Controllers\ViewController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ValueController;
 use App\Http\Controllers\ViewGuruController;
-use App\Http\Controllers\ViewAdminController;
-use App\Http\Controllers\ValueAdminController;
-use App\Http\Controllers\EditAdminController;
+
+use App\Http\Controllers\Admin\ViewAdminController;
+use App\Http\Controllers\Admin\ValueAdminController;
+use App\Http\Controllers\Admin\EditAdminController;
+use App\Http\Controllers\Admin\DetailAdminController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,10 +41,16 @@ Route::middleware('auth:guru')->group(function () {
     Route::get('/guru/profile/changepass', [ViewGuruController::class, 'changepass']);
 });
 Route::middleware('auth:admin')->group(function () {
+    // route buat admin
     Route::get('/admin/dashboard', [ViewAdminController::class, 'dashboard']);
     Route::get('/admin/profile', [ViewAdminController::class, 'profile']);
-    Route::get('/admin/anggota', [ViewAdminController::class, 'anggota']);
-    Route::get('/admin/guru', [ViewAdminController::class, 'guru']);
     Route::post('/admin/profile/update', [EditAdminController::class, 'update']);
     Route::get('/admin/dashboard/value', [ValueAdminController::class, 'valueDashboard'])->name('value.dashboard');
+
+    //route buat gituin anggota
+    Route::get('/admin/anggota', [ViewAdminController::class, 'anggota']);
+    Route::get('/admin/anggota/{ID}/detail', [DetailAdminController::class, 'anggota']);
+
+    //route buat gituin guru
+    Route::get('/admin/guru', [ViewAdminController::class, 'guru']);
 });
