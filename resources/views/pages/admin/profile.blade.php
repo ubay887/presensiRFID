@@ -42,7 +42,7 @@
                         </div>
                         <div class="form-group col-md-4 col-12">
                             <label>Username</label>
-                            <input type="text" class="form-control" value="{{ Auth::user()->username }}"
+                            <input type="text" class="form-control" value="{{ Auth::guard('admin')->user()->username }}"
                                 autocomplete="off" name="username">
                         </div>
                     </div>

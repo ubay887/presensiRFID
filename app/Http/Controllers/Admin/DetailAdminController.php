@@ -8,8 +8,8 @@ use App\Models\siswa;
 
 class DetailAdminController extends Controller
 {
-    public function anggota(siswa $id)
+    public function anggota(siswa $ID)
     {
-        return view('pages.admin.detail',compact('id'));
+        return view('pages.admin.detail',['id' => $ID]);
     }
 }
