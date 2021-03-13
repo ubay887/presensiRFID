@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Guru;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ViewGuruController extends Controller
 {
@@ -18,9 +19,9 @@ class ViewGuruController extends Controller
     {
         return view("pages.guru.changepass");
     }
-    public function anggota()
+    public function siswa()
     {
-        return view("pages.guru.anggota");
+        return view("pages.guru.siswa");
     }
     public function datasubjek()
     {

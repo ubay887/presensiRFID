@@ -1,12 +1,12 @@
 @extends('template.master')
-@section('title', 'Data Anggota')
-@section('judul', 'Data Anggota')
+@section('title', 'Data Siswa')
+@section('judul', 'Data Siswa')
 @section('breadcrumb')
 <div class="breadcrumb-item">
     <a href="{{ url('guru/dashboard') }}">Dashboard</a>
 </div>
 <div class="breadcrumb-item active">
-    Data Anggota
+    Data Siswa
 </div>
 @endsection
 @section('main')
@@ -223,7 +223,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"><i class="ph-user-plus-bold"></i> Form Tambah Anggota</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="ph-user-plus-bold"></i> Form Tambah siswa</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

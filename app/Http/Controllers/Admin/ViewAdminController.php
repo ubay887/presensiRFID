@@ -17,9 +17,9 @@ class ViewAdminController extends Controller
     {
         return view("pages.admin.profile");
     }
-    public function anggota()
+    public function siswa()
     {
-        return view("pages.admin.anggota", ['siswa' => siswa::all(),]);
+        return view("pages.admin.siswa", ['siswa' => siswa::all(),]);
     }
     public function guru()
     {

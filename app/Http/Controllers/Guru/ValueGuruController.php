@@ -1,14 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Guru;
 
 use App\Models\kehadiran;
 use App\Models\siswa;
-use Illuminate\Http\Request;
 
-class ValueController extends Controller
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class ValueGuruController extends Controller
 {
-    public function dashboardValue()
+    public function valueDashboard()
     {
         $date = now()->format('Y-m-d');
         $anggota = siswa::all()->count();

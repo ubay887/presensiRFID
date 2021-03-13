@@ -16,10 +16,10 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('guru/anggota')) active @endif">
-                    <a href="{{ url('guru/anggota') }}" class="nav-link">
+                <li class="nav-item dropdown @if (Request::is('guru/siswa')) active @endif">
+                    <a href="{{ url('guru/siswa') }}" class="nav-link">
                         <i class="ph ph-users-bold"></i>
-                        <span>Anggota</span>
+                        <span>Siswa</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown @if (Request::is('guru/presensi')) active @endif">
@@ -49,7 +49,7 @@
                 <li class="nav-item dropdown @if (Request::is('guru/tagid')) active @endif">
                     <a href="{{ url('guru/tagid') }}" class="nav-link">
                         <i class="ph ph-tag-bold"></i>
-                        <span>Tag ID</span>
+                        <span>ID Card</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown @if (Request::is('admin/quotes')) active @endif">
@@ -87,10 +87,10 @@
                         <span>Guru</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('admin/anggota','admin/anggota/*')) active @endif">
-                    <a href="{{ url('admin/anggota') }}" class="nav-link">
+                <li class="nav-item dropdown @if (Request::is('admin/siswa','admin/siswa/*')) active @endif">
+                    <a href="{{ url('admin/siswa') }}" class="nav-link">
                         <i class="ph ph-users-bold"></i>
-                        <span>Anggota</span>
+                        <span>Siswa</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown @if (Request::is('admin/quotes','admin/qutes/*')) active @endif">

@@ -1,12 +1,12 @@
 @extends('template.master')
-@section('title', 'Data Anggota')
-@section('judul', 'Data Anggota')
+@section('title', 'Data Siswa')
+@section('judul', 'Data Siswa')
 @section('breadcrumb')
     <div class="breadcrumb-item">
         <a href="{{ url('admin/dashboard') }}">Dashboard</a>
     </div>
     <div class="breadcrumb-item active">
-        Data Anggota
+        Data Siswa
     </div>
 @endsection
 @section('main')
@@ -65,7 +65,7 @@
                                     <td class="text-center">
                                         <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top"
                                             title="" data-original-title="Record"><i class="ph-record"></i></a>
-                                        <a href="{{url('/admin/anggota/'.$user->id.'/detail')}}" class="btn btn-primary" data-toggle="tooltip" data-placement="top"
+                                        <a href="{{url('/admin/siswa/'.$user->id.'/detail')}}" class="btn btn-primary" data-toggle="tooltip" data-placement="top"
                                             title="" data-original-title="Detail"><i class="ph-clipboard-bold"></i></i></a>
                                         <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top"
                                             title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
@@ -83,7 +83,7 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"><i class="ph-user-plus-bold"></i> Form Tambah Anggota
+                        <h5 class="modal-title" id="exampleModalLabel"><i class="ph-user-plus-bold"></i> Form Tambah siswa
                         </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>

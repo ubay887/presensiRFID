@@ -1,15 +1,19 @@
 <?php
-
+// use controller main
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ValueController;
-use App\Http\Controllers\ViewGuruController;
 
+// use controller guru
+use App\Http\Controllers\Guru\ValueGuruController;
+use App\Http\Controllers\Guru\ViewGuruController;
+
+// use controller admin
 use App\Http\Controllers\Admin\ViewAdminController;
 use App\Http\Controllers\Admin\ValueAdminController;
 use App\Http\Controllers\Admin\EditAdminController;
 use App\Http\Controllers\Admin\DetailAdminController;
 
+// use custom
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,35 +26,36 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// main route
 Route::get('/', [ViewController::class, 'login'])->middleware('guest:guru')->middleware('guest:admin');
 Route::post('/', [AuthController::class, 'postLogin'])->name('login');
 Route::get('/logout', [AuthController::class, 'postLogout']);
 
 Route::middleware('auth:guru')->group(function () {
+    // main route guru
     Route::get('/guru/dashboard', [ViewGuruController::class, 'dashboard']);
     Route::get('/guru/profile', [ViewGuruController::class, 'profile']);
-    Route::get('/guru/anggota', [ViewGuruController::class, 'anggota']);
+    Route::get('/guru/profile/changepass', [ViewGuruController::class, 'changepass']);
     Route::get('/guru/datasubjek', [ViewGuruController::class, 'datasubjek']);
     Route::get('/guru/presensi', [ViewGuruController::class, 'presensi']);
-    Route::get('/guru/ruangan', [ViewGuruController::class, 'ruangan']);
-    Route::get('/guru/grafik', [ViewGuruController::class, 'grafik']);
     Route::get('/guru/jammasuk', [ViewGuruController::class, 'jammasuk']);
+    Route::get('/guru/grafik', [ViewGuruController::class, 'grafik']);
     Route::get('/guru/harilibur', [ViewGuruController::class, 'harilibur']);
-    Route::get('/guru/dashboard/api/value', [ValueController::class, 'dashboardValue'])->name('value.guru.dashboard');
-    Route::get('/guru/profile/changepass', [ViewGuruController::class, 'changepass']);
+    Route::get('/guru/dashboard/value', [ValueGuruController::class, 'valueDashboard'])->name('value.guru.dashboard');
+
+    Route::get('/guru/siswa', [ViewGuruController::class, 'siswa']);
 });
 Route::middleware('auth:admin')->group(function () {
-    // route buat admin
+    // main route admin
     Route::get('/admin/dashboard', [ViewAdminController::class, 'dashboard']);
     Route::get('/admin/profile', [ViewAdminController::class, 'profile']);
     Route::post('/admin/profile/update', [EditAdminController::class, 'update']);
     Route::get('/admin/dashboard/value', [ValueAdminController::class, 'valueDashboard'])->name('value.dashboard');
 
-    //route buat gituin anggota
-    Route::get('/admin/anggota', [ViewAdminController::class, 'anggota']);
-    Route::get('/admin/anggota/{ID}/detail', [DetailAdminController::class, 'anggota']);
+    //route mengatur siswa
+    Route::get('/admin/siswa', [ViewAdminController::class, 'siswa']);
+    Route::get('/admin/siswa/{ID}/detail', [DetailAdminController::class, 'siswa']);
 
-    //route buat gituin guru
+    //route mengatur guru
     Route::get('/admin/guru', [ViewAdminController::class, 'guru']);
 });
