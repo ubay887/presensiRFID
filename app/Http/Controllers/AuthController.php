@@ -43,11 +43,10 @@ class AuthController extends Controller
     public function valueAuth()
     {
         if (Auth::guard('admin')->user()) {
-            $time = Carbon::parse(Auth::guard('admin')->user()->last_login_at)->diffForHumans();
+            $time = Carbon::parse(session()->get(Auth::guard('admin')->user()->id. 'last_login_at'))->diffForHumans();
         } elseif (Auth::guard('guru')->user()) {
             $time = Carbon::parse(Auth::guard('guru')->user()->last_login_at)->diffForHumans();
         }
-        // Carbon::parse(Auth::guard('admin')->user()->last_login_at)->diffForHumans();
         return response()->json(compact('time'));
     }
 }

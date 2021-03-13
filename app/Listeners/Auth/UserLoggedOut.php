@@ -2,12 +2,11 @@
 
 namespace App\Listeners\Auth;
 
-use Illuminate\Auth\Events\Login;
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-use Carbon\Carbon;
 
-class UserLoggedIn
+class UserLoggedOut
 {
     /**
      * Create the event listener.
@@ -22,15 +21,11 @@ class UserLoggedIn
     /**
      * Handle the event.
      *
-     * @param  Login  $event
+     * @param  Logout  $event
      * @return void
      */
-    public function handle(Login $event)
+    public function handle(Logout $event)
     {
-        session(
-            [
-                $event->user->id.'last_login_at' => Carbon::now()
-            ]
-        );
+
     }
 }
