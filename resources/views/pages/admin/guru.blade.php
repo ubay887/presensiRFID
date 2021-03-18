@@ -23,7 +23,11 @@
                     <div class="input-group rounded w-50 mx-auto">
                         <input id="searchDataTables" class="form-control shadow-none rounded-pill"
                             placeholder="Masukkan Keyword..." autocomplete="off" type="text">
+<<<<<<< HEAD
                         <label for="searchDataTables" class="input-group-text border-0" id="search-addon">
+=======
+                        <label for="searchdata" class="input-group-text border-0" id="search-addon">
+>>>>>>> 17a73a01a6314d91116452eba11b3b083275441d
                             <i class="fas fa-search"></i>
                         </label>
                     </div>

@@ -74,6 +74,11 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     @include('sweetalert::alert')
 
+    <!-- Template JS File -->
+    <script src="{{ asset('js/scripts.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
+
+
     <!-- JS Libraies -->
     @stack('js')
     <script src="{{ asset('js/logout.js') }}"></script>

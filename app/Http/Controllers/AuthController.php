@@ -45,7 +45,11 @@ class AuthController extends Controller
         if (Auth::guard('admin')->user()) {
             $time = Carbon::parse(session()->get(Auth::guard('admin')->user()->id. 'last_login_at'))->diffForHumans();
         } elseif (Auth::guard('guru')->user()) {
+<<<<<<< HEAD
             $time = Carbon::parse(session()->get(Auth::guard('guru')->user()->id . 'last_login_at'))->diffForHumans();
+=======
+            $time = Carbon::parse(Auth::guard('guru')->user()->last_login_at)->diffForHumans();
+>>>>>>> 17a73a01a6314d91116452eba11b3b083275441d
         }
         return response()->json(compact('time'));
     }
