@@ -49,6 +49,13 @@ body.sidebar-mini .main-sidebar .sidebar-menu>li>a .ph {
         width: 150px;
     }
 }
+
 .card.profile-widget .profile-widget-picture {
     width: 120px;
+}
+
+#search-addon {
+    margin-left: -40px;
+    z-index: 3;
+    background: transparent;
 }

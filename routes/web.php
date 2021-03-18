@@ -30,6 +30,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ViewController::class, 'login'])->middleware('guest:guru')->middleware('guest:admin');
 Route::post('/', [AuthController::class, 'postLogin'])->name('login');
 Route::get('/logout', [AuthController::class, 'postLogout']);
+Route::get('/time', [AuthController::class, 'valueAuth'])->name('value.auth');
 
 Route::middleware('auth:guru')->group(function () {
     // main route guru
@@ -41,6 +42,8 @@ Route::middleware('auth:guru')->group(function () {
     Route::get('/guru/jammasuk', [ViewGuruController::class, 'jammasuk']);
     Route::get('/guru/grafik', [ViewGuruController::class, 'grafik']);
     Route::get('/guru/harilibur', [ViewGuruController::class, 'harilibur']);
+    Route::get('/guru/tagid', [ViewGuruController::class, 'tagid']);
+    Route::get('/guru/quotes', [ViewGuruController::class, 'quotes']);
     Route::get('/guru/dashboard/value', [ValueGuruController::class, 'valueDashboard'])->name('value.guru.dashboard');
 
     Route::get('/guru/siswa', [ViewGuruController::class, 'siswa']);

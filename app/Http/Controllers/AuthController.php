@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,10 +29,24 @@ class AuthController extends Controller
     }
     public function postLogout()
     {
-        auth()->guard('admin')->logout();
-        auth()->guard('guru')->logout();
+
+
+        if (Auth::guard('admin')->user()) {
+            auth()->guard('admin')->logout();
+        } elseif (Auth::guard('guru')->user()) {
+            auth()->guard('guru')->logout();
+        }
         session()->flush();
 
         return redirect()->route('login');
+    }
+    public function valueAuth()
+    {
+        if (Auth::guard('admin')->user()) {
+            $time = Carbon::parse(session()->get(Auth::guard('admin')->user()->id. 'last_login_at'))->diffForHumans();
+        } elseif (Auth::guard('guru')->user()) {
+            $time = Carbon::parse(session()->get(Auth::guard('guru')->user()->id . 'last_login_at'))->diffForHumans();
+        }
+        return response()->json(compact('time'));
     }
 }

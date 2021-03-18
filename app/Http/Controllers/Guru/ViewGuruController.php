@@ -47,4 +47,8 @@ class ViewGuruController extends Controller
     {
         return view("pages.guru.harilibur");
     }
+    public function tagid()
+    {
+        return view("pages.guru.tagid");
+    }
 }

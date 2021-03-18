@@ -21,11 +21,11 @@
                 </div>
                 <div class="col text-right d-flex justify-content-between">
                     <div class="input-group rounded w-50 mx-auto">
-                        <input id="searchdata" class="form-control shadow-none rounded-pill"
+                        <input id="searchDataTables" class="form-control shadow-none rounded-pill"
                             placeholder="Masukkan Keyword..." autocomplete="off" type="text">
-                        <span class="input-group-text border-0" id="search-addon">
+                        <label for="searchDataTables" class="input-group-text border-0" id="search-addon">
                             <i class="fas fa-search"></i>
-                        </span>
+                        </label>
                     </div>
                     <div class="btn-group">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
@@ -41,7 +41,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="example" class="table table-striped dataTable no-footer cell-border text-capitalize" style="width:100%">
+                    <table id="dataTables" class="table table-striped dataTable no-footer cell-border text-capitalize" style="width:100%">
                         <thead>
                             <tr role="row">
                                 <th scope="col-1">No</th>
@@ -181,35 +181,8 @@
 @push('js')
     <script type="text/javascript" src="  https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js  "></script>
     <script type="text/javascript" src=" https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js  "></script>
-    <script>
-        $(document).ready(function() {
-            var table = $('#example').DataTable({
-                "paging": true,
-                "lengthChange": true,
-                "searching": true,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-                "dom": 'rt<"row"<"col-lg-3 pr-0"i><"col-lg-6 text-center p-0"l><"col-lg-3 pl-0"p>>'
-            })
-            $('#searchdata').on('keyup', function() {
-                table.search(this.value).draw();
-            });
-        });
-        $('#modal').appendTo('body');
-        $('#modal2').appendTo('body');
-
-    </script>
+    <script type="text/javascript" src="{{asset('js/dataTables-custom.js')}}"></script>
 @endpush
 @push('css')
     <link rel="stylesheet" type="text/css" href=" https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css  " />
-    <style>
-        #search-addon {
-            margin-left: -40px;
-            z-index: 3;
-            background: transparent;
-        }
-
-    </style>
 @endpush
