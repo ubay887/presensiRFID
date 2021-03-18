@@ -14,7 +14,7 @@
         <div class="card">
             <div class="row mt-3 mx-3 d-lg-flex justify-content-lg-between d-md-flex justify-content-md-between">
                 <div class="col-lg-auto col-md-auto p-lg-0">
-                    <button class="btn btn-success mr-3"><i class="ph-user-plus-bold"></i> Tambah Data</button>
+                    <a href="{{url('admin/siswa/tambah')}}"><button class="btn btn-success mr-3"><i class="ph-user-plus-bold"></i> Tambah Data</button></a>
                     <div class="btn-group dropright" id="action" hidden=true>
                         <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">

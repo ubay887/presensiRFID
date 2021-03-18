@@ -7,6 +7,7 @@ use Illuminate\Auth\Events\Logout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
+// use Illuminate\Support\Facades\Request;
 
 class AuthController extends Controller
 {
@@ -40,17 +41,24 @@ class AuthController extends Controller
 
         return redirect()->route('login');
     }
-    public function valueAuth()
+
+    /**       
+     * Display a listing of the resource.
+     *
+     * @param  Illuminate\Http\Request $request
+     * @return Response
+     */
+    public function timeAuth(Request $request)
     {
-        if (Auth::guard('admin')->user()) {
-            $time = Carbon::parse(session()->get(Auth::guard('admin')->user()->id. 'last_login_at'))->diffForHumans();
-        } elseif (Auth::guard('guru')->user()) {
-<<<<<<< HEAD
-            $time = Carbon::parse(session()->get(Auth::guard('guru')->user()->id . 'last_login_at'))->diffForHumans();
-=======
-            $time = Carbon::parse(Auth::guard('guru')->user()->last_login_at)->diffForHumans();
->>>>>>> 17a73a01a6314d91116452eba11b3b083275441d
+        // give a time        
+        if ($request->ajax()) {
+            if (Auth::guard('admin')->user()) {
+                $time = Carbon::parse(session()->get(Auth::guard('admin')->user()->id . 'last_login_at'))->diffForHumans();
+            } elseif (Auth::guard('guru')->user()) {
+                $time = Carbon::parse(session()->get(Auth::guard('guru')->user()->id . 'last_login_at'))->diffForHumans();
+            }
+            return response()->json(compact('time'));
         }
-        return response()->json(compact('time'));
+        return redirect()->back();
     }
 }

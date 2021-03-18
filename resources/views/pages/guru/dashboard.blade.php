@@ -135,34 +135,29 @@
 @endsection
 @push('js')
     <script>
-        $(document).ready(function() {
-            var valueDashboard = function() {
-                $.ajax({
-                    url: "{{ route('value.guru.dashboard') }}",
-                    type: "GET",
-                    dataType: "json",
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(data) {
-                        $('#totalanggota').html(data.anggota)
-                        $('#totalhadir').html(data.hadir)
-                        $('#totalcheckin').html(data.total_checkin)
-                        $('#totalterlambat').html(data.terlambat)
-                        $('#totalruangan').html(data.ruangan)
-                        $('#totaltdkhadir').html(data.tidakhadir)
-                        $('#totalcheckout').html(data.total_checkout)
-                        $('#totalizinplg').html(data.izin_pulang)
-                    },
-                    error: function(data) {
-                        console.log(data)
-                    }
-                });
-            }
-            setInterval(function() {
-                valueDashboard();
-            }, 100);
-        })
+        var valueDashboard = function() {
+            $.ajax({
+                url: "/guru/dashboard/value",
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    $('#totalanggota').html(data.anggota)
+                    // $('#totalhadir').html(data.hadir)
+                    // $('#totalcheckin').html(data.total_checkin)
+                    // $('#totalterlambat').html(data.terlambat)
+                    // $('#totalruangan').html(data.ruangan)
+                    // $('#totaltdkhadir').html(data.tidakhadir)
+                    // $('#totalcheckout').html(data.total_checkout)
+                    // $('#totalizinplg').html(data.izin_pulang)
+                },
+                error: function(data) {
+
+                }
+            });
+        }
+        setInterval(function() {
+            valueDashboard();
+        }, 100);
 
     </script>
 @endpush

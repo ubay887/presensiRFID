@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ViewController::class, 'login'])->middleware('guest:guru')->middleware('guest:admin');
 Route::post('/', [AuthController::class, 'postLogin'])->name('login');
 Route::get('/logout', [AuthController::class, 'postLogout']);
-Route::get('/time', [AuthController::class, 'valueAuth'])->name('value.auth');
+Route::get('/logtime', [AuthController::class, 'timeAuth']);
 
 Route::middleware('auth:guru')->group(function () {
     // main route guru
@@ -44,7 +44,7 @@ Route::middleware('auth:guru')->group(function () {
     Route::get('/guru/harilibur', [ViewGuruController::class, 'harilibur']);
     Route::get('/guru/tagid', [ViewGuruController::class, 'tagid']);
     Route::get('/guru/quotes', [ViewGuruController::class, 'quotes']);
-    Route::get('/guru/dashboard/value', [ValueGuruController::class, 'valueDashboard'])->name('value.guru.dashboard');
+    Route::get('/guru/dashboard/value', [ValueGuruController::class, 'valueDashboard']);
 
     Route::get('/guru/siswa', [ViewGuruController::class, 'siswa']);
 });
@@ -53,10 +53,13 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/dashboard', [ViewAdminController::class, 'dashboard']);
     Route::get('/admin/profile', [ViewAdminController::class, 'profile']);
     Route::post('/admin/profile/update', [EditAdminController::class, 'update']);
-    Route::get('/admin/dashboard/value', [ValueAdminController::class, 'valueDashboard'])->name('value.dashboard');
+    
+    // ajax
+    Route::get('/admin/dashboard/value', [ValueAdminController::class, 'valueDashboard']);
 
     //route mengatur siswa
     Route::get('/admin/siswa', [ViewAdminController::class, 'siswa']);
+    Route::get('/admin/siswa/tambah', [ViewAdminController::class, 'tambah']);
     Route::get('/admin/siswa/{ID}/detail', [DetailAdminController::class, 'siswa']);
 
     //route mengatur guru

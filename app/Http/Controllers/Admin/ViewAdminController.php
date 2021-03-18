@@ -11,7 +11,8 @@ class ViewAdminController extends Controller
 {
     public function dashboard()
     {
-        return view("pages.admin.dashboard");
+        
+        return view("pages.admin.dashboard",['anggota'=> siswa::all()->count(), 'guru'=>guru::all()->count()]);
     }
     public function profile()
     {
@@ -24,5 +25,9 @@ class ViewAdminController extends Controller
     public function guru()
     {
         return view("pages.admin.guru", ['guru' => guru::all(),]);
+    }
+    public function tambah()
+    {
+        return view("pages.admin.tambahsiswa");
     }
 }

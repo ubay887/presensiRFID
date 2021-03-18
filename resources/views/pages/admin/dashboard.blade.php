@@ -18,7 +18,13 @@
                         <h4 class="card-db-title">Total Siswa</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3" id="totalanggota">-</p>
+                        <p class="card-db-text mb-3" id="totalsiswa">
+                            @if ($anggota)
+                                {{$anggota}}
+                            @else
+                                -
+                            @endif
+                        </p>
                     </div>
                 </div>
             </div>
@@ -33,7 +39,13 @@
                         <h4 class="card-db-title">Total Guru</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3" id="totalguru">-</p>
+                        <p class="card-db-text mb-3" id="totalguru">
+                            @if ($guru)
+                                {{$guru}}
+                            @else
+                                -
+                            @endif
+                        </p>
                     </div>
                 </div>
             </div>
@@ -71,29 +83,22 @@
     </div>
 @endsection
 @push('js')
-    <script>
-        $(document).ready(function() {
-            var valueDashboard = function() {
-                $.ajax({
-                    url: "{{ route('value.dashboard') }}",
-                    type: "GET",
-                    dataType: "json",
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(data) {
-                        $('#totalanggota').html(data.anggota)
-                        $('#totalguru').html(data.guru)
-                    },
-                    error: function(data) {
-                        console.log(data)
-                    }
-                });
-            }
-            setInterval(function() {
-                valueDashboard();
-            }, 100);
-        })
+    {{-- <script>
+        var valueDashboard = function() {
+            $.ajax({
+                url: "/admin/dashboard/value",
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    $('#totalsiswa').html(data.anggota)
+                    $('#totalguru').html(data.guru)
+                },
+                error: function(data) {}
+            });
+        }
+        setInterval(function() {
+            valueDashboard();
+        }, 100);
 
-    </script>
+    </script> --}}
 @endpush
