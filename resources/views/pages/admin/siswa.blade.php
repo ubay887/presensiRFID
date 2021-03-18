@@ -14,17 +14,21 @@
         <div class="card">
             <div class="row mt-3 mx-3 d-lg-flex justify-content-lg-between d-md-flex justify-content-md-between">
                 <div class="col-lg-auto col-md-auto p-lg-0">
-                    <button class="btn btn-success mr-3 d-block"><i class="ph-user-plus-bold"></i> Tambah Data</button>
-                    {{-- <div class="btn-group d-block">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                    <button class="btn btn-success mr-3"><i class="ph-user-plus-bold"></i> Tambah Data</button>
+                    <div class="btn-group dropright" id="action" hidden=true>
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <i class="ph-download-bold"></i> Export Data
+                            Action
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item has-icon" href="#"><i class="far fa-file-pdf"></i> Export to PDF</a>
-                            <a class="dropdown-item has-icon" href="#"><i class="far fa-file-excel"></i> Export to Excel</a>
+                            <a class="dropdown-item has-icon" href="#"><i class="ph ph-record"></i> Record</a>
+                            <a class="dropdown-item has-icon" href="#" onclick="detailSelected()"><i
+                                    class="ph ph-clipboard-bold"></i> Detail</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item has-icon" href="#" onclick="detailSelected()"><i
+                                    class="ph ph-trash-simple-bold"></i> Delete</a>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
                 <div class="col-lg-auto col-md-auto p-lg-0 d-flex justify-content-between">
                     <div class="input-group rounded mr-lg-2 mr-md-2">
@@ -37,7 +41,7 @@
                     <div class="btn-group d-block">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <i class="ph-download-bold"></i> Export Data
+                            <i class="ph ph-download"></i> Export Data
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item has-icon" href="#"><i class="far fa-file-pdf"></i> Export to PDF</a>
@@ -91,7 +95,7 @@
                                         <a href="{{ url('/admin/siswa/' . $user->id . '/detail') }}"
                                             class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
                                             data-original-title="Detail"><i class="ph-clipboard-bold"></i></i></a>
-                                        <a href="#" class="btn btn-danger mr-2" data-toggle="tooltip" data-placement="top"
+                                        <a href="#" class="btn btn-danger ml-2" data-toggle="tooltip" data-placement="top"
                                             title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
                                     </td>
                                 </tr>
