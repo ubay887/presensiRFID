@@ -63,7 +63,6 @@ body.sidebar-mini .main-sidebar .sidebar-menu>li>a .ph {
 /* full calendar */
 .fc-toolbar .fc-toolbar-chunk h2 {
     font-size: 30px;
-    /* margin-top: 4px; */
 }
 
 .fc-view {
@@ -150,4 +149,31 @@ body.sidebar-mini .main-sidebar .sidebar-menu>li>a .ph {
 .fc-button.fc-state-active {
     background-color: #6777ef;
     color: #fff;
+}
+/* end of calendar */
+
+/* widget items */
+.profile-widget>.profile-widget-items{
+    margin-top: -5em;
+    padding-bottom: 10px;
+}
+.profile-widget>.profile-widget-items:after {
+    content: ' ';
+    position: static;
+    bottom: 0;
+    left: -25px;
+    right: 0;
+    height: 0;
+    background-color: #f2f2f2;
+}
+.profile-widget>.profile-widget-items>.profile-widget-item{
+    border-right: none;
+    border-top: none;
+    padding: 0 30px;
+}
+.profile-widget>.profile-widget-items>.profile-widget-item:first-of-type{
+    text-align: left;
+}
+.profile-widget>.profile-widget-items>.profile-widget-item:last-of-type{
+    text-align: right;
 }
