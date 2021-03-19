@@ -64,4 +64,7 @@ Route::middleware('auth:admin')->group(function () {
 
     //route mengatur guru
     Route::get('/admin/guru', [ViewAdminController::class, 'guru']);
+
+    // route mengatur calendar
+    Route::get('/admin/calendar', [ViewAdminController::class, 'calendar']);
 });

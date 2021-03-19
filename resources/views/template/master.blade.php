@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://unpkg.com/phosphor-icons"></script>
-
+    
     <!-- CSS Libraries -->
+    @stack('css')
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('vendor/stisla/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/stisla/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/stisla/css/components.css') }}">
-    @stack('css')
 </head>
 
 <body>
@@ -45,8 +45,8 @@
             </div>
             <footer class="main-footer">
                 <div class="footer-left">
-                    Copyright &copy 2021 <div class="bullet"></div> Develop By <a
-                        href="https://github.com/dioselvinus">Dio Selvinus Silalebit</a>
+                    Copyright &copy {{ \Carbon\Carbon::now()->format('Y') }} <div class="bullet">
+                    </div> Develop By <a href="https://github.com/dioselvinus">Dio Selvinus Silalebit</a>
                 </div>
                 <div class="footer-right">
 

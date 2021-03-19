@@ -30,4 +30,8 @@ class ViewAdminController extends Controller
     {
         return view("pages.admin.tambahsiswa");
     }
+    public function calendar()
+    {
+        return view("pages.admin.calendar");
+    }
 }

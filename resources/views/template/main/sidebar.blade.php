@@ -99,10 +99,10 @@
                         <span>Quotes</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('admin/pemberitahuan')) active @endif">
-                    <a href="{{ url('admin/pemberitahuan') }}" class="nav-link">
-                        <i class="ph ph-megaphone-bold"></i>
-                        <span>Pemberitahuan</span>
+                <li class="nav-item dropdown @if (Request::is('admin/calendar')) active @endif">
+                    <a href="{{ url('admin/calendar') }}" class="nav-link">
+                        <i class="ph ph-calendar-bold"></i>
+                        <span>Calendar</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown @if (Request::is('admin/autentikasi')) active @endif">

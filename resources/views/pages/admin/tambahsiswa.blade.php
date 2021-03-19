@@ -1,6 +1,6 @@
 @extends('template.master')
-@section('title', 'Data Siswa')
-@section('judul', 'Data Siswa')
+@section('title', 'Tambah Siswa')
+@section('judul', 'Tambah Siswa')
 @section('breadcrumb')
     <div class="breadcrumb-item">
         <a href="{{ url('admin/dashboard') }}">Dashboard</a>
@@ -14,18 +14,40 @@
 @endsection
 @section('main')
     <div class="container mt-5">
-        <div class="card">
-            <div class="card-header">
+        <form action="{{ url('admin/siswa/tambah') }}" method="post">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="mx-auto">Form Tambah Siswa</h3>
+                    <div class="card-header-action">
+                        <a data-collapse="#mycard-collapse" class="btn btn-icon btn-info" href="#">
+                            <i class="fas fa-minus"></i></a>
+                    </div>
+                </div>
+                <div class="collapse show" id="mycard-collapse">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                ID
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+@endsection
+@push('css')
 
-            </div>
-            <div class="card-body">
-                
-            </div>
-        </div>
-    @endsection
-    @push('css')
-        
-    @endpush
-    @push('js')
-        
-    @endpush
+@endpush
+@push('js')
+
+@endpush
