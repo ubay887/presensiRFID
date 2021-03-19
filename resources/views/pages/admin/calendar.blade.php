@@ -33,28 +33,24 @@
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                googleCalendarApiKey: 'AIzaSyDKQPeOh0AecFzchaNMIQ00dKyA8fnOU28',
+                googleCalendarApiKey: "{{config('services.google.calendarKey')}}",
                 height: 'auto',
-                timeZone: 'Asia/Jakarta',
-
+                timeZone: "{{config('app.timezone')}}",
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
                     right: 'dayGridMonth,timeGridWeek,dayGridDay,listYear'
                 },
-                // events: 'id.indonesian#holiday@group.v.calendar.google.com'
                 eventSources: [{
-                    googleCalendarId: 'id.indonesian#holiday@group.v.calendar.google.com',
-                    color: 'red', // an option!
-                    textColor: 'white' // an option!
+                    googleCalendarId: "{{config('services.google.calendarHolidayId')}}",
+                    color: '#fc544b',
+                    textColor: '#ffffff'
                 }, {
-                    googleCalendarId: 'gjfo2rjd4f59c5kgd3edgf5nfc@group.calendar.google.com'
+                    googleCalendarId: "{{config('services.google.calendarPresensi')}}"
                 }],
                 eventClick: function(info) {
                     info.jsEvent.preventDefault(); // don't let the browser navigate
-                    
-                }
-                // editable: true,
+                },
             });
             calendar.render();
         });

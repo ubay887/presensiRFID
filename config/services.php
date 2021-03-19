@@ -14,6 +14,12 @@ return [
     |
     */
 
+    'google' => [
+        'calendarKey' => env('GOOGLE_CALENDAR_TOKEN'),
+        'calendarHolidayId' => env('GOOGLE_CALENDAR_HOLIDAY_ID'),
+        'calendarPresensi' => env('GOOGLE_CALENDAR_PRESENSI_RFID'),
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),

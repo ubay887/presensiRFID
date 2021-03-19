@@ -45,7 +45,6 @@ $("[data-checkboxes]").each(function () {
         } else {
             if (checked_length >= total) {
                 dad.prop('checked', true);
-
                 $("div.btn-group.dropright#action").removeAttr('hidden');
             } else if (checked_length === 0) {
                 $("div.btn-group.dropright#action").attr('hidden', true);

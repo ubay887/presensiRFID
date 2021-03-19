@@ -62,48 +62,45 @@ body.sidebar-mini .main-sidebar .sidebar-menu>li>a .ph {
 
 /* full calendar */
 .fc-toolbar .fc-toolbar-chunk h2 {
-    font-size: 16px;
-    margin-top: 4px;
+    font-size: 30px;
+    /* margin-top: 4px; */
 }
 
 .fc-view {
+    border-color: #f2f2f2 !important;
+    color: #34395e !important;
+    font-weight: 500;
+    padding: 10px;
+    color: #666;
+    text-align: left !important;
+}
+
+.fc-view>table.fc-scrollgrid {
+    border-color: #f2f2f2 !important;
+}
+
+.fc-view>table.fc-scrollgrid tr,
+.fc-view>table.fc-scrollgrid td {
+    border-color: #f2f2f2 !important;
+}
+
+.fc-view>table.fc-scrollgrid th {
     border-color: #f2f2f2;
     color: #34395e !important;
     font-weight: 500;
     padding: 10px;
 }
 
-.fc-view>table {
-    border-color: #f2f2f2;
-}
-
-.fc-view>table tr,
-.fc-view>table td {
-    border-color: #f2f2f2;
-}
-
-.fc-view>table th {
-    border-color: #f2f2f2;
-    color: #34395e !important;
-    font-weight: 500;
-    padding: 10px;
-}
-
-.fc-view-container>.fc-view {
+.fc-view-harness.fc-view-harness-passive>.fc-view {
     padding: 0;
 }
 
-.fc-view {
+.fc-view>table.fc-scrollgrid td {
     color: #666;
     text-align: right;
 }
 
-.fc-view>table td {
-    color: #666;
-    text-align: right;
-}
-
-.fc-unthemed td.fc-today-button {
+#calendar button.fc-today-button {
     background-color: #f2f2f2;
 }
 
@@ -111,29 +108,46 @@ body.sidebar-mini .main-sidebar .sidebar-menu>li>a .ph {
     top: -0.09em;
 }
 
-.fc-basic-view .fc-day-number,
-.fc-basic-view .fc-week-number {
+.fc-daygrid-day-top a,
+.fc-col-header-cell-cushion a,
+.fc-col-header-cell a {
     padding: 10px;
+    color: inherit;
 }
 
-.fc-daygrid-day-events .fc-content {
+.fc-list-day-cushion a {
+    color: inherit;
+}
+.fc-event-title-container{
+    text-align: left;
+}
+
+.fc-daygrid-day-events .fc-event-title {
     padding: 5px 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
 }
 
-tr:first-child>td>.fc-daygrid-day-events {
-    margin-bottom: 10px;
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+    min-height: 7em;
 }
 
-.fc-button.fc-button-primary {
+.fc-button.fc-button-primary,
+.fc-today-button.fc-button.fc-button-primary {
     border-radius: 3px;
+    background-color: #f2f2f2;
+    background-image: none;
     border: none;
     box-shadow: none;
     text-transform: capitalize;
     font-weight: 500;
     height: auto;
-    padding: 10px 15px !important;
-    text-shadow: none !important;
+    padding: 10px 15px;
+    text-shadow: none;
     border-radius: 0;
+    color: #3C3C3C;
 }
 
+.fc-button.fc-state-active {
+    background-color: #6777ef;
+    color: #fff;
+}
