@@ -33,24 +33,30 @@
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                googleCalendarApiKey: "{{config('services.google.calendarKey')}}",
+                googleCalendarApiKey: "{{ config('services.google.calendarKey') }}",
+                timeZone: "{{ config('app.timezone') }}",
                 height: 'auto',
-                timeZone: "{{config('app.timezone')}}",
+                nowIndicator: true,
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,dayGridDay,listYear'
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
                 },
                 eventSources: [{
-                    googleCalendarId: "{{config('services.google.calendarHolidayId')}}",
+                    googleCalendarId: "{{ config('services.google.calendarHolidayId') }}",
                     color: '#fc544b',
                     textColor: '#ffffff'
                 }, {
-                    googleCalendarId: "{{config('services.google.calendarPresensi')}}"
+                    googleCalendarId: "{{ config('services.google.calendarPresensi') }}"
                 }],
                 eventClick: function(info) {
                     info.jsEvent.preventDefault(); // don't let the browser navigate
                 },
+                // navLinks: true,
+                dateClick: function() {
+                    console.log('day');
+                    console.log('coords');
+                }
             });
             calendar.render();
         });
