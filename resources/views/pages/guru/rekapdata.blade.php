@@ -1,17 +1,24 @@
 @extends('template.master')
-@section('title', 'Data Presensi')
-@section('judul', 'Data Presensi')
+@section('title', 'Rekap Data')
+@section('judul', 'Rekapitulasi Presensi')
 @section('breadcrumb')
 <div class="breadcrumb-item">
     <a href="{{ url('guru/dashboard') }}">Dashboard</a>
 </div>
+<div class="breadcrumb-item">
+    <a href="{{ url('guru/presensi') }}">Data Presensi</a>
+</div>
 <div class="breadcrumb-item active">
-    Data Presensi
+    Rekap Data
 </div>
 @endsection
 @section('main')
-<div class="container-fluid mt-5">
+<a href="{{ url('guru/presensi') }}" class="btn btn-light"><i class="ph-caret-left"></i> Kembali</a>
+<div class="container-fluid mt-3">
     @csrf
+    <p class="font-italic">
+        H = <span class="font-weight-bold">Hadir</span>; S = <span class="font-weight-bold">Sakit</span>; I = <span class="font-weight-bold">Izin</span>; A = <span class="font-weight-bold">Alfa</span>; <br> B = <span class="font-weight-bold">Bolos</span>; L = <span class="font-weight-bold">Lupa Tap</span>; T = <span class="font-weight-bold">Terlambat</span>; P = <span class="font-weight-bold">Pulang Cepat</span>;
+    </p>
     <div class="card">
         <div class="row mt-3 mx-3 d-flex justify-content-lg-between">
             <div class="col-auto">
@@ -24,8 +31,8 @@
                         <i class="fas fa-search"></i>
                     </span>
                 </div>
-                <a href="{{ url('guru/presensi/rekap') }}" class="btn btn-danger mr-3 d-flex align-items-center">
-                    <i class="ph-database-bold"></i> Rekap Data
+                <a href="#" class="btn btn-info mr-3 d-flex align-items-center">
+                    <i class="ph-database-bold"></i> Detail
                 </a>
                 <div class="btn-group">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,51 +47,51 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="example" class="table table-striped dataTable no-footer" style="width:100%" role="grid">
+                <table id="example" class="table table-striped dataTable no-footer" style="width:100%">
                     <thead>
-                        <tr role="row" class="text-center">
-                            <th scope="col" class="py-3" rowspan="2">
+                        <tr role="row">
+                            <th scope="col">
                                 <div class="custom-checkbox custom-control">
                                     <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad" class="custom-control-input" id="checkbox-all">
                                     <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
                                 </div>
                             </th>
-                            <th scope="col" class="py-3" rowspan="2">No.</th>
-                            <th scope="col" class="py-3" rowspan="2">No. Induk</th>
-                            <th scope="col" class="py-3" rowspan="2">Nama Anggota</th>
-                            <th scope="col" class="py-3" rowspan="2">Tanggal</th>
-                            <th scope="col" class="py-1" colspan="3">Jam Masuk</th>
-                            <th scope="col" class="py-1" colspan="3">Jam Pulang</th>
-                            <th scope="col" class="py-3" rowspan="2">Keterangan</th>
-                        </tr>
-                        <tr>
-                            <th class="py-1">Masuk</th>
-                            <th class="py-1">Check In</th>
-                            <th class="py-1">Late In</th>
-                            <th class="py-1">Pulang</th>
-                            <th class="py-1">Check Out</th>
-                            <th class="py-1">Early Out</th>
+                            <th scope="col">No.</th>
+                            <th scope="col">No. Induk</th>
+                            <th scope="col">Nama Anggota</th>
+                            <th scope="col">H</th>
+                            <th scope="col">S</th>
+                            <th scope="col">I</th>
+                            <th scope="col">A</th>
+                            <th scope="col">B</th>
+                            <th scope="col">L</th>
+                            <th scope="col">T</th>
+                            <th scope="col">P</th>
+                            <th scope="col">Late In</th>
+                            <th scope="col">Early Out</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="text-center">
+                        <tr>
                             <td>
-                                <div class="custom-checkbox custom-control d-flex">
+                                <div class="custom-checkbox custom-control">
                                     <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input" id="checkbox">
                                     <label for="checkbox" class="custom-control-label">&nbsp;</label>
                                 </div>
                             </td>
-                            <th scope="row">1</th>
-                            <td>6969</td>
-                            <td>Keqing</td>
-                            <td>02 Desember 2020</td>
+                            <td>1</td>
+                            <td>2000002</td>
+                            <td>Shinji Ikari</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>00:05:10</td>
                             <td>00:00:00</td>
-                            <td>00:00:00</td>
-                            <td>00:00:00</td>
-                            <td>00:00:00</td>
-                            <td>00:00:00</td>
-                            <td>00:00:00</td>
-                            <td>Wangy</td>
                         </tr>
                     </tbody>
                 </table>

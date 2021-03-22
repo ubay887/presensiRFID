@@ -19,7 +19,7 @@
                 <a href="{{ url('guru/datasubjek') }}" class="btn btn-info"><i class="ph-pedestrian-bold"></i> Data Subject</a>
             </div>
             <div class="input-group rounded w-auto mx-auto">
-                <input id="searchdata" class="form-control shadow-none rounded-pill" placeholder="Masukkan Keyword" autocomplete="off" type="text">
+                <input id="searchDataTables" class="form-control shadow-none rounded-pill" placeholder="Masukkan Keyword" autocomplete="off" type="text">
                 <span class="input-group-text border-0" id="search-addon">
                     <i class="fas fa-search"></i>
                 </span>
@@ -38,7 +38,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="example" class="table table-striped dataTable no-footer text-center" style="width:100%">
+                <table id="dataTablesGuru" class="table table-striped dataTable no-footer" style="width:100%">
                     <thead>
                         <tr role="row">
                             <th scope="col-1">
@@ -67,16 +67,16 @@
                                 </div>
                             </td>
                             <th scope="row">1</th>
-                            <td>6969</td>
-                            <td>6666</td>
-                            <td>6666</td>
-                            <td>Jeff</td>
+                            <td>1701A</td>
+                            <td>0013722</td>
+                            <td>2000002</td>
+                            <td>Shinji Ikari</td>
                             <td>Laki - laki</td>
-                            <td>Bisnis</td>
+                            <td>TKJ</td>
                             <td>20 Maret 1998</td>
-                            <td class="text-center">
-                                <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
-                                <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
+                            <td class="d-flex justify-content-center">
+                                <a href="#" class="btn btn-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Rekaman"><i class="ph-clipboard-bold"></i></i></a>
+                                <a href="#" class="btn btn-primary mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
                                 <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
                             </td>
                         </tr>
@@ -90,22 +90,9 @@
     @push('js')
     <script type="text/javascript" src="  https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js  "></script>
     <script type="text/javascript" src=" https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js  "></script>
+    <script type="text/javascript" src="{{ asset('js/dataTables-custom.js') }}"></script>
     <script>
-        $(document).ready(function() {
-            var table = $('#example').DataTable({
-                "paging": true,
-                "lengthChange": true,
-                "searching": true,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-                "dom": 'rt<"row"<"col-lg-3 pr-0"i><"col-lg-6 text-center p-0"l><"col-lg-3 pl-0"p>>'
-            })
-            $('#searchdata').on('keyup', function() {
-                table.search(this.value).draw();
-            });
-        });
+
     </script>
 
     @endpush

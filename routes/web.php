@@ -38,7 +38,10 @@ Route::middleware('auth:guru')->group(function () {
     Route::get('/guru/profile', [ViewGuruController::class, 'profile']);
     Route::get('/guru/profile/changepass', [ViewGuruController::class, 'changepass']);
     Route::get('/guru/datasubjek', [ViewGuruController::class, 'datasubjek']);
+
     Route::get('/guru/presensi', [ViewGuruController::class, 'presensi']);
+    Route::get('/guru/presensi/rekap', [ViewGuruController::class, 'rekap']);
+
     Route::get('/guru/jammasuk', [ViewGuruController::class, 'jammasuk']);
     Route::get('/guru/grafik', [ViewGuruController::class, 'grafik']);
     Route::get('/guru/harilibur', [ViewGuruController::class, 'harilibur']);

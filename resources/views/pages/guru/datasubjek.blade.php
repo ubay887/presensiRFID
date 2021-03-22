@@ -32,9 +32,9 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="example" class="table table-striped dataTable text-center no-footer" style="width:100%">
+                        <table id="dataTables" class="table table-striped dataTable no-footer" style="width:100%" role="grid">
                             <thead>
-                                <tr>
+                                <tr role="row">
                                     <th scope="col-1">
                                         <div class="custom-checkbox custom-control">
                                             <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad" class="custom-control-input" id="checkbox-all">
@@ -48,7 +48,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr role="row">
                                     <td>
                                         <div class="custom-checkbox custom-control">
                                             <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input" id="checkbox">
@@ -58,8 +58,8 @@
                                     <th scope="row">1</th>
                                     <td>Bisnis</td>
                                     <td>47</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
+                                    <td class="d-flex justify-content-center">
+                                        <a href="#" class="btn btn-primary mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
                                         <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
                                     </td>
                                 </tr>
@@ -104,7 +104,7 @@
     <script type="text/javascript" src=" https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js  "></script>
     <script>
         $(document).ready(function() {
-            var table = $('#example').DataTable({
+            var table = $('#dataTables').DataTable({
                 "paging": true,
                 "lengthChange": true,
                 "searching": true,
@@ -112,6 +112,10 @@
                 "info": true,
                 "autoWidth": false,
                 "responsive": true,
+                "columnDefs": [{
+                    "sortable": false,
+                    "targets": [0, 4]
+                }],
                 "dom": 'rt<"row"<"col-lg-3 pr-0"i><"col-lg-6 text-center p-0"l><"col-lg-3 pl-0"p>>'
             })
             $('#searchdata').on('keyup', function() {
@@ -120,6 +124,45 @@
         });
         $('#modal').appendTo('body');
         $('#modal2').appendTo('body');
+
+        var checked_length, total;
+        $("[data-checkboxes]").each(function() {
+            var me = $(this),
+                group = me.data('checkboxes'),
+                role = me.data('checkbox-role');
+
+            me.change(function() {
+                var all = $('[data-checkboxes="' + group + '"]:not([data-checkbox-role="dad"])'),
+                    checked = $('[data-checkboxes="' + group + '"]:not([data-checkbox-role="dad"]):checked'),
+                    dad = $('[data-checkboxes="' + group + '"][data-checkbox-role="dad"]');
+                total = all.length;
+                checked_length = checked.length;
+
+                if (role == 'dad') {
+                    if (me.is(':checked')) {
+                        all.prop('checked', true);
+                        $("div.btn-group.dropright#action").removeAttr('hidden');
+                    } else {
+                        all.prop('checked', false);
+                        $("div.btn-group.dropright#action").attr('hidden', true);
+                    }
+                } else {
+                    if (checked_length >= total) {
+                        dad.prop('checked', true);
+                        $("div.btn-group.dropright#action").removeAttr('hidden');
+                    } else if (checked_length === 0) {
+                        $("div.btn-group.dropright#action").attr('hidden', true);
+                    } else {
+                        dad.prop('checked', false);
+                        $("div.btn-group.dropright#action").removeAttr('hidden');
+                    }
+                }
+            });
+        });
+
+        var detailSelected = function() {
+
+        }
     </script>
     @endpush
     @push('css')
