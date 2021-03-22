@@ -47,13 +47,14 @@ Route::middleware('auth:guru')->group(function () {
     Route::get('/guru/dashboard/value', [ValueGuruController::class, 'valueDashboard']);
 
     Route::get('/guru/siswa', [ViewGuruController::class, 'siswa']);
+    Route::get('/guru/siswa/tambah', [ViewGuruController::class, 'tambah']);
 });
 Route::middleware('auth:admin')->group(function () {
     // main route admin
     Route::get('/admin/dashboard', [ViewAdminController::class, 'dashboard']);
     Route::get('/admin/profile', [ViewAdminController::class, 'profile']);
     Route::post('/admin/profile/update', [EditAdminController::class, 'update']);
-    
+
     // ajax
     Route::get('/admin/dashboard/value', [ValueAdminController::class, 'valueDashboard']);
 

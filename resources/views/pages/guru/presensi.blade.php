@@ -21,7 +21,7 @@
                     </div>
                     <div class="col text-right d-flex justify-content-between">
                         <div class="input-group rounded w-auto mx-auto">
-                            <input id="searchdata" class="form-control shadow-none rounded-pill" placeholder="Masukkan Keyword..." autocomplete="off" type="text">
+                            <input id="searchdata" class="form-control shadow-none rounded-pill" placeholder="Masukkan Keyword" autocomplete="off" type="text">
                             <span class="input-group-text border-0" id="search-addon">
                                 <i class="fas fa-search"></i>
                             </span>

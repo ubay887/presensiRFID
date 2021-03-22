@@ -6,7 +6,7 @@
     <a href="{{ url('guru/dashboard') }}">Dashboard</a>
 </div>
 <div class="breadcrumb-item">
-    <a href="{{ url('guru/anggota') }}">Data Anggota</a>
+    <a href="{{ url('guru/siswa') }}">Data Anggota</a>
 </div>
 <div class="breadcrumb-item active">
     Data Subjek
@@ -17,17 +17,30 @@
     @csrf
     <div class="row">
         <div class="col-8">
+            <a href="{{ url('guru/siswa') }}" class="btn btn-light mb-3"><i class="ph-caret-left"></i> Kembali</a>
             <div class="card">
                 <div class="row mt-3 ml-2">
-                    <div class="col">
+                    <div class="col-8">
                         <button href="#" class="btn btn-success mr-3" data-toggle="modal" data-target="#modal2"><i class="ph-user-plus-bold"></i> Tambah Subjek</button>
+                    </div>
+                    <div class="input-group rounded w-auto mx-auto">
+                        <input id="searchdata" class="form-control shadow-none rounded-pill" placeholder="Masukkan Keyword" autocomplete="off" type="text">
+                        <span class="input-group-text border-0" id="search-addon">
+                            <i class="fas fa-search"></i>
+                        </span>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="example" class="table table-striped dataTable no-footer" style="width:100%">
+                        <table id="example" class="table table-striped dataTable text-center no-footer" style="width:100%">
                             <thead>
                                 <tr>
+                                    <th scope="col-1">
+                                        <div class="custom-checkbox custom-control">
+                                            <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad" class="custom-control-input" id="checkbox-all">
+                                            <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
+                                        </div>
+                                    </th>
                                     <th scope="col">No</th>
                                     <th scope="col">Kelas</th>
                                     <th scope="col">Jumlah</th>
@@ -36,96 +49,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Bisnis</td>
-                                    <td>47</td>
                                     <td>
-                                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                        <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
+                                        <div class="custom-checkbox custom-control">
+                                            <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input" id="checkbox">
+                                            <label for="checkbox" class="custom-control-label">&nbsp;</label>
+                                        </div>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Bisnis</td>
-                                    <td>47</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                        <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Bisnis</td>
-                                    <td>47</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                        <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Bisnis</td>
-                                    <td>47</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                        <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Bisnis</td>
-                                    <td>47</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                        <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Bisnis</td>
-                                    <td>47</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                        <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Bisnis</td>
-                                    <td>47</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                        <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Bisnis</td>
-                                    <td>47</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                        <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Bisnis</td>
-                                    <td>47</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                        <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Bisnis</td>
-                                    <td>47</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="ph-note-pencil-bold"></i></a>
-                                        <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
                                     <th scope="row">1</th>
                                     <td>Bisnis</td>
                                     <td>47</td>
@@ -175,11 +104,22 @@
     <script type="text/javascript" src=" https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js  "></script>
     <script>
         $(document).ready(function() {
-            $('#example').DataTable();
+            var table = $('#example').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+                "dom": 'rt<"row"<"col-lg-3 pr-0"i><"col-lg-6 text-center p-0"l><"col-lg-3 pl-0"p>>'
+            })
+            $('#searchdata').on('keyup', function() {
+                table.search(this.value).draw();
+            });
         });
         $('#modal').appendTo('body');
         $('#modal2').appendTo('body');
-    </script>
     </script>
     @endpush
     @push('css')
