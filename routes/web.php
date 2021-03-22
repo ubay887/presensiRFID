@@ -68,4 +68,10 @@ Route::middleware('auth:admin')->group(function () {
 
     // route mengatur calendar
     Route::get('/admin/calendar', [ViewAdminController::class, 'calendar']);
+
+    // route notif
+    Route::get('/admin/quotes', [ViewAdminController::class, 'quotes']);
+    
 });
+
+

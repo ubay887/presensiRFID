@@ -34,4 +34,8 @@ class ViewAdminController extends Controller
     {
         return view("pages.admin.calendar");
     }
+    public function quotes()
+    {
+        return view("pages.admin.quotes");
+    }
 }

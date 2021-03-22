@@ -26,6 +26,10 @@ class AuthController extends Controller
             $request->session()->regenerate();
             return redirect()->intended('guru\dashboard');
         }
+        if (Auth::guard('siswa')->attempt(array('username' => $username, 'password' => $password), $remember)) {
+            $request->session()->regenerate();
+            return redirect()->intended('siswa\dashboard');
+        }
         return back()->withInput($request->only('username', 'pass'));
     }
     public function postLogout()

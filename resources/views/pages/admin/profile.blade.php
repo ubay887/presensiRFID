@@ -89,7 +89,6 @@
     </script>
 @endpush
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/dropzone.min.css') }}">
     <style>
         .dropzone {
             border: 2px dashed #6777ef;
