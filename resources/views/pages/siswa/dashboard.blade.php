@@ -8,6 +8,38 @@
 @endsection
 @section('main')
     <div class="row">
+        <div class="col mt-3">
+            <h3>{{ $jam_masuk }}</h3>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-5 p-0 mt-0 card profile-widget">
+            <div class="profile-widget-header mb-0">
+                <div class="profile-widget-items">
+                    <div class="profile-widget-item">
+                        <div class="profile-widget-item-label">Hadir</div>
+                        <div class="profile-widget-item-value">187</div>
+                    </div>
+                    <div class="profile-widget-item">
+                        <div class="profile-widget-item-label">Sakit</div>
+                        <div class="profile-widget-item-value">6,8K</div>
+                    </div>
+                    <div class="profile-widget-item">
+                        <div class="profile-widget-item-label">Izin</div>
+                        <div class="profile-widget-item-value">2,1K</div>
+                    </div>
+                    <div class="profile-widget-item">
+                        <div class="profile-widget-item-label">Telat</div>
+                        <div class="profile-widget-item-value">2,1K</div>
+                    </div>
+                    <div class="profile-widget-item">
+                        <div class="profile-widget-item-label">Alpha</div>
+                        <div class="profile-widget-item-value">2,1K</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
         <div class="col-12 col-md-6 col-lg-3 px-1">
             <div class="card card-statistic-1 rounded shadow-sm">
                 <div class="card-icon" style="background-color:#9400D3;">
@@ -135,29 +167,5 @@
 @endsection
 @push('js')
     <script>
-        var valueDashboard = function() {
-            $.ajax({
-                url: "/guru/dashboard/value",
-                type: "GET",
-                dataType: "json",
-                success: function(data) {
-                    $('#totalanggota').html(data.anggota)
-                    // $('#totalhadir').html(data.hadir)
-                    // $('#totalcheckin').html(data.total_checkin)
-                    // $('#totalterlambat').html(data.terlambat)
-                    // $('#totalruangan').html(data.ruangan)
-                    // $('#totaltdkhadir').html(data.tidakhadir)
-                    // $('#totalcheckout').html(data.total_checkout)
-                    // $('#totalizinplg').html(data.izin_pulang)
-                },
-                error: function(data) {
-
-                }
-            });
-        }
-        setInterval(function() {
-            valueDashboard();
-        }, 100);
-
     </script>
 @endpush

@@ -26,6 +26,7 @@ class RedirectIfAuthenticated
                 switch ($guard) {
                     case 'admin': return redirect(RouteServiceProvider::HOMEADMIN);
                     case 'guru' : return redirect(RouteServiceProvider::HOMEGURU);
+                    case 'siswa' : return redirect(RouteServiceProvider::HOMESISWA);
                 }
             }
         }

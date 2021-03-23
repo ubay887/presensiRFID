@@ -30,13 +30,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // main route
-Route::get('/', [ViewController::class, 'login'])->middleware('guest:guru')->middleware('guest:admin');
+Route::get('/', [ViewController::class, 'login'])->middleware('guest:guru')->middleware('guest:admin')->middleware('guest:siswa');
 Route::post('/', [AuthController::class, 'postLogin'])->name('login');
 Route::get('/logout', [AuthController::class, 'postLogout']);
 Route::get('/logtime', [AuthController::class, 'timeAuth']);
 
 Route::middleware('auth:siswa')->group(function () {
     Route::get('/siswa/dashboard', [ViewSiswaController::class, 'dashboard']);
+    Route::get('/siswa/profile', [ViewSiswaController::class, 'profile']);
+    Route::get('/siswa/grafik', [ViewSiswaController::class, 'grafik']);
+    Route::get('/siswa/presensi', [ViewSiswaController::class, 'presensi']);
 });
 
 Route::middleware('auth:guru')->group(function () {
@@ -77,10 +80,4 @@ Route::middleware('auth:admin')->group(function () {
 
     // route mengatur calendar
     Route::get('/admin/calendar', [ViewAdminController::class, 'calendar']);
-});
-
-Route::middleware('auth:siswa')->group(function () {
-    Route::get('/siswa/profile', [ViewController::class, 'profile']);
-    Route::get('/siswa/grafik', [ViewController::class, 'grafik']);
-    Route::get('/siswa/presensi', [ViewController::class, 'presensi']);
 });

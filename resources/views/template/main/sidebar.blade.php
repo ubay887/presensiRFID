@@ -124,7 +124,7 @@
             </div>
             <ul class="sidebar-menu">
                 <li class="nav-item dropdown @if (Request::is('siswa/dashboard')) active @endif">
-                    <a href="{{ url('admin/dashboard') }}" class="nav-link">
+                    <a href="{{ url('siswa/dashboard') }}" class="nav-link">
                         <i class="ph ph-stack-simple-fill"></i>
                         <span>Dashboard</span>
                     </a>

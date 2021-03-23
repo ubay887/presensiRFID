@@ -17,7 +17,7 @@ class CreateJamMasukTable extends Migration
 			$table->id();
 			$table->time('jam_masuk');
 			$table->time('jam_keluar');
-			$table->date('harimasuk');
+			$table->string('harimasuk');
 			$table->timestamps();
 		});
 	}

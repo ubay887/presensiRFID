@@ -33,7 +33,12 @@ class siswa extends Model implements
     ];
     protected $guarded = [];
     protected $hidden = ['password'];
-    public function idKelas(){
-        return $this->belongsTo(kelas::class,'id_kelas');
+    public function idKelas()
+    {
+        return $this->belongsTo(kelas::class, 'id_kelas');
+    }
+    public function idTagJam()
+    {
+        return $this->hasMany(tagjam::class, 'id_kelas', 'id_kelas');
     }
 }

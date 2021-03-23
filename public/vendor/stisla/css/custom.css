@@ -108,6 +108,13 @@ body.sidebar-mini .main-sidebar .sidebar-menu>li>a .ph {
     background-color: #f2f2f2;
 }
 
+#calendar .fc-dayGridMonth-view .fc-day-today {
+    background-color: #1a252f;
+}
+#calendar .fc-dayGridMonth-view .fc-day-today .fc-daygrid-day-number {
+    color: #fff;
+}
+
 .fc-button .fc-icon {
     top: -0.09em;
 }
@@ -122,7 +129,8 @@ body.sidebar-mini .main-sidebar .sidebar-menu>li>a .ph {
 .fc-list-day-cushion a {
     color: inherit;
 }
-.fc-event-title-container{
+
+.fc-event-title-container {
     text-align: left;
 }
 
@@ -155,13 +163,15 @@ body.sidebar-mini .main-sidebar .sidebar-menu>li>a .ph {
     background-color: #6777ef;
     color: #fff;
 }
+
 /* end of calendar */
 
 /* widget items */
-.profile-widget>.profile-widget-items{
+.profile-widget>.profile-widget-items {
     margin-top: -5em;
     padding-bottom: 10px;
 }
+
 .profile-widget>.profile-widget-items:after {
     content: ' ';
     position: static;
@@ -171,14 +181,17 @@ body.sidebar-mini .main-sidebar .sidebar-menu>li>a .ph {
     height: 0;
     background-color: #f2f2f2;
 }
-.profile-widget>.profile-widget-items>.profile-widget-item{
+
+.profile-widget>.profile-widget-items>.profile-widget-item {
     border-right: none;
     border-top: none;
     padding: 0 30px;
 }
-.profile-widget>.profile-widget-items>.profile-widget-item:first-of-type{
+
+.profile-widget>.profile-widget-items>.profile-widget-item:first-of-type {
     text-align: left;
 }
-.profile-widget>.profile-widget-items>.profile-widget-item:last-of-type{
+
+.profile-widget>.profile-widget-items>.profile-widget-item:last-of-type {
     text-align: right;
 }
