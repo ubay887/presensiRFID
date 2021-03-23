@@ -36,6 +36,21 @@
                 </div>
             </div>
         </div>
+        <div class="row mt-3 mx-3">
+            <div class="col">
+                <div class="btn-group dropright" id="action" hidden=true>
+                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Action
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item has-icon" href="#"><i class="ph ph-record"></i> Record</a>
+                        <a class="dropdown-item has-icon" href="#" onclick="detailSelected()"><i class="ph ph-clipboard-bold"></i> Detail</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item has-icon" href="#" onclick="detailSelected()"><i class="ph ph-trash-simple-bold"></i> Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table id="dataTablesGuru" class="table table-striped dataTable no-footer" style="width:100%">

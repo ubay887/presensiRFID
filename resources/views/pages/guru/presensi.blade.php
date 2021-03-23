@@ -15,7 +15,18 @@
     <div class="card">
         <div class="row mt-3 mx-3 d-flex justify-content-lg-between">
             <div class="col-auto">
-                <button href="#" class="btn btn-info">Filter</button>
+                <button href="#" class="btn btn-info mr-3">Filter</button>
+                <div class="btn-group dropright" id="action" hidden=true>
+                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Action
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item has-icon" href="#"><i class="ph ph-record"></i> Record</a>
+                        <a class="dropdown-item has-icon" href="#" onclick="detailSelected()"><i class="ph ph-clipboard-bold"></i> Detail</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item has-icon" href="#" onclick="detailSelected()"><i class="ph ph-trash-simple-bold"></i> Delete</a>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-auto d-flex justify-content-between">
                 <div class="input-group rounded w-auto mr-3">
@@ -40,7 +51,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="example" class="table table-striped dataTable no-footer" style="width:100%" role="grid">
+                <table id="example" class="table table-striped text-center dataTable no-footer" style="width:100%%" role="grid">
                     <thead>
                         <tr role="row" class="text-center">
                             <th scope="col" class="py-3" rowspan="2">
@@ -53,8 +64,8 @@
                             <th scope="col" class="py-3" rowspan="2">No. Induk</th>
                             <th scope="col" class="py-3" rowspan="2">Nama Anggota</th>
                             <th scope="col" class="py-3" rowspan="2">Tanggal</th>
-                            <th scope="col" class="py-1" colspan="3">Jam Masuk</th>
-                            <th scope="col" class="py-1" colspan="3">Jam Pulang</th>
+                            <th scope="col" class="py-2" colspan="3">Jam Masuk</th>
+                            <th scope="col" class="py-2" colspan="3">Jam Pulang</th>
                             <th scope="col" class="py-3" rowspan="2">Keterangan</th>
                         </tr>
                         <tr>

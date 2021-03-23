@@ -13,9 +13,6 @@
 <div class="container-fluid mt-5">
     @csrf
     <div class="card">
-        <div class="card-header">
-            <h4>Grafik</h4>
-        </div>
         <div class="card-body">
             <canvas id="myChart" height="100px"></canvas>
         </div>
@@ -27,9 +24,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
 <script>
     var chartCanvas = document.getElementById("myChart");
-
-    Chart.defaults.global.defaultFontFamily = "Lato";
-    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontSize = 14;
 
     var chartData = {
         labels: [

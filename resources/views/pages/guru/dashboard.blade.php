@@ -1,20 +1,15 @@
 @extends('template.master')
-@section('title', 'dashboard')
+@section('title', 'Dashboard')
 @section('judul', 'Dashboard')
-@section('breadcrumb')
-    <div class="breadcrumb-item active">
-        Dashboard
-    </div>
-@endsection
 @section('main')
     <div class="row">
-        <div class="col-12 col-md-6 col-lg-3 px-1">
-            <div class="card card-statistic-1 rounded shadow-sm">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
                 <div class="card-icon" style="background-color:#9400D3;">
                     <i class="ph-users-fill text-white ph-2x"></i>
                 </div>
                 <div class="card-wrap">
-                    <div class="card-header pt-4">
+                    <div class="card-header">
                         <h4 class="card-db-title">Total Anggota</h4>
                     </div>
                     <div class="card-body">
@@ -23,14 +18,14 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 px-1">
-            <div class="card card-statistic-1 rounded shadow-sm">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
                 <div class="card-icon" style="background-color:#32CD32;">
                     <i class="ph-user-bold text-white ph-2x"></i>
                     <i class="ph-checks-bold text-white ph-lg"></i>
                 </div>
                 <div class="card-wrap">
-                    <div class="card-header pt-4">
+                    <div class="card-header">
                         <h4 class="card-db-title">Total Hadir</h4>
                     </div>
                     <div class="card-body">
@@ -39,13 +34,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 px-1">
-            <div class="card card-statistic-1 rounded shadow-sm">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
                 <div class="card-icon" style="background-color:#008B8B;">
                     <i class="ph-sign-in-bold text-white ph-2x"></i>
                 </div>
                 <div class="card-wrap">
-                    <div class="card-header pt-4">
+                    <div class="card-header">
                         <h4 class="card-db-title">Total Check In</h4>
                     </div>
                     <div class="card-body">
@@ -54,13 +49,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 px-1">
-            <div class="card card-statistic-1 rounded shadow-sm">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
                 <div class="card-icon" style="background-color:#FF1493;">
                     <i class="ph-identification-card-bold text-white ph-2x"></i>
                 </div>
                 <div class="card-wrap">
-                    <div class="card-header pt-4">
+                    <div class="card-header">
                         <h4 class="card-db-title">Total Semua Kelas</h4>
                     </div>
                     <div class="card-body">
@@ -69,14 +64,14 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 px-1">
-            <div class="card card-statistic-1 rounded shadow-sm">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
                 <div class="card-icon" style="background-color:#32CD32;">
                     <i class="ph-user-bold text-white ph-2x"></i>
                     <i class="ph-clock-bold text-white ph-lg"></i>
                 </div>
                 <div class="card-wrap">
-                    <div class="card-header pt-4">
+                    <div class="card-header">
                         <h4 class="card-db-title">Total Terlambat</h4>
                     </div>
                     <div class="card-body">
@@ -85,14 +80,14 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 px-1">
-            <div class="card card-statistic-1 rounded shadow-sm">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
                 <div class="card-icon" style="background-color:#DC3545;">
                     <i class="ph-user-bold text-white ph-2x"></i>
                     <i class="ph-x-bold text-white"></i>
                 </div>
                 <div class="card-wrap">
-                    <div class="card-header pt-4">
+                    <div class="card-header">
                         <h4 class="card-db-title">Total Tidak Hadir</h4>
                     </div>
                     <div class="card-body">
@@ -101,13 +96,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 px-1">
-            <div class="card card-statistic-1 rounded shadow-sm">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
                 <div class="card-icon" style="background-color:#DAA520;">
                     <i class="ph-sign-out-bold text-white ph-2x"></i>
                 </div>
                 <div class="card-wrap">
-                    <div class="card-header pt-4">
+                    <div class="card-header">
                         <h4 class="card-db-title">Total Check Out</h4>
                     </div>
                     <div class="card-body">
@@ -116,13 +111,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 px-1">
-            <div class="card card-statistic-1 rounded shadow-sm">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
                 <div class="card-icon" style="background-color:#DAA520;">
                     <i class="ph-chat-circle-text-bold text-white ph-2x"></i>
                 </div>
                 <div class="card-wrap">
-                    <div class="card-header pt-4">
+                    <div class="card-header">
                         <h4 class="card-db-title">Total Quotes</h4>
                     </div>
                     <div class="card-body">

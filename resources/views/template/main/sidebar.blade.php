@@ -16,13 +16,13 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('guru/siswa')) active @endif">
+                <li class="nav-item dropdown @if (Request::is('guru/siswa','guru/siswa/*')) active @endif">
                     <a href="{{ url('guru/siswa') }}" class="nav-link">
                         <i class="ph ph-users-bold"></i>
                         <span>Siswa</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('guru/presensi')) active @endif">
+                <li class="nav-item dropdown @if (Request::is('guru/presensi', 'guru/presensi/*')) active @endif">
                     <a href="{{ url('guru/presensi') }}" class="nav-link">
                         <i class="ph ph-calendar-blank-bold"></i>
                         <span>Presensi</span>
@@ -93,7 +93,7 @@
                         <span>Siswa</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('admin/quotes', 'admin/qutes/*'
+                <li class="nav-item dropdown @if (Request::is('admin/quotes', 'admin/quotes/*'
                     )) active @endif">
                     <a href="{{ url('admin/quotes') }}" class="nav-link">
                         <i class="ph ph-chat-circle-text-bold"></i>
