@@ -15,7 +15,7 @@ class CreateGuruTable extends Migration
     {
         Schema::create('guru', function (Blueprint $table) {
             $table->id();
-            $table->string('idchat',20)->unique()->nullable();
+            $table->string('idtelegram',20)->unique()->nullable();
             $table->string('foto')->nullable();
             $table->string('nama');
             $table->enum('kelamin', ['l', 'p']);
@@ -25,7 +25,6 @@ class CreateGuruTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->timestamp('last_login_at')->nullable();
             $table->timestamps();
         });
     }

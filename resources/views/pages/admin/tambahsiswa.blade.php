@@ -15,6 +15,7 @@
 @section('main')
     <div class="container mt-5">
         <form action="{{ url('admin/siswa/tambah') }}" method="post">
+            @csrf
             <div class="card">
                 <div class="card-header">
                     <h3 class="mx-auto">Form Tambah Siswa</h3>

@@ -53,8 +53,8 @@
                 },
                 // navLinks: true,
                 dateClick: function() {
-                    console.log('day');
-                    console.log('coords');
+                    // console.log('day');
+                    // console.log('coords');
                 }
             });
             calendar.render();

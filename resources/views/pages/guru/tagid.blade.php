@@ -11,7 +11,6 @@
 @endsection
 @section('main')
 <div class="container-fluid mt-5">
-    @csrf
     <div class="row mt-5">
         <div class="col mt-5">
             <div class="card mt-5">

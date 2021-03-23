@@ -95,7 +95,7 @@
                                         <a href="{{ url('/admin/siswa/' . $user->id . '/detail') }}"
                                             class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
                                             data-original-title="Detail"><i class="ph-clipboard-bold"></i></i></a>
-                                        <a href="#" class="btn btn-danger ml-2" data-toggle="tooltip" data-placement="top"
+                                        <a href="" class="btn btn-danger ml-2" data-toggle="tooltip" data-placement="top"
                                             title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
                                     </td>
                                 </tr>

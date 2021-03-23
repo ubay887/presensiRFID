@@ -17,7 +17,7 @@
     <div class="container mt-5">
         <div class="card profile-widget">
             <div class="profile-widget-header">
-                <img alt="image" src="{{ asset(Auth::guard('admin')->user()->foto) }}"
+                <img alt="image" id="preview" src="{{ asset(Auth::guard('admin')->user()->foto) }}"
                     class="rounded profile-widget-picture">
             </div>
             <form method="post" class="needs-validation" enctype="multipart/form-data" action="/admin/profile/update">
@@ -68,33 +68,6 @@
     </div>
 @endsection
 @push('js')
-    <script src="{{ asset('js/dropzone.min.js') }}"></script>
-    <script>
-        "use strict";
-
-        var dropzone = new Dropzone("#mydropzone", {
-            required: true,
-            url: '/admin/profile/update',
-            maxFiles: 1,
-            addRemoveLinks: true,
-            maxfilesexceeded: function(file) {
-                this.removeAllFiles();
-                this.addFile(file);
-            },
-            init: function() {
-                this.hiddenFileInput.removeAttribute('multiple');
-            }
-        });
-
-    </script>
 @endpush
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/dropzone.min.css') }}">
-    <style>
-        .dropzone {
-            border: 2px dashed #6777ef;
-        }
-
-    </style>
-
 @endpush

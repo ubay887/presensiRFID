@@ -9,6 +9,6 @@ class EditAdminController extends Controller
 {
     public function update(Request $request)
     {
-        dd($request);
+        // return response()->json(["request"=>$request->img]);
     }
 }
