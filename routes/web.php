@@ -77,3 +77,9 @@ Route::middleware('auth:admin')->group(function () {
     // route mengatur calendar
     Route::get('/admin/calendar', [ViewAdminController::class, 'calendar']);
 });
+
+Route::middleware('auth:siswa')->group(function () {
+    Route::get('/siswa/profile', [ViewController::class, 'profile']);
+    Route::get('/siswa/grafik', [ViewController::class, 'grafik']);
+    Route::get('/siswa/presensi', [ViewController::class, 'presensi']);
+});
