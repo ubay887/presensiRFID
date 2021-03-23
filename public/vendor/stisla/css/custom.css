@@ -48,11 +48,15 @@ body.sidebar-mini .main-sidebar .sidebar-menu>li>a .ph {
         display: block;
         float: none;
         width: 150px;
+        height: 150px;
+        object-fit: cover;
     }
 }
 
 .card.profile-widget .profile-widget-picture {
     width: 120px;
+    height: 120px;
+    object-fit: cover;
 }
 
 #search-addon {

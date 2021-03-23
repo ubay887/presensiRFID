@@ -62,7 +62,7 @@ Route::middleware('auth:admin')->group(function () {
     // main route admin
     Route::get('/admin/dashboard', [ViewAdminController::class, 'dashboard']);
     Route::get('/admin/profile', [ViewAdminController::class, 'profile']);
-    Route::post('/admin/profile/update', [EditAdminController::class, 'update']);
+    Route::post('/admin/profile/{id}/update', [EditAdminController::class, 'updateProfile']);
 
     // ajax
     Route::get('/admin/dashboard/value', [ValueAdminController::class, 'valueDashboard']);
@@ -70,7 +70,7 @@ Route::middleware('auth:admin')->group(function () {
     //route mengatur siswa
     Route::get('/admin/siswa', [ViewAdminController::class, 'siswa']);
     Route::get('/admin/siswa/tambah', [ViewAdminController::class, 'tambah']);
-    Route::get('/admin/siswa/{ID}/detail', [DetailAdminController::class, 'siswa']);
+    Route::get('/admin/siswa/{id}/detail', [DetailAdminController::class, 'siswa']);
 
     //route mengatur guru
     Route::get('/admin/guru', [ViewAdminController::class, 'guru']);
