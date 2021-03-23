@@ -46,13 +46,20 @@ return [
             'provider' => 'users',
             'hash' => true,
         ],
+
         'guru' => [
             'driver' => 'session',
             'provider' => 'guru',
         ],
+
         'admin' => [
             'driver' => 'session',
             'provider' => 'admin',
+        ],
+
+        'siswa' => [
+            'driver' => 'session',
+            'provider' => 'siswa',
         ]
     ],
 
@@ -87,6 +94,11 @@ return [
         'admin' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+        ],
+
+        'siswa' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\siswa::class,
         ],
 
         // 'users' => [

@@ -54,7 +54,7 @@
             </li>
         @else
         <li class="dropdown">
-                <a href="#" data-toggle="dropdown" onclick="valueAuth('{{ route('value.auth') }}')"
+                <a href="#" data-toggle="dropdown" onclick="valueAuth()"
                     class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                     <img alt="image" src="{{ asset(Auth::guard('siswa')->user()->foto) }}"
                         class="rounded-circle mr-1">

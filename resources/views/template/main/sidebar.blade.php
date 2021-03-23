@@ -1,14 +1,14 @@
 <div class="main-sidebar position-fixed">
     <aside id="sidebar-wrapper">
         @if (Auth::guard('guru')->user())
-        <div class="sidebar-brand">
-            <a href="{{ url('guru/dashboard') }}">{{ config('app.name') }}</a>
-        </div>
-        <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{ url('guru/dashboard') }}">
-                <img src="{{ asset('photos/logo_epresensi.png') }}" alt="Epresensi" width="50px">
-            </a>
-        </div>
+            <div class="sidebar-brand">
+                <a href="{{ url('guru/dashboard') }}">{{ config('app.name') }}</a>
+            </div>
+            <div class="sidebar-brand sidebar-brand-sm">
+                <a href="{{ url('guru/dashboard') }}">
+                    <img src="{{ asset('photos/logo_epresensi.png') }}" alt="Epresensi" width="50px">
+                </a>
+            </div>
             <ul class="sidebar-menu">
                 <li class="nav-item dropdown @if (Request::is('guru/dashboard')) active @endif">
                     <a href="{{ url('guru/dashboard') }}" class="nav-link">
@@ -66,14 +66,14 @@
                 </li>
             </ul>
         @elseif (Auth::guard('admin')->user())
-        <div class="sidebar-brand">
-            <a href="{{ url('admin/dashboard') }}">{{ config('app.name') }}</a>
-        </div>
-        <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{ url('admin/dashboard') }}">
-                <img src="{{ asset('photos/logo_epresensi.png') }}" alt="Epresensi" width="50px">
-            </a>
-        </div>
+            <div class="sidebar-brand">
+                <a href="{{ url('admin/dashboard') }}">{{ config('app.name') }}</a>
+            </div>
+            <div class="sidebar-brand sidebar-brand-sm">
+                <a href="{{ url('admin/dashboard') }}">
+                    <img src="{{ asset('photos/logo_epresensi.png') }}" alt="Epresensi" width="50px">
+                </a>
+            </div>
             <ul class="sidebar-menu">
                 <li class="nav-item dropdown @if (Request::is('admin/dashboard')) active @endif">
                     <a href="{{ url('admin/dashboard') }}" class="nav-link">
@@ -81,19 +81,20 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('admin/guru','admin/guru/*')) active @endif">
+                <li class="nav-item dropdown @if (Request::is('admin/guru', 'admin/guru/*' )) active @endif">
                     <a href="{{ url('admin/guru') }}" class="nav-link">
                         <i class="ph ph-user-gear-bold"></i>
                         <span>Guru</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('admin/siswa','admin/siswa/*')) active @endif">
+                <li class="nav-item dropdown @if (Request::is('admin/siswa', 'admin/siswa/*' )) active @endif">
                     <a href="{{ url('admin/siswa') }}" class="nav-link">
                         <i class="ph ph-users-bold"></i>
                         <span>Siswa</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('admin/quotes','admin/qutes/*')) active @endif">
+                <li class="nav-item dropdown @if (Request::is('admin/quotes', 'admin/qutes/*'
+                    )) active @endif">
                     <a href="{{ url('admin/quotes') }}" class="nav-link">
                         <i class="ph ph-chat-circle-text-bold"></i>
                         <span>Quotes</span>
@@ -112,6 +113,37 @@
                     </a>
                 </li>
             </ul>
+        @else
+            <div class="sidebar-brand">
+                <a href="{{ url('siswa/dashboard') }}">{{ config('app.name') }}</a>
+            </div>
+            <div class="sidebar-brand sidebar-brand-sm">
+                <a href="{{ url('siswa/dashboard') }}">
+                    <img src="{{ asset('photos/logo_epresensi.png') }}" alt="Epresensi" width="50px">
+                </a>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="nav-item dropdown @if (Request::is('siswa/dashboard')) active @endif">
+                    <a href="{{ url('admin/dashboard') }}" class="nav-link">
+                        <i class="ph ph-stack-simple-fill"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown @if (Request::is('siswa/presensi', 'siswa/presensi/*'
+                    )) active @endif">
+                    <a href="{{ url('admin/presensi') }}" class="nav-link">
+                        <i class="ph ph-calendar-bold"></i>
+                        <span>Presensi</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown @if (Request::is('siswa/grafik')) active @endif">
+                    <a href="{{ url('siswa/grafik') }}" class="nav-link">
+                        <i class="ph ph-chart-pie-slice-bold"></i>
+                        <span>Grafik Presensi</span>
+                    </a>
+                </li>
+            </ul>
+
         @endif
 
         <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

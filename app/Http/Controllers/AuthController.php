@@ -16,6 +16,12 @@ class AuthController extends Controller
         $remember = $request->remember == 'on' ? true : false;
         $username = $request->username; //the input field has name='username' in form
         $password = $request->pass;
+        // dd($password,$username);
+
+        if (Auth::guard('siswa')->attempt(array('nipd' => $username, 'password' => $password), $remember)) {
+            $request->session()->regenerate();
+            return redirect()->intended('siswa\dashboard');
+        }
 
         if (Auth::guard('admin')->attempt(array('username' => $username, 'password' => $password), $remember)) {
             $request->session()->regenerate();
@@ -56,6 +62,8 @@ class AuthController extends Controller
                 $time = Carbon::parse(session()->get(Auth::guard('admin')->user()->id . 'last_login_at'))->diffForHumans();
             } elseif (Auth::guard('guru')->user()) {
                 $time = Carbon::parse(session()->get(Auth::guard('guru')->user()->id . 'last_login_at'))->diffForHumans();
+            } else {
+                $time = Carbon::parse(session()->get(Auth::guard('siswa')->user()->id . 'last_login_at'))->diffForHumans();
             }
             return response()->json(compact('time'));
         }

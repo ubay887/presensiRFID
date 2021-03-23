@@ -3,6 +3,9 @@
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\AuthController;
 
+// use controller siswa
+use App\Http\Controllers\Siswa\ViewSiswaController;
+
 // use controller guru
 use App\Http\Controllers\Guru\ValueGuruController;
 use App\Http\Controllers\Guru\ViewGuruController;
@@ -32,6 +35,10 @@ Route::post('/', [AuthController::class, 'postLogin'])->name('login');
 Route::get('/logout', [AuthController::class, 'postLogout']);
 Route::get('/logtime', [AuthController::class, 'timeAuth']);
 
+Route::middleware('auth:siswa')->group(function () {
+    Route::get('/siswa/dashboard', [ViewSiswaController::class, 'dashboard']);
+});
+
 Route::middleware('auth:guru')->group(function () {
     // main route guru
     Route::get('/guru/dashboard', [ViewGuruController::class, 'dashboard']);
@@ -49,6 +56,7 @@ Route::middleware('auth:guru')->group(function () {
     Route::get('/guru/siswa', [ViewGuruController::class, 'siswa']);
     Route::get('/guru/siswa/tambah', [ViewGuruController::class, 'tambah']);
 });
+
 Route::middleware('auth:admin')->group(function () {
     // main route admin
     Route::get('/admin/dashboard', [ViewAdminController::class, 'dashboard']);
