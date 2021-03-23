@@ -2,12 +2,12 @@
     "use strict";
     $('#logout').click(function () {
         swal.fire({
-            title: "keluar dari web ini?",
+            title: "Anda ingin keluar dari web ini?",
             icon: "question",
             showCancelButton: true,
             confirmButtonClass: 'btn-danger waves-effect waves-light',
-            confirmButtonText: "Submit",
-            cancelButtonText: "Cancel",
+            confirmButtonText: "Ya",
+            cancelButtonText: "Tidak",
             closeOnConfirm: true,
             closeOnCancel: true
         }).then((result) => {

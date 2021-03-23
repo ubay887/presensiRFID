@@ -52,14 +52,14 @@
                         <span>ID Card</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('admin/quotes')) active @endif">
-                    <a href="{{ url('admin/quotes') }}" class="nav-link">
+                <li class="nav-item dropdown @if (Request::is('guru/quotes')) active @endif">
+                    <a href="{{ url('guru/quotes') }}" class="nav-link">
                         <i class="ph ph-chat-circle-text-bold"></i>
                         <span>Quotes</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('admin/pemberitahuan')) active @endif">
-                    <a href="{{ url('admin/pemberitahuan') }}" class="nav-link">
+                <li class="nav-item dropdown @if (Request::is('guru/pemberitahuan')) active @endif">
+                    <a href="{{ url('guru/pemberitahuan') }}" class="nav-link">
                         <i class="ph ph-megaphone-bold"></i>
                         <span>Pemberitahuan</span>
                     </a>
@@ -131,7 +131,7 @@
                 </li>
                 <li class="nav-item dropdown @if (Request::is('siswa/presensi', 'siswa/presensi/*'
                     )) active @endif">
-                    <a href="{{ url('admin/presensi') }}" class="nav-link">
+                    <a href="{{ url('siswa/presensi') }}" class="nav-link">
                         <i class="ph ph-calendar-bold"></i>
                         <span>Presensi</span>
                     </a>

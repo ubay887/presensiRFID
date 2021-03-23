@@ -35,6 +35,10 @@ class ViewGuruController extends Controller
     {
         return view("pages.guru.presensi");
     }
+    public function rekap()
+    {
+        return view("pages.guru.rekapdata");
+    }
     public function ruangan()
     {
         return view("pages.guru.ruangan");

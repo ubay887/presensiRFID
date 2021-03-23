@@ -46,6 +46,7 @@ Route::middleware('auth:guru')->group(function () {
     Route::get('/guru/profile/changepass', [ViewGuruController::class, 'changepass']);
     Route::get('/guru/datasubjek', [ViewGuruController::class, 'datasubjek']);
     Route::get('/guru/presensi', [ViewGuruController::class, 'presensi']);
+    Route::get('/guru/presensi/rekap', [ViewGuruController::class, 'rekap']);
     Route::get('/guru/jammasuk', [ViewGuruController::class, 'jammasuk']);
     Route::get('/guru/grafik', [ViewGuruController::class, 'grafik']);
     Route::get('/guru/harilibur', [ViewGuruController::class, 'harilibur']);
@@ -76,4 +77,10 @@ Route::middleware('auth:admin')->group(function () {
 
     // route mengatur calendar
     Route::get('/admin/calendar', [ViewAdminController::class, 'calendar']);
+});
+
+Route::middleware('auth:siswa')->group(function () {
+    Route::get('/siswa/profile', [ViewController::class, 'profile']);
+    Route::get('/siswa/grafik', [ViewController::class, 'grafik']);
+    Route::get('/siswa/presensi', [ViewController::class, 'presensi']);
 });
