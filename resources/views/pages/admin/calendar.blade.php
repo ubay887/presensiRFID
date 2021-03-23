@@ -12,9 +12,6 @@
 @section('main')
     <div class="container mt-5">
         <div class="card">
-            <div class="card-header">
-                <h4>Calendar</h4>
-            </div>
             <div class="card-body">
                 <div class="fc-overflow">
                     <div id="calendar"></div>

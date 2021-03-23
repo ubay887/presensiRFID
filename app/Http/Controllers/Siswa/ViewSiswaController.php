@@ -36,8 +36,8 @@ class ViewSiswaController extends Controller
     {
         return view('pages.siswa.grafik');
     }
-    public function presensi()
+    public function calendar()
     {
-        return view('pages.siswa.presensi');
+        return view('pages.siswa.calendar');
     }
 }

@@ -39,7 +39,7 @@ Route::middleware('auth:siswa')->group(function () {
     Route::get('/siswa/dashboard', [ViewSiswaController::class, 'dashboard']);
     Route::get('/siswa/profile', [ViewSiswaController::class, 'profile']);
     Route::get('/siswa/grafik', [ViewSiswaController::class, 'grafik']);
-    Route::get('/siswa/presensi', [ViewSiswaController::class, 'presensi']);
+    Route::get('/siswa/calendar', [ViewSiswaController::class, 'calendar']);
 });
 
 Route::middleware('auth:guru')->group(function () {

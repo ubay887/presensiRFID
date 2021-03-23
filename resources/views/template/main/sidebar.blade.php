@@ -129,11 +129,11 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('siswa/presensi', 'siswa/presensi/*'
+                <li class="nav-item dropdown @if (Request::is('siswa/calendar', 'siswa/calendar/*'
                     )) active @endif">
-                    <a href="{{ url('siswa/presensi') }}" class="nav-link">
+                    <a href="{{ url('siswa/calendar') }}" class="nav-link">
                         <i class="ph ph-calendar-bold"></i>
-                        <span>Presensi</span>
+                        <span>Calendar</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown @if (Request::is('siswa/grafik')) active @endif">
