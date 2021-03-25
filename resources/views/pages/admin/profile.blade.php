@@ -20,21 +20,19 @@
                 action="{{ url('/admin/profile/' . Auth::guard('admin')->user()->id . '/update') }}">
                 @csrf
                 <div class="profile-widget-header">
-                    <div class="dropdown dropright">
+                    <div class="dropdown dropright mx-auto" style="width: fit-content;">
                         <img alt="image" id="profilemenu" src="{{ asset(Auth::guard('admin')->user()->foto) }}"
                             class="rounded shadow dropdown-toggle profile-widget-picture" type="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu position-absolute" id="profilemenuitems"
-                            aria-labelledby="dropdownMenuButton" style="will-change: unset">
+                        <div class="dropdown-menu">
                             <a class="dropdown-item" data-toggle="modal" data-target="#viewModal"
                                 style="cursor: default">View Photo</a>
-
                             <a class="p-0 dropdown-item" href="#"><label for="img" class="d-block mb-0"
                                     style="padding: 10px 20px">Upload Photo</label></a>
-                            <a class="dropdown-item" href="#" id="removephoto">Remove Photo</a>
+                            <a class="dropdown-item text-danger" href="#" id="removephoto">Remove Photo</a>
                         </div>
                     </div>
-                    <input type="file" hidden accept="img/*" id="img" name="photo">
+                    <input type="file" hidden accept="image/*" id="img" name="photo" onclick="fileClicked(event)" onchange="fileChanged(event)">
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -71,31 +69,15 @@
 
     <!-- modal -->
     <div class="modal fade" tabindex="-1" role="dialog" id="viewModal" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <img id="profilemodal" src="{{ asset(Auth::guard('admin')->user()->foto) }}" style="width: auto;" alt="">
-            </div>
+        <div class="modal-dialog d-flex justify-content-center" role="document">
+            <img id="profilemodal" src="{{ asset(Auth::guard('admin')->user()->foto) }}"
+                style="width: 25vw; height: 50vh;object-fit: cover;" alt="">
         </div>
     </div>
 
 @endsection
 @push('js')
     <script>
-        // $('#profilemenu').on('click', function(e) {
-        //     var img = $(this).offset();
-        //     var tempX = e.pageX - img.left;
-        //     var tempY = e.pageY - img.top;
-        //     console.log(-tempX, -tempY)
-
-        //     document.getElementById('profilemenuitems').style.willChange = 'unset';
-        //     $("div.dropdown-menu#profilemenuitems").css({
-        //         'top': tempY,
-        //         'left': tempX,
-        //         'will-change': 'unset',
-        //         'transform': 'translate3d(' + tempX + ', ' + tempX + ', "0 px")'
-        //     });
-        // });
-
         $(function() {
             $('#img').change(function() {
                 var input = this;
@@ -107,7 +89,7 @@
                 }
                 reader.readAsDataURL(input.files[0]);
             });
-            
+
             $('#removephoto').click(function() {
                 swal.fire({
                     title: "Hapus foto profile?",
@@ -116,22 +98,52 @@
                     confirmButtonClass: 'btn-danger waves-effect waves-light',
                     confirmButtonText: "Submit",
                     cancelButtonText: "Cancel",
-                    closeOnConfirm: true,
-                    closeOnCancel: true
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href =
-                            "{{ url('/admin/profile/' . Auth::guard('admin')->user()->id . '/delete') }}";
+                        $.ajaxSetup({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
+                        });
+                        $.post("{{ url('/admin/profile/' . Auth::guard('admin')->user()->id . '/delete') }}",
+                            function(data) {
+                                location.reload();
+                            });
                     }
                 })
             });
         });
+        $('#viewModal').appendTo("body");
 
-        $('#viewModal').appendTo("body").modal('show.bs.modal');
+        var clone = {};
+
+        // FileClicked()
+        function fileClicked(event) {
+            var fileElement = event.target;
+            if (fileElement.value != "") {
+                clone[fileElement.id] = $(fileElement).clone(); //'Saving Clone'
+            }
+            //What ever else you want to do when File Chooser Clicked
+        }
+
+        // FileChanged()
+        function fileChanged(event) {
+            var fileElement = event.target;
+            console.log(event.target.files);
+            if (fileElement.value == "") {
+                clone[fileElement.id].insertBefore(fileElement); //'Restoring Clone'
+                $(fileElement).remove(); //'Removing Original'
+                if (eventMoreListeners) {
+                    addEventListenersTo(clone[fileElement.id])
+                } //If Needed Re-attach additional Event Listeners
+            }
+            //What ever else you want to do when File Chooser Changed
+        }
 
     </script>
 @endpush
 @push('css')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- <style>
         div.dropdown-menu#profilemenuitems{
             will-change: unset;

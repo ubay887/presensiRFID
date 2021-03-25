@@ -66,6 +66,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/dashboard', [ViewAdminController::class, 'dashboard']);
     Route::get('/admin/profile', [ViewAdminController::class, 'profile']);
     Route::post('/admin/profile/{id}/update', [EditAdminController::class, 'updateProfile']);
+    Route::post('/admin/profile/{id}/delete', [EditAdminController::class, 'deleteProfile']);
 
     // ajax
     Route::get('/admin/dashboard/value', [ValueAdminController::class, 'valueDashboard']);
