@@ -1,4 +1,5 @@
 [![Contributors][contributors-shield]][contributors-url]
+[![Code Quality](https://img.shields.io/badge/Quality-9.84-green?style=for-the-badge)](https://scrutinizer-ci.com/g/Project-prokerin/presensiRFID/?branch=main)
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]

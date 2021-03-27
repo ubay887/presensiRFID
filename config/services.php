@@ -15,7 +15,7 @@ return [
     */
 
     'google' => [
-        'calendarKey' => env('GOOGLE_CALENDAR_TOKEN'),
+        'calendarKey' => env('GOOGLE_DEVELOPER_KEY'),
         'calendarHolidayId' => env('GOOGLE_CALENDAR_HOLIDAY_ID'),
         'calendarPresensi' => env('GOOGLE_CALENDAR_PRESENSI_RFID'),
     ],

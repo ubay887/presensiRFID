@@ -144,10 +144,4 @@
 @endpush
 @push('css')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    {{-- <style>
-        div.dropdown-menu#profilemenuitems{
-            will-change: unset;
-            transform: translate3d(100px,200px,0px);
-        }
-    </style> --}}
 @endpush

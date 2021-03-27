@@ -22,11 +22,11 @@
                             Action
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item has-icon" href="#"><i class="ph ph-record"></i> Record</a>
-                            <a class="dropdown-item has-icon" href="#" onclick="detailSelected()"><i
+                            <a class="dropdown-item has-icon" href="javascript:void(0)"><i class="ph ph-record"></i> Record</a>
+                            <a class="dropdown-item has-icon" href="javascript:void(0)" onclick="detailSelected()"><i
                                     class="ph ph-clipboard-bold"></i> Detail</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item has-icon" href="#" onclick="detailSelected()"><i
+                            <a class="dropdown-item has-icon" href="javascript:void(0)" onclick="detailSelected()"><i
                                     class="ph ph-trash-simple-bold"></i> Delete</a>
                         </div>
                     </div>
@@ -79,8 +79,8 @@
                                     <td>
                                         <div class="custom-checkbox custom-control">
                                             <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                                                id="checkbox-{{ $loop->iteration }}">
-                                            <label for="checkbox-{{ $loop->iteration }}"
+                                                id="checkbox-{{ $user->id }}">
+                                            <label for="checkbox-{{ $user->id }}"
                                                 class="custom-control-label">&nbsp;</label>
                                         </div>
                                     </td>
