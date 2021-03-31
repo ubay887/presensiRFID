@@ -22,7 +22,7 @@
                         <i class="ph ph-gear"></i> Settings
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="#" id="logout" class="dropdown-item has-icon text-danger">
+                    <a href="javascrip:void(0)" id="logout" class="dropdown-item has-icon text-danger">
                         <i class="ph ph-sign-out-bold"></i> Logout
                     </a>
                 </div>
@@ -47,7 +47,7 @@
                         <i class="ph ph-gear-bold"></i> Settings
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="#" id="logout" class="dropdown-item has-icon text-danger">
+                    <a href="javascrip:void(0)" id="logout" class="dropdown-item has-icon text-danger">
                         <i class="ph ph-sign-out-bold"></i> Logout
                     </a>
                 </div>
@@ -69,7 +69,7 @@
                         <i class="ph ph-gear-bold"></i> Settings
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="#" id="logout" class="dropdown-item has-icon text-danger">
+                    <a href="javascrip:void(0)" id="logout" class="dropdown-item has-icon text-danger">
                         <i class="ph ph-sign-out-bold"></i> Logout
                     </a>
                 </div>

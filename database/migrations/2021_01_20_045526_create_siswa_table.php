@@ -20,6 +20,7 @@ class CreateSiswaTable extends Migration
             $table->string('idtelegram',20)->unique()->nullable();
             $table->date('tanggal_lahir');
             $table->string('password');
+            $table->string('passwordcrypt');
             $table->string('foto')->nullable();
             $table->string('nama');
             $table->enum('kelamin', ['l', 'p']);

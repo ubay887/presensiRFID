@@ -33,6 +33,11 @@ class siswa extends Model implements
     ];
     protected $guarded = [];
     protected $hidden = ['password'];
+    protected $casts = [
+        'created_at' => 'datetime:d M Y',
+        'updated_at' => 'datetime:d M Y',
+        'tanggal_lahir' => 'datetime:d M Y'
+    ];
     public function idKelas()
     {
         return $this->belongsTo(kelas::class, 'id_kelas');
