@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\ViewAdminController;
 use App\Http\Controllers\Admin\ValueAdminController;
 use App\Http\Controllers\Admin\EditAdminController;
 use App\Http\Controllers\Admin\DetailAdminController;
+use App\Http\Controllers\Admin\ExportAdminController;
 
 // use custom
 use Illuminate\Support\Facades\Route;
@@ -47,18 +48,20 @@ Route::middleware('auth:guru')->group(function () {
     Route::get('/guru/dashboard', [ViewGuruController::class, 'dashboard']);
     Route::get('/guru/profile', [ViewGuruController::class, 'profile']);
     Route::get('/guru/profile/changepass', [ViewGuruController::class, 'changepass']);
-    Route::get('/guru/datasubjek', [ViewGuruController::class, 'datasubjek']);
+    // Route::get('/guru/datasubjek', [ViewGuruController::class, 'datasubjek']);
     Route::get('/guru/presensi', [ViewGuruController::class, 'presensi']);
     Route::get('/guru/presensi/rekap', [ViewGuruController::class, 'rekap']);
     Route::get('/guru/jammasuk', [ViewGuruController::class, 'jammasuk']);
     Route::get('/guru/grafik', [ViewGuruController::class, 'grafik']);
-    Route::get('/guru/harilibur', [ViewGuruController::class, 'harilibur']);
     Route::get('/guru/tagid', [ViewGuruController::class, 'tagid']);
     Route::get('/guru/quotes', [ViewGuruController::class, 'quotes']);
     Route::get('/guru/dashboard/value', [ValueGuruController::class, 'valueDashboard']);
+    Route::get('/guru/calendar', [ViewGuruController::class, 'calendar']);
 
-    Route::get('/guru/siswa', [ViewGuruController::class, 'siswa']);
-    Route::get('/guru/siswa/tambah', [ViewGuruController::class, 'tambah']);
+    // route mengatur siswa
+    Route::get('/guru/siswa', [ViewGuruController::class, 'tableSiswa']);
+    Route::get('/guru/siswa/tambah', [ViewGuruController::class, 'tambahSiswa']);
+    Route::get('/guru/siswa/{id}/detail', [ViewGuruController::class, 'detailSiswa']);
 });
 
 Route::middleware('auth:admin')->group(function () {
@@ -72,9 +75,11 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/dashboard/value', [ValueAdminController::class, 'valueDashboard']);
 
     //route mengatur siswa
-    Route::get('/admin/siswa', [ViewAdminController::class, 'siswa']);
-    Route::get('/admin/siswa/tambah', [ViewAdminController::class, 'tambah']);
-    Route::get('/admin/siswa/{id}/detail', [DetailAdminController::class, 'siswa']);
+    Route::get('/admin/siswa', [ViewAdminController::class, 'tableSiswa']);
+    Route::get('/admin/siswa/tambah', [ViewAdminController::class, 'tambahSiswa']);
+    Route::get('/admin/siswa/{id}/detail', [ViewAdminController::class, 'detailSiswa']);
+    //route mengatur export siswa
+    Route::get('/admin/siswa/export', [ExportAdminController::class, 'allSiswa']);
 
     //route mengatur guru
     Route::get('/admin/guru', [ViewAdminController::class, 'guru']);

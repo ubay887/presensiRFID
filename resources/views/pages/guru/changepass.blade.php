@@ -50,8 +50,7 @@
 
                 </div>
                 <div class="card-footer text-right">
-                    <a href="{{ url('/guru/profile') }}" class="btn btn-secondary mr-2"
-                        >Back</a>
+                    <a href="{{ url('/guru/profile') }}" class="btn btn-secondary mr-2">Back</a>
                     <button type="submit" class="btn btn-success">Save Changes</button>
                 </div>
             </form>

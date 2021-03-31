@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guru;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\siswa;
 
 class ViewGuruController extends Controller
 {
@@ -11,6 +12,13 @@ class ViewGuruController extends Controller
     {
         return view("pages.guru.dashboard");
     }
+
+    public function calendar()
+    {
+        return view("pages.calendar");
+    }
+
+
     public function profile()
     {
         return view("pages.guru.profile");
@@ -18,14 +26,6 @@ class ViewGuruController extends Controller
     public function changepass()
     {
         return view("pages.guru.changepass");
-    }
-    public function siswa()
-    {
-        return view("pages.guru.siswa");
-    }
-    public function tambah()
-    {
-        return view("pages.guru.tambahsiswa");
     }
     public function datasubjek()
     {
@@ -38,10 +38,6 @@ class ViewGuruController extends Controller
     public function rekap()
     {
         return view("pages.guru.rekapdata");
-    }
-    public function ruangan()
-    {
-        return view("pages.guru.ruangan");
     }
     public function grafik()
     {
@@ -58,5 +54,20 @@ class ViewGuruController extends Controller
     public function tagid()
     {
         return view("pages.guru.tagid");
+    }
+
+
+    // siswa
+    public function tableSiswa()
+    {
+        return view("pages.siswa.table", ['siswa' => siswa::all(),]);
+    }
+    public function detailSiswa(siswa $ID)
+    {
+        return view('pages.siswa.detail', ['id' => $ID->first()]);
+    }
+    public function tambahSiswa()
+    {
+        return view("pages.siswa.tambah");
     }
 }

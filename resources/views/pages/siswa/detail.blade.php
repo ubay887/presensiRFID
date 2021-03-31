@@ -6,10 +6,10 @@
 
 @section('breadcrumb')
     <div class="breadcrumb-item">
-        <a href="{{ url('admin/dashboard') }}">Dashboard</a>
+        <a href="{{ url(Auth::getDefaultDriver().'/dashboard') }}">Dashboard</a>
     </div>
     <div class="breadcrumb-item">
-        <a href="{{ url('admin/siswa') }}">Data Siswa</a>
+        <a href="{{ url(Auth::getDefaultDriver().'/siswa') }}">Data Siswa</a>
     </div>
     <div class="breadcrumb-item active">
         Detail
@@ -100,7 +100,7 @@
                                 <div class="col text-center d-flex justify-content-between">
                                     <div>Kelas</div>
                                     <div><a
-                                            href="{{ urL('/admin/kelas/' . $id->id_kelas . '/detail') }}">{{ $id->idKelas->kelas }}</a>
+                                            href="{{ urL(Auth::getDefaultDriver().'/kelas/' . $id->id_kelas . '/detail') }}">{{ $id->idKelas->kelas }}</a>
                                     </div>
                                 </div>
                             </div>

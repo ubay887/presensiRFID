@@ -1,12 +1,12 @@
 @extends('template.master')
-@section('title', 'Presensi')
-@section('judul', 'Presensi')
+@section('title', 'Calendar')
+@section('judul', 'Calendar')
 @section('breadcrumb')
     <div class="breadcrumb-item">
-        <a href="{{ url('siswa/dashboard') }}">Dashboard</a>
+        <a href="{{ url(Auth::getDefaultDriver().'/dashboard') }}">Dashboard</a>
     </div>
     <div class="breadcrumb-item active">
-        Presensi
+        Calendar
     </div>
 @endsection
 @section('main')

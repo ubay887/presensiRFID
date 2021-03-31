@@ -3,10 +3,10 @@
 @section('judul', 'Tambah Siswa')
 @section('breadcrumb')
 <div class="breadcrumb-item">
-    <a href="{{ url('guru/dashboard') }}">Dashboard</a>
+    <a href="{{ url(Auth::getDefaultDriver().'/dashboard') }}">Dashboard</a>
 </div>
 <div class="breadcrumb-item">
-    <a href="{{ url('guru/siswa') }}">Data Siswa</a>
+    <a href="{{ url(Auth::getDefaultDriver().'/siswa') }}">Data Siswa</a>
 </div>
 <div class="breadcrumb-item active">
     Tambah Siswa
@@ -14,8 +14,8 @@
 @endsection
 @section('main')
 <div class="container mt-5">
-    <form action="{{ url('guru/siswa/tambah') }}" method="post">
-        <a href="{{ url('guru/siswa') }}" class="btn btn-light mb-3"><i class="ph-caret-left"></i> Kembali</a>
+    <form action="{{ url(Auth::getDefaultDriver().'/siswa/tambah') }}" method="post">
+        <a href="{{ url(Auth::getDefaultDriver().'/siswa') }}" class="btn btn-light mb-3"><i class="ph-caret-left"></i> Kembali</a>
         <div class="card">
             <div class="card-header">
                 <h3 class="mx-auto d-flex align-items-center"><i class="ph-user-circle-plus ph-lg"></i> Form Tambah Siswa</h3>

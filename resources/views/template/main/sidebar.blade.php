@@ -40,10 +40,10 @@
                         <span>Jam Masuk</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('guru/harilibur')) active @endif">
-                    <a href="{{ url('guru/harilibur') }}" class="nav-link">
-                        <i class="ph ph-calendar-x-bold"></i>
-                        <span>Hari Libur</span>
+                <li class="nav-item dropdown @if (Request::is('guru/calendar')) active @endif">
+                    <a href="{{ url('guru/calendar') }}" class="nav-link">
+                        <i class="ph ph-calendar-bold"></i>
+                        <span>Calendar</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown @if (Request::is('guru/tagid')) active @endif">

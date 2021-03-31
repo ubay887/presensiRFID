@@ -16,12 +16,25 @@
     </p>
     <div class="container mt-5">
         <div class="card profile-widget">
-            <div class="profile-widget-header">
-                <img alt="image" src="{{ asset(Auth::guard('guru')->user()->foto) }}"
-                    class="rounded profile-widget-picture">
-            </div>
-            <form method="post" class="needs-validation" enctype="multipart/form-data" action="profile/update">
+            <form method="POST" class="needs-validation" enctype="multipart/form-data"
+                action="{{ url('/guru/profile/' . Auth::guard('guru')->user()->id . '/update') }}">
                 @csrf
+                <div class="profile-widget-header">
+                    <div class="dropdown dropright mx-auto" style="width: fit-content;">
+                        <img alt="image" id="profilemenu" src="{{ asset(Auth::guard('guru')->user()->foto) }}"
+                            class="rounded shadow dropdown-toggle profile-widget-picture" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" data-toggle="modal" data-target="#viewModal"
+                                style="cursor: default">View Photo</a>
+                            <a class="p-0 dropdown-item" href="javascript:void(0)"><label for="img" class="d-block mb-0"
+                                    style="padding: 10px 20px">Upload Photo</label></a>
+                            <a class="dropdown-item text-danger" href="javascript:void(0)" id="removephoto">Remove Photo</a>
+                        </div>
+                    </div>
+                    <input type="file" hidden accept="image/*" id="img" name="photo" onclick="fileClicked(event)"
+                        onchange="fileChanged(event)">
+                </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group col-md-4 col-12">
@@ -56,83 +69,90 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="form-group col-md-10 col-12">
-                            <label>Upload New Picture</label>
-                            <div class="dropzone dz-clickable" id="mydropzone">
-                                <div class="dz-default dz-message"><span>Drop files here or click to upload image</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
                 <div class="card-footer text-right">
-                    <a href="{{ url('/guru/profile/changepass') }}" class="btn btn-primary mr-2">Change Password</a>
+                    <button href="javascript:void(0)" class="btn btn-primary mr-2">Change Password</button>
                     <button type="submit" class="btn btn-success">Save Changes</button>
                 </div>
             </form>
         </div>
     </div>
+
+
+    <!-- modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="viewModal" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog d-flex justify-content-center" role="document">
+            <img id="profilemodal" src="{{ asset(Auth::guard('guru')->user()->foto) }}"
+                style="width: 25vw; height: 50vh;object-fit: cover;" alt="">
+        </div>
+    </div>
 @endsection
 @push('js')
-    <script src="{{ asset('js/dropzone.min.js') }}"></script>
     <script>
-        "use strict";
-
-        var dropzone = new Dropzone("#mydropzone", {
-            url: "#",
-            maxFiles: 1,
-            init: function() {
-                this.hiddenFileInput.removeAttribute('multiple');
-            }
-        });
-
-        var minSteps = 6,
-            maxSteps = 60,
-            timeBetweenSteps = 100,
-            bytesPerStep = 100000;
-
-        dropzone.uploadFiles = function(files) {
-            var self = this;
-
-            for (var i = 0; i < files.length; i++) {
-
-                var file = files[i];
-                totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
-
-                for (var step = 0; step < totalSteps; step++) {
-                    var duration = timeBetweenSteps * (step + 1);
-                    setTimeout(function(file, totalSteps, step) {
-                        return function() {
-                            file.upload = {
-                                progress: 100 * (step + 1) / totalSteps,
-                                total: file.size,
-                                bytesSent: (step + 1) * file.size / totalSteps
-                            };
-
-                            self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
-                            if (file.upload.progress == 100) {
-                                file.status = Dropzone.SUCCESS;
-                                self.emit("success", file, 'success', null);
-                                self.emit("complete", file);
-                                self.processQueue();
-                            }
-                        };
-                    }(file, totalSteps, step), duration);
+        $(function() {
+            $('#img').change(function() {
+                var input = this;
+                var url = $(this).val();
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#profilemenu').attr('src', e.target.result);
+                    $('#profilemodal').attr('src', e.target.result);
                 }
+                reader.readAsDataURL(input.files[0]);
+            });
+
+            $('#removephoto').click(function() {
+                swal.fire({
+                    title: "Hapus foto profile?",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonClass: 'btn-danger waves-effect waves-light',
+                    confirmButtonText: "Submit",
+                    cancelButtonText: "Cancel",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajaxSetup({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
+                        });
+                        $.post("{{ url('/guru/profile/' . Auth::guard('guru')->user()->id . '/delete') }}",
+                            function(data) {
+                                location.reload();
+                            });
+                    }
+                })
+            });
+        });
+        $('#viewModal').appendTo("body");
+
+        var clone = {};
+
+        // FileClicked()
+        function fileClicked(event) {
+            var fileElement = event.target;
+            if (fileElement.value != "") {
+                clone[fileElement.id] = $(fileElement).clone(); //'Saving Clone'
             }
+            //What ever else you want to do when File Chooser Clicked
+        }
+
+        // FileChanged()
+        function fileChanged(event) {
+            var fileElement = event.target;
+            console.log(event.target.files);
+            if (fileElement.value == "") {
+                clone[fileElement.id].insertBefore(fileElement); //'Restoring Clone'
+                $(fileElement).remove(); //'Removing Original'
+                if (eventMoreListeners) {
+                    addEventListenersTo(clone[fileElement.id])
+                } //If Needed Re-attach additional Event Listeners
+            }
+            //What ever else you want to do when File Chooser Changed
         }
 
     </script>
 @endpush
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/dropzone.min.css') }}">
-    <style>
-        .dropzone {
-            border: 2px dashed #6777ef;
-        }
-
-    </style>
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 @endpush
