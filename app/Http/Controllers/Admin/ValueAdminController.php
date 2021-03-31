@@ -9,7 +9,8 @@ use App\Http\Controllers\Controller;
 
 class ValueAdminController extends Controller
 {
-    public function valueDashboard(Request $request){
+    public function valueDashboard(Request $request)
+    {
         if ($request->ajax()) {
             $anggota = siswa::all()->count();
             $guru = guru::all()->count();

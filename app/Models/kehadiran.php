@@ -9,7 +9,7 @@ class kehadiran extends Model
 {
     protected $table = 'kehadiran';
     protected $guarded = [];
-      public function siswa()
+    public function siswa()
     {
         return $this->belongsTo(siswa::class, 'id');
     }

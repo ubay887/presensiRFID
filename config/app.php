@@ -167,7 +167,7 @@ return [
          */
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        PulkitJalan\Google\GoogleServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -231,7 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         'Image' => Intervention\Image\ImageManagerStatic::class,
-        'Google' => PulkitJalan\Google\Facades\Google::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];

@@ -10,5 +10,4 @@ class ViewController extends Controller
     {
         return view('login');
     }
-
 }

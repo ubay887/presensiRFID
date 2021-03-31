@@ -19,7 +19,7 @@ class guru extends Model implements
     CanResetPasswordContract
 {
     use Authenticatable, Authorizable, CanResetPassword, HasFactory, Notifiable;
-    
+
     protected $guard = 'guru';
     protected $table = 'guru';
     protected $fillable = [

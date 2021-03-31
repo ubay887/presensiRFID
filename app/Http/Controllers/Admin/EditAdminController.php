@@ -40,7 +40,7 @@ class EditAdminController extends Controller
         }
         return redirect()->back();
     }
-    public function deleteProfile(Request $request, Admin $admin)
+    public function deleteProfile(Admin $admin)
     {
         if (File::exists($admin->first()->foto) && $admin->first()->foto !== "photos/default/no-avatar.png") {
             File::delete($admin->first()->foto);

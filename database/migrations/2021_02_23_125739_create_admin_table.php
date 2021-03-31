@@ -19,7 +19,7 @@ class CreateAdminTable extends Migration
             $table->string('nama');
             $table->string('foto');
             $table->string('password');
-            $table->string('idtelegram',20)->unique()->nullable();
+            $table->string('idtelegram', 20)->unique()->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

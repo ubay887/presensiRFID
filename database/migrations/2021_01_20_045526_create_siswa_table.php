@@ -15,9 +15,9 @@ class CreateSiswaTable extends Migration
     {
         Schema::create('siswa', function (Blueprint $table) {
             $table->id();
-            $table->string('nipd',20)->unique();
+            $table->string('nipd', 20)->unique();
             $table->string('idrfid')->unique()->nullable();
-            $table->string('idtelegram',20)->unique()->nullable();
+            $table->string('idtelegram', 20)->unique()->nullable();
             $table->date('tanggal_lahir');
             $table->string('password');
             $table->string('passwordcrypt');

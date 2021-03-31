@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use Illuminate\Auth\Events\Logout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use RealRashid\SweetAlert\Facades\Alert;
-// use Illuminate\Support\Facades\Request;
 
 class AuthController extends Controller
 {
@@ -16,7 +13,6 @@ class AuthController extends Controller
         $remember = $request->remember == 'on' ? true : false;
         $username = $request->username; //the input field has name='username' in form
         $password = $request->pass;
-        // dd($password,$username);
 
         if (Auth::guard('siswa')->attempt(array('nipd' => $username, 'password' => $password), $remember)) {
             $request->session()->regenerate();

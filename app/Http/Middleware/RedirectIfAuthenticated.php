@@ -24,9 +24,12 @@ class RedirectIfAuthenticated
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
                 switch ($guard) {
-                    case 'admin': return redirect(RouteServiceProvider::HOMEADMIN);
-                    case 'guru' : return redirect(RouteServiceProvider::HOMEGURU);
-                    case 'siswa' : return redirect(RouteServiceProvider::HOMESISWA);
+                    case 'admin':
+                        return redirect(RouteServiceProvider::HOMEADMIN);
+                    case 'guru':
+                        return redirect(RouteServiceProvider::HOMEGURU);
+                    case 'siswa':
+                        return redirect(RouteServiceProvider::HOMESISWA);
                 }
             }
         }

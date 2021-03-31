@@ -10,6 +10,6 @@ class DetailAdminController extends Controller
 {
     public function siswa(siswa $ID)
     {
-        return view('pages.admin.detail',['id' => $ID->first()]);
+        return view('pages.admin.detail', ['id' => $ID->first()]);
     }
 }

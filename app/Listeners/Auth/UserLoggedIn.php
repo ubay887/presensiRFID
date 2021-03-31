@@ -29,7 +29,7 @@ class UserLoggedIn
     {
         session(
             [
-                $event->user->id.'last_login_at' => Carbon::now()
+                $event->user->id . 'last_login_at' => Carbon::now()
             ]
         );
     }
