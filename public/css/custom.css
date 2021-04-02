@@ -1,0 +1,149 @@
+.fc .fc-button,
+.fc-icon {
+    text-transform: none;
+    text-align: center
+}
+
+.fc {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em
+}
+
+.fc .fc-button,
+.fc-icon {
+    display: inline-block;
+    font-weight: 400
+}
+
+.fc,
+.fc *,
+.fc :after,
+.fc :before {
+    box-sizing: border-box
+}
+
+.fc .fc-button,
+.fc .fc-button .fc-icon,
+.fc .fc-button-group,
+.fc .fc-timegrid-slot-label {
+    vertical-align: middle
+}
+
+.fc .fc-button:hover,
+.fc .fc-list-event-title a,
+a.fc-event,
+a.fc-event:hover {
+    text-decoration: none
+}
+
+
+
+.fc .fc-button {
+    overflow: visible;
+    text-transform: none;
+    margin: 0;
+    font-family: inherit
+}
+
+.fc .fc-button::-moz-focus-inner {
+    padding: 0;
+    border-style: none
+}
+
+.fc .fc-button {
+    -webkit-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .4em .65em;
+    font-size: 1em;
+    line-height: 1.5;
+    border-radius: .25em
+}
+
+.fc .fc-button:focus {
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(44, 62, 80, .25)
+}
+
+.fc .fc-button-primary:focus,
+.fc .fc-button-primary:not(:disabled).fc-button-active:focus,
+.fc .fc-button-primary:not(:disabled):active:focus {
+    box-shadow: 0 0 0 .2rem rgba(76, 91, 106, .5)
+}
+
+.fc .fc-button:disabled {
+    opacity: .65
+}
+
+.fc .fc-button-primary {
+    color: #fff;
+    background-color: #2C3E50;
+    border-color: #2C3E50;
+}
+
+.fc .fc-button-primary:hover {
+    color: #fff;
+    background-color: #1e2b37;
+    border-color: #1a252f;
+}
+
+.fc .fc-button-primary:disabled {
+    color: #fff;
+    background-color: #2C3E50;
+    border-color: #2C3E50;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+    color: #fff;
+    background-color: #1a252f;
+    border-color: #151e27;
+}
+
+.fc .fc-button .fc-icon {
+    font-size: 1.5em
+}
+
+.fc .fc-button-group {
+    position: relative;
+    display: inline-flex
+}
+
+.fc .fc-button-group>.fc-button {
+    position: relative;
+    flex: 1 1 auto
+}
+
+.fc .fc-button-group>.fc-button.fc-button-active,
+.fc .fc-button-group>.fc-button:active,
+.fc .fc-button-group>.fc-button:focus,
+.fc .fc-button-group>.fc-button:hover {
+    z-index: 1
+}
+
+.fc-direction-ltr .fc-button-group>.fc-button:not(:first-child) {
+    margin-left: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0
+}
+
+.fc-direction-ltr .fc-button-group>.fc-button:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0
+}
+
+.fc-direction-rtl .fc-button-group>.fc-button:not(:first-child) {
+    margin-right: -1px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0
+}
+
+.fc-direction-rtl .fc-button-group>.fc-button:not(:last-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0
+}

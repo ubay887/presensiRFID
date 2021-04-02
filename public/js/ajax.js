@@ -14,7 +14,6 @@ function valueAuth() {
             $('#timeago').html(data.time);
         },
         error: function (data) {
-
         }
     });
 }

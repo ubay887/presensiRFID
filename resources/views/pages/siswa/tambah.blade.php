@@ -17,7 +17,7 @@
         <form action="{{ url(Auth::getDefaultDriver() . '/siswa/tambah') }}" method="post">
             @csrf
             <section id="formid">
-                @for ($i = 1; $i <= ($count = 5); $i++)
+                @for ($i = 1; $i <= ($count = 1); $i++)
                     <div class="card">
                         <div class="card-header">
                             <h3 class="mx-auto d-flex align-items-center"><i class="ph-user-circle-plus ph-lg"></i> Form
@@ -37,8 +37,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Nomor NISN</label>
-                                            <input type="text" class="form-control"
-                                                placeholder="Masukkan NISN">
+                                            <input type="text" class="form-control" placeholder="Masukkan NISN">
                                         </div>
                                         <div class="form-group">
                                             <label>Upload Foto</label>
@@ -67,10 +66,10 @@
                                         <div class="form-group">
                                             <label>Pilih Kelas</label>
                                             <select class="form-control">
-                                                <option selected>...</option>
-                                                <option>Option 1</option>
-                                                <option>Option 2</option>
-                                                <option>Option 3</option>
+                                                <option selected disabled>...</option>
+                                                @foreach ($kelas as $tingkat)
+                                                    <option>{{ $tingkat['kelas'] }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>

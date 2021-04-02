@@ -33,24 +33,6 @@ class ViewAdminController extends Controller
     {
         return view("pages.admin.profile");
     }
-    public function calendar()
-    {
-        return view("pages.calendar");
-    }
-
-    // siswa
-    public function tableSiswa()
-    {
-        return view("pages.siswa.table", ['siswa' => siswa::all(),]);
-    }
-    public function detailSiswa(siswa $ID)
-    {
-        return view('pages.siswa.detail', ['id' => $ID->first()]);
-    }
-    public function tambahSiswa()
-    {
-        return view("pages.siswa.tambah");
-    }
 
     // guru
     public function guru()

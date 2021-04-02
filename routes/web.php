@@ -1,10 +1,12 @@
 <?php
 // use controller main
-use App\Http\Controllers\ViewController;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Main\ViewController;
+use App\Http\Controllers\Main\AuthController;
+use App\Http\Controllers\Main\EditController;
 
 // use controller siswa
 use App\Http\Controllers\Siswa\ViewSiswaController;
+use App\Http\Controllers\Siswa\EditSiswaController;
 
 // use controller guru
 use App\Http\Controllers\Guru\ValueGuruController;
@@ -14,7 +16,6 @@ use App\Http\Controllers\Guru\ViewGuruController;
 use App\Http\Controllers\Admin\ViewAdminController;
 use App\Http\Controllers\Admin\ValueAdminController;
 use App\Http\Controllers\Admin\EditAdminController;
-use App\Http\Controllers\Admin\DetailAdminController;
 use App\Http\Controllers\Admin\ExportAdminController;
 
 // use custom
@@ -40,7 +41,7 @@ Route::middleware('auth:siswa')->group(function () {
     Route::get('/siswa/dashboard', [ViewSiswaController::class, 'dashboard']);
     Route::get('/siswa/profile', [ViewSiswaController::class, 'profile']);
     Route::get('/siswa/grafik', [ViewSiswaController::class, 'grafik']);
-    Route::get('/siswa/calendar', [ViewSiswaController::class, 'calendar']);
+    Route::get('/siswa/calendar', [ViewController::class, 'calendar']);
 });
 
 Route::middleware('auth:guru')->group(function () {
@@ -59,9 +60,9 @@ Route::middleware('auth:guru')->group(function () {
     Route::get('/guru/calendar', [ViewGuruController::class, 'calendar']);
 
     // route mengatur siswa
-    Route::get('/guru/siswa', [ViewGuruController::class, 'tableSiswa']);
-    Route::get('/guru/siswa/tambah', [ViewGuruController::class, 'tambahSiswa']);
-    Route::get('/guru/siswa/{id}/detail', [ViewGuruController::class, 'detailSiswa']);
+    Route::get('/guru/siswa', [ViewController::class, 'tableSiswa']);
+    Route::get('/guru/siswa/tambah', [ViewController::class, 'tambahSiswa']);
+    Route::get('/guru/siswa/{id}/detail', [ViewController::class, 'detailSiswa']);
 });
 
 Route::middleware('auth:admin')->group(function () {
@@ -70,20 +71,20 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/profile', [ViewAdminController::class, 'profile']);
     Route::post('/admin/profile/{id}/update', [EditAdminController::class, 'updateProfile']);
     Route::post('/admin/profile/{id}/delete', [EditAdminController::class, 'deleteProfile']);
+    Route::get('/admin/calendar', [ViewController::class, 'calendar']);
 
     // ajax
     Route::get('/admin/dashboard/value', [ValueAdminController::class, 'valueDashboard']);
 
     //route mengatur siswa
-    Route::get('/admin/siswa', [ViewAdminController::class, 'tableSiswa']);
-    Route::get('/admin/siswa/tambah', [ViewAdminController::class, 'tambahSiswa']);
-    Route::get('/admin/siswa/{id}/detail', [ViewAdminController::class, 'detailSiswa']);
-    //route mengatur export siswa
+    Route::get('/admin/siswa', [ViewController::class, 'tableSiswa'])->name('admin.table.siswa');
+    Route::get('/admin/siswa/tambah', [ViewController::class, 'tambahSiswa']);
+    Route::get('/admin/siswa/{id}/detail', [ViewController::class, 'detailSiswa']);
+    Route::get('/admin/siswa/{id}/record', [ViewController::class, 'recordSiswa']);
+    Route::post('/admin/siswa/delete', [EditController::class, 'deleteSiswa']);
+    
     Route::get('/admin/siswa/export', [ExportAdminController::class, 'allSiswa']);
 
     //route mengatur guru
     Route::get('/admin/guru', [ViewAdminController::class, 'guru']);
-
-    // route mengatur calendar
-    Route::get('/admin/calendar', [ViewAdminController::class, 'calendar']);
 });

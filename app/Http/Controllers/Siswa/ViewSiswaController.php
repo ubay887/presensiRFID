@@ -8,7 +8,6 @@ use App\Models\siswa;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use phpDocumentor\Reflection\Types\Null_;
 
 class ViewSiswaController extends Controller
 {
@@ -35,10 +34,5 @@ class ViewSiswaController extends Controller
     public function grafik()
     {
         return view('pages.siswa.grafik');
-    }
-
-    public function calendar()
-    {
-        return view("pages.calendar");
     }
 }

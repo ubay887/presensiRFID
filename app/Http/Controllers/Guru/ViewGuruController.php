@@ -13,11 +13,6 @@ class ViewGuruController extends Controller
         return view("pages.guru.dashboard");
     }
 
-    public function calendar()
-    {
-        return view("pages.calendar");
-    }
-
 
     public function profile()
     {
@@ -54,20 +49,5 @@ class ViewGuruController extends Controller
     public function tagid()
     {
         return view("pages.guru.tagid");
-    }
-
-
-    // siswa
-    public function tableSiswa()
-    {
-        return view("pages.siswa.table", ['siswa' => siswa::all(),]);
-    }
-    public function detailSiswa(siswa $ID)
-    {
-        return view('pages.siswa.detail', ['id' => $ID->first()]);
-    }
-    public function tambahSiswa()
-    {
-        return view("pages.siswa.tambah");
     }
 }

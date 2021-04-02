@@ -3,7 +3,7 @@
 @section('judul', 'Data Siswa')
 @section('breadcrumb')
     <div class="breadcrumb-item">
-        <a href="{{ url(Auth::getDefaultDriver().'/dashboard') }}">Dashboard</a>
+        <a href="{{ url(Auth::getDefaultDriver() . '/dashboard') }}">Dashboard</a>
     </div>
     <div class="breadcrumb-item active">
         Data Siswa
@@ -14,15 +14,16 @@
         <div class="card">
             <div class="row mt-3 mx-3 d-lg-flex justify-content-lg-between d-md-flex justify-content-md-between">
                 <div class="col-lg-auto col-md-auto p-lg-0">
-                    <a href="{{ url(Auth::getDefaultDriver().'/siswa/tambah') }}"><button class="btn btn-success mr-3"><i
-                                class="ph-user-plus-bold"></i> Tambah Data</button></a>
+                    <a href="{{ url(Auth::getDefaultDriver() . '/siswa/tambah') }}"><button
+                            class="btn btn-success mr-3"><i class="ph-user-plus-bold"></i> Tambah Data</button></a>
                     <div class="btn-group dropright" id="action" hidden=true>
                         <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             Action
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item has-icon" href="javascript:void(0)"><i class="ph ph-record"></i> Record</a>
+                            <a class="dropdown-item has-icon" href="javascript:void(0)"><i class="ph ph-record"></i>
+                                Record</a>
                             <a class="dropdown-item has-icon" href="javascript:void(0)" onclick="detailSelected()"><i
                                     class="ph ph-clipboard-bold"></i> Detail</a>
                             <div class="dropdown-divider"></div>
@@ -46,7 +47,8 @@
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item has-icon" href="#"><i class="far fa-file-pdf"></i> Export to PDF</a>
-                            <a class="dropdown-item has-icon" onclick="siswaExcel()" href="javascript:void(0)"><i class="far fa-file-excel"></i> Export to
+                            <a class="dropdown-item has-icon" onclick="siswaExcel()" href="javascript:void(0)"><i
+                                    class="far fa-file-excel"></i> Export to
                                 Excel</a>
                         </div>
                     </div>
@@ -91,13 +93,17 @@
                                     <td>{{ $user->kelamin }}</td>
                                     <td>{{ $user->idKelas->kelas }}</td>
                                     <td class="d-flex justify-content-center">
-                                        <a href="#" class="btn btn-success mr-2" data-toggle="tooltip" data-placement="top"
-                                            title="" data-original-title="Record"><i class="ph-record"></i></a>
-                                        <a href="{{ url(Auth::getDefaultDriver().'/siswa/' . $user->id . '/detail') }}"
+                                        <a href="{{ url(Auth::getDefaultDriver() . '/siswa/' . $user->id . '/record') }}"
+                                            class="btn btn-success mr-2" data-toggle="tooltip" data-placement="top" title=""
+                                            data-original-title="Record"><i class="ph-record"></i></a>
+                                        <a href="{{ url(Auth::getDefaultDriver() . '/siswa/' . $user->id . '/detail') }}"
                                             class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
                                             data-original-title="Detail"><i class="ph-clipboard-bold"></i></i></a>
-                                        <a href="" class="btn btn-danger ml-2" data-toggle="tooltip" data-placement="top"
-                                            title="" data-original-title="Delete"><i class="ph-trash-simple-bold"></i></a>
+                                        <a href="javascript:void(0)" class="btn btn-danger ml-2" data-toggle="tooltip"
+                                            data-placement="top" title="" data-original-title="Delete" data-name="siswa"
+                                            data-id="{{ $user->id }}">
+                                            <i class="ph-trash-simple-bold"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -110,9 +116,11 @@
 @endsection
 @push('css')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 @endpush
 @push('js')
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/dataTables-custom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/delete.js') }}"></script>
 @endpush
