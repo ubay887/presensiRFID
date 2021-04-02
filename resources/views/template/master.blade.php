@@ -65,7 +65,11 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
-
+    <!-- JS Libraies -->
+    @stack('js')
+    <script src="{{ asset('js/logout.js') }}"></script>
+    <script src="{{ asset('js/ajax.js') }}"></script>
+    
     <!-- Stisla -->
     <script src="{{ asset('vendor/stisla/js/custom.js') }}"></script>
     <script src="{{ asset('vendor/stisla/js/stisla.js') }}"></script>
@@ -74,10 +78,6 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     @include('sweetalert::alert')
 
-    <!-- JS Libraies -->
-    @stack('js')
-    <script src="{{ asset('js/logout.js') }}"></script>
-    <script src="{{ asset('js/ajax.js') }}"></script>
 </body>
 
 </html>
