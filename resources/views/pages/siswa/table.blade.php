@@ -13,9 +13,10 @@
     <div class="container mt-5">
         <div class="card">
             <div class="row mt-3 mx-3 d-lg-flex justify-content-lg-between d-md-flex justify-content-md-between">
-                <div class="col-lg-auto col-md-auto p-lg-0">
-                    <a href="{{ url(Auth::getDefaultDriver() . '/siswa/tambah') }}"><button
-                            class="btn btn-success mr-3"><i class="ph-user-plus-bold"></i> Tambah Data</button></a>
+                <div class="col-lg-auto col-md-auto">
+                    <a href="{{ url(Auth::getDefaultDriver() . '/siswa/tambah') }}">
+                        <button class="btn btn-success mr-3"><i class="fa fa-user-plus"></i> Tambah Data</button>
+                    </a>
                     <div class="btn-group dropright" id="action" hidden=true>
                         <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -32,26 +33,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-auto col-md-auto p-lg-0 d-flex justify-content-between">
-                    <div class="input-group rounded mr-lg-2 mr-md-2">
-                        <input id="searchDataTables" class="form-control shadow-none rounded-pill pr-4"
-                            placeholder="Masukkan Keyword..." autocomplete="off" type="text">
-                        <label for="searchDataTables" class="input-group-text border-0" id="search-addon">
+                <div class="col-lg-auto d-flex justify-content-between">
+                    <div class="input-group rounded w-auto mr-3">
+                        <input id="searchdata" class="form-control shadow-none rounded-pill" placeholder="Masukkan Keyword"
+                            autocomplete="off" type="text">
+                        <span class="input-group-text border-0" id="search-addon">
                             <i class="fas fa-search"></i>
-                        </label>
+                        </span>
                     </div>
-                    <div class="btn-group d-block">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <i class="ph ph-download"></i> Export Data
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item has-icon" href="#"><i class="far fa-file-pdf"></i> Export to PDF</a>
-                            <a class="dropdown-item has-icon" onclick="siswaExcel()" href="javascript:void(0)"><i
-                                    class="far fa-file-excel"></i> Export to
-                                Excel</a>
-                        </div>
-                    </div>
+                    <a href="#" onclick="siswaExcel()" href="javascript:void(0)">
+                        <button class="btn btn-primary"><i class="fa fa-download"></i> Export Data</button>
+                    </a>
                 </div>
             </div>
             <div class="card-body">
