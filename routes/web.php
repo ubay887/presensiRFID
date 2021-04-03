@@ -49,10 +49,11 @@ Route::middleware('auth:guru')->group(function () {
     Route::get('/guru/dashboard', [ViewGuruController::class, 'dashboard']);
     Route::get('/guru/profile', [ViewGuruController::class, 'profile']);
     Route::get('/guru/profile/changepass', [ViewGuruController::class, 'changepass']);
-    // Route::get('/guru/datasubjek', [ViewGuruController::class, 'datasubjek']);
+    Route::get('/guru/kelas', [ViewGuruController::class, 'datasubjek']);
     Route::get('/guru/presensi', [ViewGuruController::class, 'presensi']);
     Route::get('/guru/presensi/rekap', [ViewGuruController::class, 'rekap']);
     Route::get('/guru/jammasuk', [ViewGuruController::class, 'jammasuk']);
+    Route::get('/guru/jammasuk/tambahjam', [ViewGuruController::class, 'tambahjam']);
     Route::get('/guru/grafik', [ViewGuruController::class, 'grafik']);
     Route::get('/guru/tagid', [ViewGuruController::class, 'tagid']);
     Route::get('/guru/quotes', [ViewGuruController::class, 'quotes']);
@@ -82,7 +83,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/siswa/{id}/detail', [ViewController::class, 'detailSiswa']);
     Route::get('/admin/siswa/{id}/record', [ViewController::class, 'recordSiswa']);
     Route::post('/admin/siswa/delete', [EditController::class, 'deleteSiswa']);
-    
+
     Route::get('/admin/siswa/export', [ExportAdminController::class, 'allSiswa']);
 
     //route mengatur guru

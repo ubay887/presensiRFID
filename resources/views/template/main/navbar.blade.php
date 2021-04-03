@@ -18,9 +18,6 @@
                     <a href="{{ url('guru/profile') }}" class="dropdown-item has-icon">
                         <i class="ph ph-user-bold"></i> Profile
                     </a>
-                    <a href="{{ url('guru/settings') }}" class="dropdown-item has-icon">
-                        <i class="ph ph-gear"></i> Settings
-                    </a>
                     <div class="dropdown-divider"></div>
                     <a href="javascrip:void(0)" id="logout" class="dropdown-item has-icon text-danger">
                         <i class="ph ph-sign-out-bold"></i> Logout

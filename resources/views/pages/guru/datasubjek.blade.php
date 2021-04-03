@@ -17,7 +17,6 @@
     @csrf
     <div class="row">
         <div class="col-8">
-            <a href="{{ url('guru/siswa') }}" class="btn btn-light mb-3"><i class="ph-caret-left"></i> Kembali</a>
             <div class="card">
                 <div class="row mt-3 ml-2">
                     <div class="col-8">

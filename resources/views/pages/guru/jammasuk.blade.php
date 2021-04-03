@@ -1,83 +1,102 @@
 @extends('template.master')
-@section('title', 'E - Presensi | Grafik')
+@section('title', 'Jam Masuk')
 @section('judul', 'Jam Masuk')
 @section('breadcrumb')
 <div class="breadcrumb-item">
     <a href="{{ url('guru/dashboard') }}">Dashboard</a>
 </div>
 <div class="breadcrumb-item active">
-    Jam Masuk
+    Jam Kerja
 </div>
 @endsection
 @section('main')
 <div class="container-fluid mt-5">
     @csrf
+    <a href="{{ url('guru/jammasuk/tambahjam') }}"><button class="btn btn-success mb-3"><i class="ph-lg ph-plus-circle"></i>Tambah Data</button></a>
     <div class="row">
-        <div class="col-auto">
-            <div class="card">
-                <div class="card-body">
-                    <div class="form-group">
-                        <label>Zona Waktu</label>
-                        <select class="form-control">
-                            <option selected>WIB</option>
-                            <option>WITA</option>
-                            <option>WIT</option>
-                        </select>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-info">
+                <div class="card-header align-items-start flex-column">
+                    <h4>07:15 - 12:00</h4>
+                    <div class="">
+                        <span class="badge badge-light">S</span>
+                        <span class="badge badge-light">T</span>
+                        <span class="badge badge-light">F</span>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-danger mr-2" data-dismiss="modal"><i class="ph-x"></i> Batal</button>
-                    <button type="button" class="btn btn-success"><i class="ph-floppy-disk"></i> Simpan</button>
+                <div class="card-body">
+                    <p>XI REKAYASA PERANGKAT LUNAK 1</p>
+                    <p>XI REKAYASA PERANGKAT LUNAK 3</p>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="form-group">
-                        <label>Mulai Masuk</label>
-                        <input type="time" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Jam Masuk</label>
-                        <input type="time" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Akhir Masuk</label>
-                        <input type="time" class="form-control">
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-info">
+                <div class="card-header align-items-start flex-column">
+                    <h4>13:15 - 17:00</h4>
+                    <div class="">
+                        <span class="badge badge-light">S</span>
+                        <span class="badge badge-light">T</span>
+                        <span class="badge badge-light">F</span>
                     </div>
                 </div>
-                <div class="card-footer d-flex justify-content-end">
-                    <button type="button" class="btn btn-danger mr-2" data-dismiss="modal"><i class="ph-x"></i> Batal</button>
-                    <button type="button" class="btn btn-success"><i class="ph-floppy-disk"></i> Simpan</button>
+                <div class="card-body">
+                    <p>XI REKAYASA PERANGKAT LUNAK 1</p>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div class="form-group">
-                        <label>Mulai Pulang</label>
-                        <input type="time" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Jam Pulang</label>
-                        <input type="time" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Akhir Pulang</label>
-                        <input type="time" class="form-control">
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-info">
+                <div class="card-header align-items-start flex-column">
+                    <h4>07:15 - 15:00</h4>
+                    <div class="">
+                        <span class="badge badge-light">S</span>
+                        <span class="badge badge-light">T</span>
+                        <span class="badge badge-light">F</span>
                     </div>
                 </div>
-                <div class="card-footer d-flex justify-content-end">
-                    <button type="button" class="btn btn-danger mr-2" data-dismiss="modal"><i class="ph-x"></i> Batal</button>
-                    <button type="button" class="btn btn-success"><i class="ph-floppy-disk"></i> Simpan</button>
+                <div class="card-body">
+                    <p>XI REKAYASA PERANGKAT LUNAK 1</p>
+                    <p>XI REKAYASA PERANGKAT LUNAK 2</p>
+                    <p>XI REKAYASA PERANGKAT LUNAK 3</p>
                 </div>
             </div>
         </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-info">
+                <div class="card-header align-items-start flex-column">
+                    <h4>07:15 - 12:00</h4>
+                    <div class="">
+                        <span class="badge badge-light">S</span>
+                        <span class="badge badge-light">T</span>
+                        <span class="badge badge-light">F</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>XI REKAYASA PERANGKAT LUNAK 1</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-info">
+                <div class="card-header align-items-start flex-column">
+                    <h4>07:15 - 12:00</h4>
+                    <div class="">
+                        <span class="badge badge-light">S</span>
+                        <span class="badge badge-light">T</span>
+                        <span class="badge badge-light">F</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>XI REKAYASA PERANGKAT LUNAK 1</p>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </div>
 
