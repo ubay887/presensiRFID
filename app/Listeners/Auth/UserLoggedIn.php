@@ -25,7 +25,7 @@ class UserLoggedIn
      * @param  Login  $event
      * @return void
      */
-    public function handle(Login $event)
+    public function handle()
     {
         session(
             [

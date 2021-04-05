@@ -19,7 +19,7 @@ var table = $('#dataTables').DataTable({
 })
 
 //presensi
-var tablePresensi = $('#presensi').DataTable({
+var tablePresensi = $('#dataTables_presensi').DataTable({
     "paging": true,
     "lengthChange": true,
     "searching": true,
@@ -29,14 +29,33 @@ var tablePresensi = $('#presensi').DataTable({
     "responsive": true,
     "columnDefs": [{
         "sortable": false,
-        "targets": [4,5,6,7]
+        "targets": [4, 5, 6, 7]
     }],
-    "dom": 'rt<"row"<"col-lg-3 pr-0"i><"col-lg-6 text-center p-0"l><"col-lg-3 pl-0"p>>'
+    "dom": 'rt<"row"<"col-3 pr-0 pl-3"i><"col-6 text-center p-0"l><"col-3 pl-0 pr-3"p>>'
+})
+
+var tableKelas = $('#dataTables_kelas').DataTable({
+    "paging": true,
+    "lengthChange": true,
+    "searching": true,
+    "ordering": true,
+    "info": true,
+    "autoWidth": false,
+    "responsive": true,
+    "order": [
+        [2, "asc"]
+    ],
+    "columnDefs": [{
+        "sortable": false,
+        "targets": [0, 4]
+    }],
+    "dom": 'rt<"row"<"col-3 pr-0 pl-3"i><"col-6 text-center p-0"l><"col-3 pl-0 pr-3"p>>'
 })
 
 $('#searchDataTables').on('keyup', function () {
     table.search(this.value).draw();
     tablePresensi.search(this.value).draw();
+    tableKelas.search(this.value).draw();
 });
 
 var checked, all;

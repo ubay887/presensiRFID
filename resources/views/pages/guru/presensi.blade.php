@@ -38,7 +38,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="presensi" class="table table-striped text-center dataTable no-footer" style="width:100%"
+                    <table id="dataTables_presensi" class="table table-striped text-center dataTable no-footer" style="width:100%"
                         role="grid">
                         <thead>
                             <tr role="row" class="text-center">

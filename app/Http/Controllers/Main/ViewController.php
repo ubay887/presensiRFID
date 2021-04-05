@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Main;
 
-use App\Models\siswa;
 use App\Http\Controllers\Controller;
+use App\Models\guru;
 use App\Models\kelas;
-use Illuminate\Http\Request;
+use App\Models\siswa;
 
 class ViewController extends Controller
 {
@@ -21,7 +21,7 @@ class ViewController extends Controller
     // view siswa oleh admin dan guru
     public function tableSiswa()
     {
-        return view("pages.siswa.table", ['siswa' => siswa::all(),]);
+        return view("pages.siswa.table", ['siswa' => siswa::all()]);
     }
     public function detailSiswa(siswa $ID)
     {
@@ -31,9 +31,12 @@ class ViewController extends Controller
     {
         return view("pages.siswa.tambah", ['kelas' => kelas::get('kelas')]);
     }
-
     public function recordSiswa(siswa $siswa)
     {
         return view("pages.siswa.record", ['personal' => $siswa->first()]);
+    }
+    public function kelasSiswa()
+    {
+        return view("pages.siswa.kelas", ['kelas' => kelas::all(), 'guru' => guru::all()]);
     }
 }

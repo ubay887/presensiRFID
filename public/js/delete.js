@@ -3,7 +3,7 @@ $('a[data-original-title="Delete"]').click(function () {
     const name = $(this).data('name');
 
     swal.fire({
-        title: "Anda ingin menghapus data siswa ini?",
+        title: "Anda ingin menghapus data "+name+" ini?",
         icon: "question",
         showCancelButton: true,
         confirmButtonClass: 'btn-danger waves-effect waves-light',

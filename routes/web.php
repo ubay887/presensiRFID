@@ -1,22 +1,21 @@
 <?php
 // use controller main
-use App\Http\Controllers\Main\ViewController;
-use App\Http\Controllers\Main\AuthController;
-use App\Http\Controllers\Main\EditController;
-
-// use controller siswa
-use App\Http\Controllers\Siswa\ViewSiswaController;
-use App\Http\Controllers\Siswa\EditSiswaController;
-
-// use controller guru
-use App\Http\Controllers\Guru\ValueGuruController;
-use App\Http\Controllers\Guru\ViewGuruController;
-
-// use controller admin
-use App\Http\Controllers\Admin\ViewAdminController;
-use App\Http\Controllers\Admin\ValueAdminController;
 use App\Http\Controllers\Admin\EditAdminController;
 use App\Http\Controllers\Admin\ExportAdminController;
+use App\Http\Controllers\Admin\ValueAdminController;
+
+// use controller siswa
+use App\Http\Controllers\Admin\ViewAdminController;
+use App\Http\Controllers\Guru\ValueGuruController;
+
+// use controller guru
+use App\Http\Controllers\Guru\ViewGuruController;
+use App\Http\Controllers\Main\AuthController;
+
+// use controller admin
+use App\Http\Controllers\Main\EditController;
+use App\Http\Controllers\Main\ViewController;
+use App\Http\Controllers\Siswa\ViewSiswaController;
 
 // use custom
 use Illuminate\Support\Facades\Route;
@@ -30,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 // main route
 Route::get('/', [ViewController::class, 'login'])->middleware('guest:guru')->middleware('guest:admin')->middleware('guest:siswa');
 Route::post('/', [AuthController::class, 'postLogin'])->name('login');
@@ -49,7 +48,7 @@ Route::middleware('auth:guru')->group(function () {
     Route::get('/guru/dashboard', [ViewGuruController::class, 'dashboard']);
     Route::get('/guru/profile', [ViewGuruController::class, 'profile']);
     Route::get('/guru/profile/changepass', [ViewGuruController::class, 'changepass']);
-    Route::get('/guru/kelas', [ViewGuruController::class, 'datasubjek']);
+    Route::get('/guru/kelas', [ViewController::class, 'kelasSiswa']);
     Route::get('/guru/presensi', [ViewGuruController::class, 'presensi']);
     Route::get('/guru/presensi/rekap', [ViewGuruController::class, 'rekap']);
     Route::get('/guru/jammasuk', [ViewGuruController::class, 'jammasuk']);
@@ -85,6 +84,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/siswa/{id}/detail', [ViewController::class, 'detailSiswa']);
     Route::get('/admin/siswa/{id}/record', [ViewController::class, 'recordSiswa']);
     Route::post('/admin/siswa/delete', [EditController::class, 'deleteSiswa']);
+    Route::get('/admin/kelas', [ViewController::class, 'kelasSiswa']);
 
     Route::get('/admin/siswa/export', [ExportAdminController::class, 'allSiswa']);
 

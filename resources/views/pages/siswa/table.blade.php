@@ -35,13 +35,13 @@
                 </div>
                 <div class="col-lg-auto d-flex justify-content-between">
                     <div class="input-group rounded w-auto mr-3">
-                        <input id="searchdata" class="form-control shadow-none rounded-pill" placeholder="Masukkan Keyword"
+                        <input id="searchDataTables" class="form-control shadow-none rounded-pill" placeholder="Masukkan Keyword"
                             autocomplete="off" type="text">
                         <span class="input-group-text border-0" id="search-addon">
                             <i class="fas fa-search"></i>
                         </span>
                     </div>
-                    <a href="#" onclick="siswaExcel()" href="javascript:void(0)">
+                    <a onclick="siswaExcel()" href="javascript:void(0)">
                         <button class="btn btn-primary"><i class="fa fa-download"></i> Export Data</button>
                     </a>
                 </div>
@@ -90,7 +90,7 @@
                                             data-original-title="Record"><i class="ph-record"></i></a>
                                         <a href="{{ url(Auth::getDefaultDriver() . '/siswa/' . $user->id . '/detail') }}"
                                             class="btn btn-primary" data-toggle="tooltip" data-placement="top" title=""
-                                            data-original-title="Detail"><i class="ph-clipboard-bold"></i></i></a>
+                                            data-original-title="Detail"><i class="ph-clipboard-bold"></i></a>
                                         <a href="javascript:void(0)" class="btn btn-danger ml-2" data-toggle="tooltip"
                                             data-placement="top" title="" data-original-title="Delete" data-name="siswa"
                                             data-id="{{ $user->id }}">

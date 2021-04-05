@@ -13,7 +13,6 @@ class ViewGuruController extends Controller
         return view("pages.guru.dashboard");
     }
 
-
     public function profile()
     {
         return view("pages.guru.profile");
@@ -21,10 +20,6 @@ class ViewGuruController extends Controller
     public function changepass()
     {
         return view("pages.guru.changepass");
-    }
-    public function datasubjek()
-    {
-        return view("pages.guru.datasubjek");
     }
     public function presensi()
     {
