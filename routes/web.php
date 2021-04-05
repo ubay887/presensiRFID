@@ -58,12 +58,14 @@ Route::middleware('auth:guru')->group(function () {
     Route::get('/guru/tagid', [ViewGuruController::class, 'tagid']);
     Route::get('/guru/quotes', [ViewGuruController::class, 'quotes']);
     Route::get('/guru/dashboard/value', [ValueGuruController::class, 'valueDashboard']);
-    Route::get('/guru/calendar', [ViewGuruController::class, 'calendar']);
+    Route::get('/guru/calendar', [ViewController::class, 'calendar']);
 
     // route mengatur siswa
     Route::get('/guru/siswa', [ViewController::class, 'tableSiswa']);
     Route::get('/guru/siswa/tambah', [ViewController::class, 'tambahSiswa']);
     Route::get('/guru/siswa/{id}/detail', [ViewController::class, 'detailSiswa']);
+    Route::get('/guru/siswa/{id}/record', [ViewController::class, 'recordSiswa']);
+    Route::post('/guru/siswa/delete', [EditController::class, 'deleteSiswa']);
 });
 
 Route::middleware('auth:admin')->group(function () {

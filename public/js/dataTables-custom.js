@@ -17,12 +17,9 @@ var table = $('#dataTables').DataTable({
     }],
     "dom": 'rt<"row"<"col-3 pr-0 pl-3"i><"col-6 text-center p-0"l><"col-3 pl-0 pr-3"p>>'
 })
-$('#searchDataTables').on('keyup', function () {
-    table.search(this.value).draw();
-});
 
-//guru
-var table2 = $('#dataTablesGuru').DataTable({
+//presensi
+var tablePresensi = $('#presensi').DataTable({
     "paging": true,
     "lengthChange": true,
     "searching": true,
@@ -30,18 +27,16 @@ var table2 = $('#dataTablesGuru').DataTable({
     "info": true,
     "autoWidth": false,
     "responsive": true,
-    "order": [
-        [2, "asc"]
-    ],
     "columnDefs": [{
         "sortable": false,
-        "targets": [0, 9]
+        "targets": [4,5,6,7]
     }],
-    "dom": 'rt<"row"<"col-3 pr-0 pl-3"i><"col-6 text-center p-0"l><"col-3 pl-0 pr-3"p>>'
+    "dom": 'rt<"row"<"col-lg-3 pr-0"i><"col-lg-6 text-center p-0"l><"col-lg-3 pl-0"p>>'
 })
 
 $('#searchDataTables').on('keyup', function () {
-    table2.search(this.value).draw();
+    table.search(this.value).draw();
+    tablePresensi.search(this.value).draw();
 });
 
 var checked, all;

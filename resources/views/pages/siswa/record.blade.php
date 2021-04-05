@@ -18,6 +18,16 @@
         <div class="card">
             <div class="row mt-3 mx-3 d-lg-flex justify-content-lg-between d-md-flex justify-content-md-between">
                 <div class="col-lg-auto col-md-auto p-lg-0 d-flex justify-content-between">
+                    <!-- XXX: need filter? -->
+                </div>
+                <div class="col-lg-auto col-md-auto p-lg-0">
+                    {{-- <div class="btn-toolbar fc" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="fc-button-group btn-group" role="group">
+                            <button type="button" class="fc-button fc-button-primary fc-button-active">Semester</button>
+                            <button type="button" class="fc-button fc-button-primary">Bulanan</button>
+                            <button type="button" class="fc-button fc-button-primary">Mingguan</button>
+                        </div>
+                    </div> --}}
                     <div class="btn-group d-block">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -30,22 +40,6 @@
                                 Excel</a>
                         </div>
                     </div>
-                    <div class="input-group rounded ml-md-2 ml-lg-2">
-                        <input id="searchDataTables" class="form-control shadow-none rounded-pill pr-4"
-                            placeholder="Masukkan Keyword..." autocomplete="off" type="text">
-                        <label for="searchDataTables" class="input-group-text border-0" id="search-addon">
-                            <i class="fas fa-search"></i>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-lg-auto col-md-auto p-lg-0">
-                    <div class="btn-toolbar fc" role="toolbar" aria-label="Toolbar with button groups">
-                        <div class="fc-button-group btn-group" role="group">
-                            <button type="button" class="fc-button fc-button-primary fc-button-active">Semester</button>
-                            <button type="button" class="fc-button fc-button-primary">Bulanan</button>
-                            <button type="button" class="fc-button fc-button-primary">Mingguan</button>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="card-body">
@@ -54,18 +48,12 @@
                         style="width:100%" role="grid">
                         <thead>
                             <tr role="row">
-                                <th scope="col-1">
-                                    <div class="custom-checkbox custom-control">
-                                        <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad"
-                                            class="custom-control-input" id="checkbox-all">
-                                        <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
-                                    </div>
-                                </th>
-                                <th scope="col">Gambar</th>
-                                <th scope="col">Nama</th>
-                                <th scope="col">No. Induk</th>
-                                <th scope="col-1">L/P</th>
-                                <th scope="col">Kelas</th>
+                                <th scope="col">Tanggal</th>
+                                <th scope="col">Jam Masuk</th>
+                                <th scope="col">Check In</th>
+                                <th scope="col">Jam Pulang</th>
+                                <th scope="col">Check Out</th>
+                                <th scope="col">Keterangan</th>
                                 <th scope="col">Opsi</th>
                             </tr>
                         </thead>
