@@ -15,7 +15,7 @@
             <div class="row mt-3 mx-3 d-lg-flex justify-content-lg-between d-md-flex justify-content-md-between">
                 <div class="col-lg-auto col-md-auto">
                     <a href="{{ url(Auth::getDefaultDriver() . '/siswa/tambah') }}">
-                        <button class="btn btn-success mr-3"><i class="fa fa-user-plus"></i> Tambah Data</button>
+                        <button class="btn btn-success mr-3"><i class="fa fa-user-plus"></i> Tambah Siswa</button>
                     </a>
                     <div class="btn-group dropright" id="action" hidden=true>
                         <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"
@@ -35,8 +35,8 @@
                 </div>
                 <div class="col-lg-auto d-flex justify-content-between">
                     <div class="input-group rounded w-auto mr-3">
-                        <input id="searchDataTables" class="form-control shadow-none rounded-pill" placeholder="Masukkan Keyword"
-                            autocomplete="off" type="text">
+                        <input id="searchDataTables" class="form-control shadow-none rounded-pill"
+                            placeholder="Masukkan Keyword" autocomplete="off" type="text">
                         <span class="input-group-text border-0" id="search-addon">
                             <i class="fas fa-search"></i>
                         </span>
@@ -107,12 +107,14 @@
     </div>
 @endsection
 @push('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.24/cr-1.5.3/date-1.0.3/fc-3.3.2/fh-3.1.8/kt-2.6.1/rg-1.1.2/rr-1.2.7/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.3/datatables.min.css" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endpush
 @push('js')
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/bs4/dt-1.10.24/cr-1.5.3/date-1.0.3/fc-3.3.2/fh-3.1.8/kt-2.6.1/rg-1.1.2/rr-1.2.7/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.3/datatables.min.js">
+    </script>
     <script type="text/javascript" src="{{ asset('js/dataTables-custom.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/delete.js') }}"></script>
 @endpush

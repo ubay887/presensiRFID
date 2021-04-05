@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\jam;
 use App\Models\siswa;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ViewSiswaController extends Controller
@@ -19,7 +18,7 @@ class ViewSiswaController extends Controller
             if (jam::where([['id', $key->id_jam], ['harimasuk', 'LIKE', "%$now%"]])->get()->first() !== null) {
                 $data = jam::where([
                     ['id', $key->id_jam],
-                    ['harimasuk', 'LIKE', "%$now%"]
+                    ['harimasuk', 'LIKE', "%$now%"],
                 ])->get()->first();
             }
         }

@@ -16,7 +16,7 @@
     </p>
     <div class="container mt-5">
         <div class="card profile-widget">
-            <form method="POST" class="needs-validation" enctype="multipart/form-data"
+            <form method="POST" id="profileForm" class="needs-validation" enctype="multipart/form-data"
                 action="{{ url('/guru/profile/' . Auth::guard('guru')->user()->id . '/update') }}">
                 @csrf
                 <div class="profile-widget-header">
@@ -38,14 +38,14 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group col-md-4 col-12">
-                            <label>ID Chat</label>
+                            <label>ID Telegram</label>
                             <input type="text" class="form-control" value="{{ Auth::guard('guru')->user()->idchat }}"
-                                required name="idchat">
+                                readonly name="idtelegram">
                             <div class="invalid-feedback">
-                                Please fill in the Id Chat
+                                Please fill in the Id Telegram
                             </div>
                         </div>
-                        <div class="form-group col-lg-8 col-md-4 col-12">
+                        <div class="form-group col-lg-8 col-md-8 col-12">
                             <label>Full Name</label>
                             <input type="text" class="form-control" value="{{ Auth::guard('guru')->user()->nama }}"
                                 required name="fullname">
@@ -58,23 +58,26 @@
                         <div class="form-group col-md-5 col-12">
                             <label>Username</label>
                             <input type="text" class="form-control" value="{{ Auth::guard('guru')->user()->username }}"
-                                autocomplete="off" name="username">
+                                autocomplete="off" name="username" required>
+                            <div class="invalid-feedback">
+                                Please fill in the username
+                            </div>
                         </div>
                         <div class="form-group col-md-7 col-12">
                             <label>Email</label>
                             <input type="email" class="form-control" value="{{ Auth::guard('guru')->user()->email }}"
-                                required="">
+                                required>
                             <div class="invalid-feedback">
                                 Please fill in the email
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer text-right">
-                    <button href="javascript:void(0)" class="btn btn-primary mr-2">Change Password</button>
-                    <button type="submit" class="btn btn-success">Save Changes</button>
-                </div>
             </form>
+            <div class="card-footer text-right">
+                <button href="javascript:void(0)" data-toggle="modal" data-target="#modal2" class="btn btn-primary mr-2">Change Password</button>
+                <button type="submit" form="profileForm" class="btn btn-success">Save Changes</button>
+            </div>
         </div>
     </div>
 
@@ -86,73 +89,107 @@
                 style="width: 25vw; height: 50vh;object-fit: cover;" alt="">
         </div>
     </div>
-@endsection
-@push('js')
-    <script>
-        $(function() {
-            $('#img').change(function() {
-                var input = this;
-                var url = $(this).val();
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#profilemenu').attr('src', e.target.result);
-                    $('#profilemodal').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            });
-
-            $('#removephoto').click(function() {
-                swal.fire({
-                    title: "Hapus foto profile?",
-                    icon: "question",
-                    showCancelButton: true,
-                    confirmButtonClass: 'btn-danger waves-effect waves-light',
-                    confirmButtonText: "Submit",
-                    cancelButtonText: "Cancel",
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        $.ajaxSetup({
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            }
-                        });
-                        $.post("{{ url('/guru/profile/' . Auth::guard('guru')->user()->id . '/delete') }}",
-                            function(data) {
-                                location.reload();
-                            });
+    
+    <!-- Modal -->
+    <div class="modal" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal2"><i class="ph-identification-card-bold"></i> Ganti Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ url('guru/profile') }}" method="post" id="formModal">
+                        <div class="form-group">
+                            <label>Password Saat Ini</label>
+                            <input type="password" class="form-control" placeholder="masukan password saat ini">
+                        </div>
+                        <div class="form-group">
+                            <label>Password Baru</label>
+                            <input type="password" class="form-control" placeholder="masukan password Baru">
+                        </div>
+                        <div class="form-group">
+                            <label>Ulangi Password Baru</label>
+                            <input type="password" class="form-control" placeholder="masukan password lagi">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" form="formModal"><i class="ph-floppy-disk"></i>
+                        Simpan</button>
+                </div>
+            </div>
+        </div>
+    @endsection
+    @push('js')
+        <script>
+            $(function() {
+                $('#img').change(function() {
+                    var input = this;
+                    var url = $(this).val();
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#profilemenu').attr('src', e.target.result);
+                        $('#profilemodal').attr('src', e.target.result);
                     }
-                })
+                    reader.readAsDataURL(input.files[0]);
+                });
+
+                $('#removephoto').click(function() {
+                    swal.fire({
+                        title: "Hapus foto profile?",
+                        icon: "question",
+                        showCancelButton: true,
+                        confirmButtonClass: 'btn-danger waves-effect waves-light',
+                        confirmButtonText: "Submit",
+                        cancelButtonText: "Cancel",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $.ajaxSetup({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr(
+                                        'content')
+                                }
+                            });
+                            $.post("{{ url('/guru/profile/' . Auth::guard('guru')->user()->id . '/delete') }}",
+                                function(data) {
+                                    location.reload();
+                                });
+                        }
+                    })
+                });
             });
-        });
-        $('#viewModal').appendTo("body");
+            $('#viewModal').appendTo("body");
+            $('#modal2').appendTo("body");
 
-        var clone = {};
+            var clone = {};
 
-        // FileClicked()
-        function fileClicked(event) {
-            var fileElement = event.target;
-            if (fileElement.value != "") {
-                clone[fileElement.id] = $(fileElement).clone(); //'Saving Clone'
+            // FileClicked()
+            function fileClicked(event) {
+                var fileElement = event.target;
+                if (fileElement.value != "") {
+                    clone[fileElement.id] = $(fileElement).clone(); //'Saving Clone'
+                }
+                //What ever else you want to do when File Chooser Clicked
             }
-            //What ever else you want to do when File Chooser Clicked
-        }
 
-        // FileChanged()
-        function fileChanged(event) {
-            var fileElement = event.target;
-            console.log(event.target.files);
-            if (fileElement.value == "") {
-                clone[fileElement.id].insertBefore(fileElement); //'Restoring Clone'
-                $(fileElement).remove(); //'Removing Original'
-                if (eventMoreListeners) {
-                    addEventListenersTo(clone[fileElement.id])
-                } //If Needed Re-attach additional Event Listeners
+            // FileChanged()
+            function fileChanged(event) {
+                var fileElement = event.target;
+                if (fileElement.value == "") {
+                    clone[fileElement.id].insertBefore(fileElement); //'Restoring Clone'
+                    $(fileElement).remove(); //'Removing Original'
+                    if (eventMoreListeners) {
+                        addEventListenersTo(clone[fileElement.id])
+                    } //If Needed Re-attach additional Event Listeners
+                }
+                //What ever else you want to do when File Chooser Changed
             }
-            //What ever else you want to do when File Chooser Changed
-        }
 
-    </script>
-@endpush
-@push('css')
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-@endpush
+        </script>
+    @endpush
+    @push('css')
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+    @endpush

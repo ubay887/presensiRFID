@@ -100,7 +100,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="guru/kelas" method="post">
+                        <form action="{{ url('guru/kelas') }}" method="post" id="formModal">
                             <div class="form-group">
                                 <label>Nama Kelas</label>
                                 <input type="text" class="form-control" placeholder="Masukkan Nama Kelas">
@@ -118,7 +118,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success"><i class="ph-floppy-disk"></i> Simpan</button>
+                        <button type="submit" class="btn btn-success" form="formModal"><i class="ph-floppy-disk"></i>
+                            Simpan</button>
                     </div>
                 </div>
             </div>
@@ -131,7 +132,6 @@
     </script>
     <script type="text/javascript" src="{{ asset('js/dataTables-custom.js') }}"></script>
     <script>
-        $('#modal').appendTo('body');
         $('#modal2').appendTo('body');
 
     </script>

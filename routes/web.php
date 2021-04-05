@@ -47,7 +47,6 @@ Route::middleware('auth:guru')->group(function () {
     // main route guru
     Route::get('/guru/dashboard', [ViewGuruController::class, 'dashboard']);
     Route::get('/guru/profile', [ViewGuruController::class, 'profile']);
-    Route::get('/guru/profile/changepass', [ViewGuruController::class, 'changepass']);
     Route::get('/guru/kelas', [ViewController::class, 'kelasSiswa']);
     Route::get('/guru/presensi', [ViewGuruController::class, 'presensi']);
     Route::get('/guru/presensi/rekap', [ViewGuruController::class, 'rekap']);

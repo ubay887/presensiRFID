@@ -129,7 +129,6 @@
         // FileChanged()
         function fileChanged(event) {
             var fileElement = event.target;
-            console.log(event.target.files);
             if (fileElement.value == "") {
                 clone[fileElement.id].insertBefore(fileElement); //'Restoring Clone'
                 $(fileElement).remove(); //'Removing Original'

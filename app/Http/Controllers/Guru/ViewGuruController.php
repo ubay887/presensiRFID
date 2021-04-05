@@ -17,10 +17,6 @@ class ViewGuruController extends Controller
     {
         return view("pages.guru.profile");
     }
-    public function changepass()
-    {
-        return view("pages.guru.changepass");
-    }
     public function presensi()
     {
         return view("pages.guru.presensi");
