@@ -9,8 +9,12 @@ class tagjam extends Model
 {
     use HasFactory;
     protected $table = 'tag_jamkelas';
-    public function getValJam()
+    public function getJam()
     {
         return $this->belongsTo(jam::class, 'id_jam');
+    }
+    public function getKelas()
+    {
+        return $this->belongsTo(kelas::class, 'id_kelas');
     }
 }

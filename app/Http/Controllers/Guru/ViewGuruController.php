@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Guru;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\siswa;
+use App\Models\jam;
+use App\Models\tagjam;
 
 class ViewGuruController extends Controller
 {
@@ -29,9 +29,9 @@ class ViewGuruController extends Controller
     {
         return view("pages.guru.grafik");
     }
-    public function jammasuk()
+    public function jamMasuk()
     {
-        return view("pages.guru.jammasuk");
+        return view("pages.guru.jam", ['tagjam' => tagjam::all(), 'jam' => jam::all()]);
     }
     public function tambahjam()
     {

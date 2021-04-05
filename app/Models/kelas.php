@@ -12,10 +12,6 @@ class kelas extends Model
     {
         return $this->hasMany(siswa::class, 'id_kelas', 'id');
     }
-    // public function getSiswaCount()
-    // {
-    //     return $this->hasMany(siswa::class, 'id_kelas', 'id')->count();
-    // }
     public function getGuru()
     {
         return $this->belongsTo(guru::class, 'id_guru');

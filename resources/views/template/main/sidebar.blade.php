@@ -41,9 +41,9 @@
                         <span>Grafik Presensi</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('guru/jammasuk', 'guru/jammasuk/*'
+                <li class="nav-item dropdown @if (Request::is('guru/jam', 'guru/jam/*'
                     )) active @endif">
-                    <a href="{{ url('guru/jammasuk') }}" class="nav-link">
+                    <a href="{{ url('guru/jam') }}" class="nav-link">
                         <i class="ph ph-clock-bold"></i>
                         <span>Jam Masuk</span>
                     </a>

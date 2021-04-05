@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
+use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Faker\Factory as Faker;
-use Illuminate\Support\Facades\Crypt;
 
 class SiswaSeeder extends Seeder
 {
@@ -46,6 +46,141 @@ class SiswaSeeder extends Seeder
                 'passwordcrypt' => Crypt::encryptString('121119'),
                 'kelamin' => 'p',
                 'id_kelas' => '3',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '4',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '5',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '6',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '7',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '8',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '9',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '1',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '2',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '3',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '4',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '5',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '6',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '7',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '8',
+            ], [
+                'nipd' => $faker->randomNumber(),
+                'tanggal_lahir' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'foto' => 'photos/default/no-avatar.png',
+                'nama' => $faker->name,
+                'password' => Hash::make($faker->name),
+                'passwordcrypt' => Crypt::encryptString($faker->name),
+                'kelamin' => 'l',
+                'id_kelas' => '9',
             ]
         ]);
     }

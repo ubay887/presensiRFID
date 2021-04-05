@@ -43,7 +43,7 @@ var tableKelas = $('#dataTables_kelas').DataTable({
     "autoWidth": false,
     "responsive": true,
     "order": [
-        [2, "asc"]
+        [1, "asc"]
     ],
     "columnDefs": [{
         "sortable": false,
