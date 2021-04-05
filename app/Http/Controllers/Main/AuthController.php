@@ -18,13 +18,10 @@ class AuthController extends Controller
         if (Auth::guard('siswa')->attempt(array('nipd' => $username, 'password' => $password), $remember)) {
             $request->session()->regenerate();
             return redirect()->intended('siswa\dashboard');
-        }
-
-        if (Auth::guard('admin')->attempt(array('username' => $username, 'password' => $password), $remember)) {
+        } else if (Auth::guard('admin')->attempt(array('username' => $username, 'password' => $password), $remember)) {
             $request->session()->regenerate();
             return redirect()->intended('admin\dashboard');
-        }
-        if (Auth::guard('guru')->attempt(array('username' => $username, 'password' => $password), $remember) || $request->validate(['username' => 'email:rfc,dns']) && Auth::guard('guru')->attempt(array('email' => $username, 'password' => $password), $remember)) {
+        } else if (Auth::guard('guru')->attempt(array('username' => $username, 'password' => $password), $remember) || $request->validate(['username' => 'email:rfc,dns']) && Auth::guard('guru')->attempt(array('email' => $username, 'password' => $password), $remember)) {
             //guru sent their email or username
             $request->session()->regenerate();
             return redirect()->intended('guru\dashboard');
@@ -33,15 +30,8 @@ class AuthController extends Controller
     }
     public function postLogout()
     {
-
-
-        if (Auth::guard('admin')->user()) {
-            auth()->guard('admin')->logout();
-        } elseif (Auth::guard('guru')->user()) {
-            auth()->guard('guru')->logout();
-        }
+        Auth::logout();
         session()->flush();
-
         return redirect()->route('login');
     }
 
@@ -55,13 +45,7 @@ class AuthController extends Controller
     {
         // give a time        
         if ($request->ajax()) {
-            if (Auth::guard('admin')->user()) {
-                $time = Carbon::parse(session()->get(Auth::guard('admin')->user()->id . 'last_login_at'))->diffForHumans();
-            } elseif (Auth::guard('guru')->user()) {
-                $time = Carbon::parse(session()->get(Auth::guard('guru')->user()->id . 'last_login_at'))->diffForHumans();
-            } else {
-                $time = Carbon::parse(session()->get(Auth::guard('siswa')->user()->id . 'last_login_at'))->diffForHumans();
-            }
+            $time = Carbon::parse(session()->get('last_login_at'))->diffForHumans();
             return response()->json(compact('time'));
         }
         return redirect()->back();
