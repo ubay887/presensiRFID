@@ -14,6 +14,7 @@
 @endsection
 @section('main')
     <div class="container mt-5">
+        <a href="{{ url('guru/siswa') }}" class="btn btn-light mb-3"><i class="fa fa-caret-left"></i> Kembali</a>
         <div class="card">
             <div class="row mt-3 mx-3 d-lg-flex justify-content-lg-between d-md-flex justify-content-md-between">
                 <div class="col-lg-auto col-md-auto p-lg-0 d-flex justify-content-between">
@@ -27,18 +28,9 @@
                             <button type="button" class="fc-button fc-button-primary">Mingguan</button>
                         </div>
                     </div> --}}
-                    <div class="btn-group d-block">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <i class="ph ph-download"></i> Export Data
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item has-icon" href="#"><i class="far fa-file-pdf"></i> Export to PDF</a>
-                            <a class="dropdown-item has-icon" onclick="siswaExcel()" href="javascript:void(0)"><i
-                                    class="far fa-file-excel"></i> Export to
-                                Excel</a>
-                        </div>
-                    </div>
+                    <a onclick="siswaExcel()" href="javascript:void(0)">
+                        <button class="btn btn-primary"><i class="fa fa-download"></i> Export Data</button>
+                    </a>
                 </div>
             </div>
             <div class="card-body">

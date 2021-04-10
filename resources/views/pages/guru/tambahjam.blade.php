@@ -6,7 +6,7 @@
         <a href="{{ url('guru/dashboard') }}">Dashboard</a>
     </div>
     <div class="breadcrumb-item active">
-        <a href="{{ url('guru/jammasuk') }}">Jam Masuk</a>
+        <a href="{{ url('guru/jam') }}">Jam Masuk</a>
     </div>
     <div class="breadcrumb-item active">
         Tambah Jam Masuk
@@ -15,7 +15,7 @@
 @section('main')
     <div class="container-fluid mt-5">
         @csrf
-        <a href="{{ url('guru/jammasuk') }}" class="btn btn-light mb-3"><i class="fa fa-caret-left"></i> Kembali</a>
+        <a href="{{ url('guru/jam') }}" class="btn btn-light mb-3"><i class="fa fa-caret-left"></i> Kembali</a>
         <div class="card">
             <div class="card-header">
                 <h4>Form Tambah</h4>
@@ -33,79 +33,37 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label>Mulai Masuk</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                            </div>
-                            <input type="time" class="form-control timepicker">
-                        </div>
+                        <input type="time" class="form-control timepicker">
                     </div>
                     <div class="form-group col-md-4">
                         <label>Jam Masuk</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                            </div>
-                            <input type="time" class="form-control timepicker">
-                        </div>
+                        <input type="time" class="form-control timepicker">
                     </div>
                     <div class="form-group col-md-4">
                         <label>Akhir Masuk</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                            </div>
-                            <input type="time" class="form-control timepicker">
-                        </div>
+                        <input type="time" class="form-control timepicker">
                     </div>
                 </div>
                 <div class="section-title">Pulang</div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label>Mulai Pulang</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                            </div>
-                            <input type="time" class="form-control timepicker">
-                        </div>
+                        <input type="time" class="form-control timepicker">
                     </div>
                     <div class="form-group col-md-4">
                         <label>Jam Pulang</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                            </div>
-                            <input type="time" class="form-control timepicker">
-                        </div>
+                        <input type="time" class="form-control timepicker">
                     </div>
                     <div class="form-group col-md-4">
                         <label>Akhir Pulang</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                            </div>
-                            <input type="time" class="form-control timepicker">
-                        </div>
+                        <input type="time" class="form-control timepicker">
                     </div>
                 </div>
             </div>
             <div class="card-footer d-flex justify-content-end">
-                <button class="btn btn-danger mr-3"><i class="fa fa-reset"></i>
+                <button class="btn btn-danger mr-3"><i class="far fa-save"></i>
                     Reset</button>
-                <button class="btn btn-success"><i class="fa fa-floppy-disk ph-lg"></i>
+                <button class="btn btn-success"><i class="far fa-save"></i>
                     Simpan</button>
             </div>
         </div>

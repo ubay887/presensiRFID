@@ -12,8 +12,8 @@
 @section('main')
     <div class="container-fluid mt-5">
         @csrf
-        <a href="{{ url('guru/jammasuk/tambahjam') }}"><button class="btn btn-success mb-3"><i
-                    class="fa fa-plus-circle"></i> Tambah Data</button></a>
+        <a href="{{ url('guru/jam/tambahjam') }}"><button class="btn btn-success mb-3"><i class="fa fa-plus-circle"></i>
+                Tambah Data</button></a>
         <div class="row">
             @foreach ($jam as $jam)
                 <div class="col-12 col-md-6 col-lg-4 d-flex">

@@ -1,4 +1,4 @@
-<div class="main-sidebar position-fixed">
+<div class="main-sidebar position-fixed shadow-none">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
             <a href="{{ url(Auth::getDefaultDriver() . '/dashboard') }}">{{ config('app.name') }}</a>
@@ -41,8 +41,7 @@
                         <span>Grafik Presensi</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown @if (Request::is('guru/jam', 'guru/jam/*'
-                    )) active @endif">
+                <li class="nav-item dropdown @if (Request::is('guru/jam', 'guru/jam/*' )) active @endif">
                     <a href="{{ url('guru/jam') }}" class="nav-link">
                         <i class="ph ph-clock-bold"></i>
                         <span>Jam Masuk</span>

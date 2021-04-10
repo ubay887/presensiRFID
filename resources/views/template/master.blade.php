@@ -69,7 +69,7 @@
     @stack('js')
     <script src="{{ asset('js/logout.js') }}"></script>
     <script src="{{ asset('js/ajax.js') }}"></script>
-    
+
     <!-- Stisla -->
     <script src="{{ asset('vendor/stisla/js/custom.js') }}"></script>
     <script src="{{ asset('vendor/stisla/js/stisla.js') }}"></script>

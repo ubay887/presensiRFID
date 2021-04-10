@@ -51,7 +51,7 @@ Route::middleware('auth:guru')->group(function () {
     Route::get('/guru/presensi', [ViewGuruController::class, 'presensi']);
     Route::get('/guru/presensi/rekap', [ViewGuruController::class, 'rekap']);
     Route::get('/guru/jam', [ViewGuruController::class, 'jammasuk']);
-    Route::get('/guru/jammasuk/tambahjam', [ViewGuruController::class, 'tambahjam']);
+    Route::get('/guru/jam/tambahjam', [ViewGuruController::class, 'tambahjam']);
     Route::get('/guru/grafik', [ViewGuruController::class, 'grafik']);
     Route::get('/guru/tagid', [ViewGuruController::class, 'tagid']);
     Route::get('/guru/quotes', [ViewGuruController::class, 'quotes']);
