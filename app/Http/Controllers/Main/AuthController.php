@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Main;
 
+use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
 
 class AuthController extends Controller
 {
@@ -35,7 +35,7 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
 
-    /**       
+    /**
      * Display a listing of the resource.
      *
      * @param  Illuminate\Http\Request $request
@@ -43,7 +43,7 @@ class AuthController extends Controller
      */
     public function timeAuth(Request $request)
     {
-        // give a time        
+        // give a time
         if ($request->ajax()) {
             $time = Carbon::parse(session()->get('last_login_at'))->diffForHumans();
             return response()->json(compact('time'));
