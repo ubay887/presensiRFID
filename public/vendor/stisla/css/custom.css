@@ -8,13 +8,11 @@
 /*# sourceMappingURL=custom.css.map */
 * {
     box-sizing: border-box;
-    font-family: 'Nunito Sans',
-        sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .pp-font {
-    font-family: 'Poppins',
-    sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .ph {

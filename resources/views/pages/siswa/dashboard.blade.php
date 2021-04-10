@@ -16,23 +16,33 @@
                 <div class="profile-widget-items">
                     <div class="profile-widget-item">
                         <div class="profile-widget-item-label">Hadir</div>
-                        <div class="profile-widget-item-value pp-font">187</div>
+                        <div class="profile-widget-item-value pp-font">
+                            -
+                        </div>
                     </div>
                     <div class="profile-widget-item">
                         <div class="profile-widget-item-label">Sakit</div>
-                        <div class="profile-widget-item-value pp-font">6,8K</div>
+                        <div class="profile-widget-item-value pp-font">
+                            -
+                        </div>
                     </div>
                     <div class="profile-widget-item">
                         <div class="profile-widget-item-label">Izin</div>
-                        <div class="profile-widget-item-value pp-font">2,1K</div>
+                        <div class="profile-widget-item-value pp-font">
+                            -
+                        </div>
                     </div>
                     <div class="profile-widget-item">
                         <div class="profile-widget-item-label">Telat</div>
-                        <div class="profile-widget-item-value pp-font">2,1K</div>
+                        <div class="profile-widget-item-value pp-font">
+                            -
+                        </div>
                     </div>
                     <div class="profile-widget-item">
-                        <div class="profile-widget-item-label">Alpha</div>
-                        <div class="profile-widget-item-value pp-font">2,1K</div>
+                        <div class="profile-widget-item-label">Absen</div>
+                        <div class="profile-widget-item-value pp-font">
+                            -
+                        </div>
                     </div>
                 </div>
             </div>
@@ -44,15 +54,14 @@
                 <div class="col-12 col-md-6 col-lg-6 px-1">
                     <div class="card card-success">
                         <div class="card-header">
-                            <h4 style="color: #34395e">Qoutes</h4>
+                            <h4 style="color: #34395e">Quotes</h4>
                         </div>
-                        <div class="card-body">
-                            <q class="text-bold font-italic">Barang siapa yang tidak mau merasakan
-                                pahitnya belajar, ia akan merasakan hinanya kebodohan sepanjang hidupnya</q>
-                        </div>
-                        <div class="card-footer text-capitalize font-weight-bold text-right"
-                            style="background-color: #F7F9F9">
-                            - imam syafi'i
+                        <div class="card-body p-0">
+                            <blockquote class="blockquote mb-0 bg-transparent">
+                                <p class="mb-0" style="font-size: 0.8rem">Barang siapa yang tidak mau merasakan
+                                pahitnya belajar, ia akan merasakan hinanya kebodohan sepanjang hidupnya.</p>
+                                <footer class="blockquote-footer text-right" style="font-size: 0.8rem">imam syafi'i</footer>
+                            </blockquote>
                         </div>
                     </div>
                 </div>
@@ -63,8 +72,8 @@
                         </div>
                         <div class="card-body">
                             <div class="row d-flex justify-content-between">
-                                <button class="col mr-1 btn btn-success" disabled>Masuk</button>
-                                <button class="col ml-1 btn btn-primary" disabled>Selesai</button>
+                                <a type="button" class="col mr-1 btn btn-success active shadow-none disabled">Masuk</a>
+                                <a type="button" class="col ml-1 btn btn-primary active shadow-none disabled">Selesai</a>
                             </div>
                             <div class="row">
                                 <div class="col mr-1 text-center font-weight-bold py-4 pp-font">07:05</div>
@@ -75,7 +84,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col p-0">
                     <div class="card card-primary">
                         <div class="card-header">
                             <h4 style="color: #34395e">Pemberitahuan</h4>
@@ -114,7 +123,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <tr role="row">
                                     <td>1</td>
                                     <td>Adio's Amigos</td>
@@ -151,15 +159,15 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 @endsection
 @push('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.24/cr-1.5.3/date-1.0.3/fc-3.3.2/fh-3.1.8/kt-2.6.1/rg-1.1.2/rr-1.2.7/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.3/datatables.min.css" />
 @endpush
 @push('js')
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/bs4/dt-1.10.24/cr-1.5.3/date-1.0.3/fc-3.3.2/fh-3.1.8/kt-2.6.1/rg-1.1.2/rr-1.2.7/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.3/datatables.min.js">
+    </script>
     <script type="text/javascript" src="{{ asset('js/dataTables-custom.js') }}"></script>
 @endpush
