@@ -37,13 +37,13 @@ class ViewAdminController extends Controller
         return view("pages.admin.guru", ['guru' => guru::all()]);
     }
 
-    public function detailGuru(guru $ID)
+    public function detailGuru(guru $id)
     {
-        return view('pages.guru.detail', ['id' => $ID->first()]);
+        return view('pages.guru.detail', ['id' => $id]);
     }
 
-    public function editDetailGuru(guru $ID)
+    public function editDetailGuru(guru $id)
     {
-        return view('pages.guru.editdetail', ['id' => $ID->first()]);
+        return view('pages.guru.editdetail', ['id' => $id]);
     }
 }
