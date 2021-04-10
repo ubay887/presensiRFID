@@ -15,7 +15,7 @@
             <div class="row mt-3 mx-3 d-flex justify-content-lg-between ">
                 <div class="col col-lg-8 col-md-7 col-sm-4">
                     <button href="#" class="btn btn-success mr-3" data-toggle="modal" data-target="#modal2"><i
-                            class="fa fa-user-plus"></i> Tambah Kelas</button>
+                            class="fas fa-door-open"></i> Tambah Kelas</button>
                     <div class="btn-group dropright" id="action" hidden=true>
                         <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -94,7 +94,7 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modal2"><i class="ph-identification-card-bold"></i> Tambah Kelas</h5>
+                        <h5 class="modal-title" id="modal2"><i class="fas fa-door-open"></i> Tambah Kelas</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -118,7 +118,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success" form="formModal"><i class="ph-floppy-disk"></i>
+                        <button type="submit" class="btn btn-success" form="formModal"><i class="far fa-save"></i>
                             Simpan</button>
                     </div>
                 </div>

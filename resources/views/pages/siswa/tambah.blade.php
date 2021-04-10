@@ -14,13 +14,14 @@
 @endsection
 @section('main')
     <div class="container mt-5">
+        <a href="{{ url('guru/siswa') }}" class="btn btn-light mb-3"><i class="fa fa-caret-left"></i> Kembali</a>
         <form action="{{ url(Auth::getDefaultDriver() . '/siswa/tambah') }}" method="post">
             @csrf
             <section id="formid">
                 @for ($i = 1; $i <= ($count = 1); $i++)
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="mx-auto d-flex align-items-center"><i class="ph-user-circle-plus ph-lg"></i> Form
+                            <h3 class="mx-auto  "><i class="ph-user-circle-plus ph-lg"></i> Form
                                 Tambah Siswa {{ $count > 1 ? $i : '' }}</h3>
                             <div class="card-header-action">
                                 <a data-collapse="#mycard-collapse-{{ $i }}" class="btn btn-icon btn-info">
@@ -82,7 +83,7 @@
             <div class="d-flex justify-content-end">
                 <button type="button" class="btn btn-info mr-2" onclick="tambahForm()"><i class="ph-file-plus ph-lg"></i>
                     Tambah Form</button>
-                <button type="button" class="btn btn-success" type="submit"><i class="ph-floppy-disk ph-lg"></i>
+                <button type="button" class="btn btn-success" type="submit"><i class="far fa-save"></i>
                     Simpan</button>
             </div>
         </form>

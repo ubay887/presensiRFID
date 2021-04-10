@@ -17,6 +17,7 @@
 @endsection
 @section('main')
     <div class="container mt-5">
+        <a href="{{ url('guru/siswa') }}" class="btn btn-light mb-3"><i class="fa fa-caret-left"></i> Kembali</a>
         <div class="card profile-widget">
             <div class="profile-widget-header">
                 <img alt="image" src="{{ asset($id->foto) }}" class="rounded profile-widget-picture">
@@ -39,7 +40,7 @@
             </div>
             <div class="card-body row pt-5">
                 <div class="col-12 d-flex justify-content-center">
-                    <div class="card border col-6">
+                    <div class="card border col-6 shadow-none">
                         <div class="card-body">
                             <div class="row py-2">
                                 <div class="col text-center d-flex justify-content-between">
@@ -70,7 +71,7 @@
                     </div>
                 </div>
                 <div class="col-12 d-flex justify-content-center">
-                    <div class="card border col-6">
+                    <div class="card border col-6 shadow-none">
                         <div class="card-body">
                             <div class="row py-2">
                                 <div class="col text-center d-flex justify-content-between">
@@ -107,7 +108,8 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary ml-auto mr-lg-5 shadow-primary mb-3">Edit Data</button>
+                <button class="btn btn-primary ml-auto mr-lg-5 shadow-primary mb-3"><i class="fas fa-edit"></i> Edit
+                    Data</button>
             </div>
         </div>
     </div>
