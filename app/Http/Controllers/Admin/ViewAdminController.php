@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\guru;
 use App\Models\siswa;
-use Spatie\GoogleCalendar\Event;
 
 class ViewAdminController extends Controller
 {
@@ -33,10 +31,19 @@ class ViewAdminController extends Controller
     {
         return view("pages.admin.profile");
     }
-
     // guru
-    public function guru()
+    public function tableGuru()
     {
-        return view("pages.admin.guru", ['guru' => guru::all(),]);
+        return view("pages.admin.guru", ['guru' => guru::all()]);
+    }
+
+    public function detailGuru(guru $ID)
+    {
+        return view('pages.guru.detail', ['id' => $ID->first()]);
+    }
+
+    public function editDetailGuru(guru $ID)
+    {
+        return view('pages.guru.editdetail', ['id' => $ID->first()]);
     }
 }

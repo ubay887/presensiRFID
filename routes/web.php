@@ -88,5 +88,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/siswa/export', [ExportAdminController::class, 'allSiswa']);
 
     //route mengatur guru
-    Route::get('/admin/guru', [ViewAdminController::class, 'guru']);
+    Route::get('/admin/guru', [ViewAdminController::class, 'tableGuru']);
+    Route::get('/admin/guru/{id}/detail', [ViewAdminController::class, 'detailGuru']);
+    Route::get('/admin/guru/{id}/detail/edit', [ViewAdminController::class, 'editDetailGuru']);
 });
