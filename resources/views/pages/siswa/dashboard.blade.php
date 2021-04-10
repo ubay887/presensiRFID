@@ -16,23 +16,23 @@
                 <div class="profile-widget-items">
                     <div class="profile-widget-item">
                         <div class="profile-widget-item-label">Hadir</div>
-                        <div class="profile-widget-item-value">187</div>
+                        <div class="profile-widget-item-value pp-font">187</div>
                     </div>
                     <div class="profile-widget-item">
                         <div class="profile-widget-item-label">Sakit</div>
-                        <div class="profile-widget-item-value">6,8K</div>
+                        <div class="profile-widget-item-value pp-font">6,8K</div>
                     </div>
                     <div class="profile-widget-item">
                         <div class="profile-widget-item-label">Izin</div>
-                        <div class="profile-widget-item-value">2,1K</div>
+                        <div class="profile-widget-item-value pp-font">2,1K</div>
                     </div>
                     <div class="profile-widget-item">
                         <div class="profile-widget-item-label">Telat</div>
-                        <div class="profile-widget-item-value">2,1K</div>
+                        <div class="profile-widget-item-value pp-font">2,1K</div>
                     </div>
                     <div class="profile-widget-item">
                         <div class="profile-widget-item-label">Alpha</div>
-                        <div class="profile-widget-item-value">2,1K</div>
+                        <div class="profile-widget-item-value pp-font">2,1K</div>
                     </div>
                 </div>
             </div>
@@ -67,8 +67,8 @@
                                 <button class="col ml-1 btn btn-primary" disabled>Selesai</button>
                             </div>
                             <div class="row">
-                                <div class="col mr-1 text-center font-weight-bold py-4">07:05</div>
-                                <div class="col ml-1 text-center font-weight-bold py-4">12:00</div>
+                                <div class="col mr-1 text-center font-weight-bold py-4 pp-font">07:05</div>
+                                <div class="col ml-1 text-center font-weight-bold py-4 pp-font">12:00</div>
                             </div>
                         </div>
                     </div>

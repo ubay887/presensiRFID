@@ -31,6 +31,7 @@
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 googleCalendarApiKey: "{{ config('services.google.calendarKey') }}",
                 timeZone: "{{ config('app.timezone') }}",
+                firstDay: 1,
                 height: 'auto',
                 nowIndicator: true,
                 headerToolbar: {

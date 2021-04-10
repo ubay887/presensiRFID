@@ -18,7 +18,7 @@
                         <h4 class="card-db-title">Total Siswa</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3 font-weight-bold" id="totalsiswa">
+                        <p class="card-db-text mb-3 font-weight-bold pp-font">
                             @if ($anggota)
                                 {{ $anggota }}
                             @else
@@ -39,7 +39,7 @@
                         <h4 class="card-db-title">Total Guru</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3 font-weight-bold" id="totalguru">
+                        <p class="card-db-text mb-3 font-weight-bold pp-font">
                             @if ($guru)
                                 {{ $guru }}
                             @else
@@ -60,7 +60,7 @@
                         <h4 class="card-db-title">Total Quotes</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3 font-weight-bold" id="totalquotes">-</p>
+                        <p class="card-db-text mb-3 font-weight-bold pp-font">-</p>
                     </div>
                 </div>
             </div>
@@ -68,37 +68,17 @@
         <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="card card-statistic-1 rounded shadow-sm">
                 <div class="card-icon" style="background-color:#6777EF;">
-                    <i class="ph-megaphone-bold text-white ph-2x"></i>
+                    <i class="ph-reddit-logo-bold text-white ph-2x"></i>
                 </div>
                 <div class="card-wrap">
                     <div class="card-header pt-4">
-                        <h4 class="card-db-title">Total Pemberitahuan</h4>
+                        <h4 class="card-db-title">Total Admin</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text mb-3 font-weight-bold" id="totalpemberitahuan">-</p>
+                        <p class="card-db-text mb-3 font-weight-bold pp-font">-</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
-@push('js')
-    {{-- <script>
-        var valueDashboard = function() {
-            $.ajax({
-                url: "/admin/dashboard/value",
-                type: "GET",
-                dataType: "json",
-                success: function(data) {
-                    $('#totalsiswa').html(data.anggota)
-                    $('#totalguru').html(data.guru)
-                },
-                error: function(data) {}
-            });
-        }
-        setInterval(function() {
-            valueDashboard();
-        }, 100);
-
-    </script> --}}
-@endpush

@@ -13,7 +13,7 @@
                         <h4 class="card-db-title ">Total Anggota</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text font-weight-bold" id="totalanggota">-</p>
+                        <p class="card-db-text font-weight-bold pp-font" id="totalanggota">-</p>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                         <h4 class="card-db-title">Total Hadir</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text font-weight-bold" id="totalhadir">-</p>
+                        <p class="card-db-text font-weight-bold pp-font" id="totalhadir">-</p>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                         <h4 class="card-db-title">Total Check In</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text font-weight-bold" id="totalcheckin">-</p>
+                        <p class="card-db-text font-weight-bold pp-font" id="totalcheckin">-</p>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                         <h4 class="card-db-title">Total Semua Kelas</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text font-weight-bold" id="totalpemberitahuan">-</p>
+                        <p class="card-db-text font-weight-bold pp-font" id="totalpemberitahuan">-</p>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                         <h4 class="card-db-title">Total Terlambat</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text font-weight-bold" id="totalterlambat">-</p>
+                        <p class="card-db-text font-weight-bold pp-font" id="totalterlambat">-</p>
                     </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@
                         <h4 class="card-db-title">Total Tidak Hadir</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text font-weight-bold" id="totaltdkhadir">-</p>
+                        <p class="card-db-text font-weight-bold pp-font" id="totaltdkhadir">-</p>
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                         <h4 class="card-db-title">Total Check Out</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text font-weight-bold" id="totalcheckout">-</p>
+                        <p class="card-db-text font-weight-bold pp-font" id="totalcheckout">-</p>
                     </div>
                 </div>
             </div>
@@ -121,7 +121,7 @@
                         <h4 class="card-db-title">Total Quotes</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-db-text font-weight-bold" id="totalquotes">-</p>
+                        <p class="card-db-text font-weight-bold pp-font" id="totalquotes">-</p>
                     </div>
                 </div>
             </div>

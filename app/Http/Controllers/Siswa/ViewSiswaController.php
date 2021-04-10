@@ -19,11 +19,11 @@ class ViewSiswaController extends Controller
                 $data = jam::where([
                     ['id', $key->id_jam],
                     ['harimasuk', 'LIKE', "%$now%"],
-                ])->get()->first();
+                ])->first();
             }
         }
         $now = Carbon::now()->format('l');
-        $hari_ini = Carbon::parse($data->jam_masuk)->format('H:i');
+        $hari_ini = isset($data) ? Carbon::parse($data->jam_masuk)->format('H:i') : 'Libur';
         return view("pages.siswa.dashboard", ['jam_masuk' => "$now - $hari_ini"]);
     }
     public function profile()
