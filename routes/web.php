@@ -1,20 +1,20 @@
 <?php
-// use controller main
+// use controller admin
 use App\Http\Controllers\Admin\EditAdminController;
 use App\Http\Controllers\Admin\ExportAdminController;
-use App\Http\Controllers\Admin\ValueAdminController;
-
-// use controller siswa
 use App\Http\Controllers\Admin\ViewAdminController;
-use App\Http\Controllers\Guru\ValueGuruController;
 
 // use controller guru
+use App\Http\Controllers\Guru\EditGuruController;
+use App\Http\Controllers\Guru\ValueGuruController;
 use App\Http\Controllers\Guru\ViewGuruController;
-use App\Http\Controllers\Main\AuthController;
 
-// use controller admin
+// use controller main
+use App\Http\Controllers\Main\AuthController;
 use App\Http\Controllers\Main\EditController;
 use App\Http\Controllers\Main\ViewController;
+
+// use controller siswa
 use App\Http\Controllers\Siswa\ViewSiswaController;
 
 // use custom
@@ -47,7 +47,11 @@ Route::middleware('auth:guru')->group(function () {
     // main route guru
     Route::get('/guru/dashboard', [ViewGuruController::class, 'dashboard']);
     Route::get('/guru/profile', [ViewGuruController::class, 'profile']);
+    Route::post('/guru/profile/{guru}/update', [EditGuruController::class, 'updateProfile']);
+    Route::post('/guru/profile/{guru}/delete', [EditGuruController::class, 'deleteProfile']);
     Route::get('/guru/kelas', [ViewController::class, 'kelasSiswa']);
+    Route::post('/guru/kelas/tambah', [EditController::class, 'tambahKelasSiswa']);
+
     Route::get('/guru/presensi', [ViewGuruController::class, 'presensi']);
     Route::get('/guru/presensi/rekap', [ViewGuruController::class, 'rekap']);
     Route::get('/guru/jam', [ViewGuruController::class, 'jammasuk']);
@@ -70,12 +74,9 @@ Route::middleware('auth:admin')->group(function () {
     // main route admin
     Route::get('/admin/dashboard', [ViewAdminController::class, 'dashboard']);
     Route::get('/admin/profile', [ViewAdminController::class, 'profile']);
-    Route::post('/admin/profile/{id}/update', [EditAdminController::class, 'updateProfile']);
-    Route::post('/admin/profile/{id}/delete', [EditAdminController::class, 'deleteProfile']);
+    Route::post('/admin/profile/{admin}/update', [EditAdminController::class, 'updateProfile']);
+    Route::post('/admin/profile/{admin}/delete', [EditAdminController::class, 'deleteProfile']);
     Route::get('/admin/calendar', [ViewController::class, 'calendar']);
-
-    // ajax
-    Route::get('/admin/dashboard/value', [ValueAdminController::class, 'valueDashboard']);
 
     //route mengatur siswa
     Route::get('/admin/siswa', [ViewController::class, 'tableSiswa'])->name('admin.table.siswa');

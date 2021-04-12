@@ -100,10 +100,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ url('guru/kelas') }}" method="post" id="formModal">
+                        <form action="{{ url(Auth::getDefaultDriver() . '/kelas/tambah') }}" method="POST" id="formModal">
+                            @csrf
                             <div class="form-group">
                                 <label>Nama Kelas</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Nama Kelas">
+                                <input type="text" class="form-control" placeholder="Masukkan Nama Kelas" name="kelas">
                             </div>
                             <div class="form-group">
                                 <label>Nama Wali Kelas</label>
@@ -118,8 +119,9 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success" form="formModal"><i class="far fa-save"></i>
-                            Simpan</button>
+                        <button type="submit" class="btn btn-success" form="formModal">
+                            <i class="far fa-save"></i> Simpan
+                        </button>
                     </div>
                 </div>
             </div>
@@ -137,6 +139,7 @@
     </script>
 @endpush
 @push('css')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/v/bs4/dt-1.10.24/cr-1.5.3/date-1.0.3/fc-3.3.2/fh-3.1.8/kt-2.6.1/rg-1.1.2/rr-1.2.7/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.3/datatables.min.css" />
 @endpush

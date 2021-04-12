@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Guru;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin;
+use App\Models\guru;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Image;
 
-class EditAdminController extends Controller
+class EditGuruController extends Controller
 {
-    public function updateProfile(Request $request, Admin $admin)
+    public function updateProfile(Request $request, guru $guru)
     {
         if ($request->hasFile('photo')) {
             $foto = $request->file('photo');
@@ -19,45 +19,50 @@ class EditAdminController extends Controller
             $foto_resize->fit(150);
 
             // Check if folder not exists
-            if (!File::exists(public_path('photos/admin'))) {
+            if (!File::exists(public_path('photos/guru'))) {
                 // make the folder
-                File::makeDirectory(public_path('photos/admin'), 0777, true, true);
-            } elseif (File::exists($admin->foto)) {
-                File::delete($admin->foto);
+                File::makeDirectory(public_path('photos/guru'), 0777, true, true);
+            } elseif (File::exists($guru->foto)) {
+                File::delete($guru->foto);
             }
 
-            $foto_resize->save(public_path('photos/admin/' . $fileName));
-            $admin->update([
+            $foto_resize->save(public_path('photos/guru/' . $fileName));
+            $guru->update([
                 'nama' => $request->fullname,
                 'username' => $request->username,
-                'idtelegram' => $request->idtelegram,
-                'foto' => "photos/admin/$fileName",
+                'foto' => "photos/guru/$fileName",
+                'email' => $request->email,
             ]);
         } else {
-            $admin->update([
+            $guru->update([
                 'username' => $request->username,
                 'nama' => $request->fullname,
-                'idtelegram' => $request->idtelegram,
+                'email' => $request->email,
             ]);
         }
         return redirect()->back();
     }
 
-    public function deleteProfile(Admin $admin)
+    public function deleteProfile(guru $guru)
     {
         // Check if file exists
-        if (File::exists($admin->foto)) {
+        if (File::exists($guru->foto)) {
             // Yes, delete the image.
-            File::delete($admin->foto);
+            File::delete($guru->foto);
             // Check if directory is empty.
-            if (empty(File::files(public_path('photos/admin/')))) {
+            if (empty(File::files(public_path('photos/guru/')))) {
                 // Yes, delete the directory.
-                File::deleteDirectory(public_path('photos/admin'));
+                File::deleteDirectory(public_path('photos/guru'));
             }
         }
 
-        $admin->update([
+        $guru->update([
             'foto' => "photos/default/no-avatar.png",
         ]);
+    }
+
+    public function updatePassword(guru $guru)
+    {
+        
     }
 }

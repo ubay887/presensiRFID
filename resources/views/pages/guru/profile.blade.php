@@ -48,7 +48,7 @@
                         <div class="form-group col-lg-8 col-md-8 col-12">
                             <label>Full Name</label>
                             <input type="text" class="form-control" value="{{ Auth::guard('guru')->user()->nama }}"
-                                required name="fullname">
+                                required name="fullname" autocomplete="off">
                             <div class="invalid-feedback">
                                 Please fill in the full name
                             </div>
@@ -65,8 +65,8 @@
                         </div>
                         <div class="form-group col-md-7 col-12">
                             <label>Email</label>
-                            <input type="email" class="form-control" value="{{ Auth::guard('guru')->user()->email }}"
-                                required>
+                            <input type="email" autocomplete="off" class="form-control" value="{{ Auth::guard('guru')->user()->email }}"
+                                required name="email">
                             <div class="invalid-feedback">
                                 Please fill in the email
                             </div>
@@ -75,7 +75,8 @@
                 </div>
             </form>
             <div class="card-footer text-right">
-                <button href="javascript:void(0)" data-toggle="modal" data-target="#modal2" class="btn btn-primary mr-2">Change Password</button>
+                <button href="javascript:void(0)" data-toggle="modal" data-target="#modal2"
+                    class="btn btn-primary mr-2">Change Password</button>
                 <button type="submit" form="profileForm" class="btn btn-success">Save Changes</button>
             </div>
         </div>
@@ -89,8 +90,8 @@
                 style="width: 25vw; height: 50vh;object-fit: cover;" alt="">
         </div>
     </div>
-    
-    <!-- Modal -->
+
+    <!-- Modal changepass -->
     <div class="modal" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
