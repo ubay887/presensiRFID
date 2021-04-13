@@ -20,10 +20,27 @@
 @endsection
 @section('main')
     <form action="" method="post">
+        @csrf
         <div class="container mt-5">
             <div class="card profile-widget">
                 <div class="profile-widget-header">
-                    <img alt="image" src="{{ asset($id->foto) }}" class="rounded profile-widget-picture">
+                    <div class="dropdown dropright mx-auto" style="width: fit-content;">
+                        <img alt="image" id="profilemenu" src="{{ asset($id->foto) }}"
+                            class="rounded shadow dropdown-toggle profile-widget-picture" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" data-toggle="modal" data-target="#viewModal"
+                                style="cursor: default">View Photo</a>
+                            <a class="p-0 dropdown-item" href="#">
+                                <label for="img" class="d-block mb-0" style="padding: 10px 20px">Upload Photo</label>
+                            </a>
+                            <a class="dropdown-item text-danger" href="javascript:void(0)" id="resetphoto">Reset Photo</a>
+                        </div>
+                    </div>
+                    <input type="file" hidden accept="image/*" id="img" name="photo" onclick="fileClicked(event)"
+                        onchange="fileChanged(event)">
+                    <input type="file" hidden accept="image/*" id="img2" onclick="fileClicked(event)"
+                        onchange="fileChanged(event)">
                 </div>
                 <div class="card-body row pt-5">
                     <div class="col-12 d-flex justify-content-center">
@@ -113,15 +130,29 @@
                                         <div class="row">
                                             <div class="my-auto col">Role</div>
                                             <div class="col">
-                                                {{ $id->role }}
+                                                <div class="selectgroup w-100">
+                                                    <label class="selectgroup-item">
+                                                        <input type="radio" name="role" value="wali kelas"
+                                                            class="selectgroup-input" @if ($id->role === 'wali kelas') checked @endif>
+                                                        <span class="selectgroup-button">wali kelas</span>
+                                                    </label>
+                                                    <label class="selectgroup-item">
+                                                        <input type="radio" name="role" value="kesiswaan"
+                                                            class="selectgroup-input" @if ($id->role === 'kesiswaan') checked @endif>
+                                                        <span class="selectgroup-button">kesiswaan</span>
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 @if ($id->role === 'wali kelas')
                                     <div class="row py-2 d-flex justify-content-end">
-                                        <a
-                                            href="{{ urL(Auth::getDefaultDriver() . '/kelas/' . $id->idWaliKelas->id . '/detail') }}">{{ $id->idWaliKelas->kelas }}</a>
+                                        <select class="form-control select2">
+                                            @foreach ($kelas as $kls)
+                                                <option @if ($id->idWaliKelas->id === $kls->id) selected @endif>{{ $kls->kelas }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 @endif
                             </div>
@@ -132,11 +163,21 @@
             </div>
         </div>
     </form>
+
+    <!-- modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="viewModal" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog d-flex justify-content-center" role="document">
+            <img id="profilemodal" src="{{ asset(Auth::guard('admin')->user()->foto) }}"
+                style="width: 25vw; height: 50vh;object-fit: cover;" alt="">
+        </div>
+    </div>
 @endsection
 
 @push('js')
     <script type="text/javascript">
         "use strict";
+
+        $('#viewModal').appendTo("body");
 
         function detailShow(e) {
             if ($(e).hasClass('fa-eye-slash')) {
@@ -148,5 +189,52 @@
             }
         }
 
+        $(function() {
+            $('#img').change(function() {
+                var input = this;
+                var url = $(this).val();
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#profilemenu').attr('src', e.target.result);
+                    $('#profilemodal').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            });
+
+            $('#resetphoto').click(function() {
+                $('#profilemenu').attr('src', "{{ asset($id->foto) }}");
+                $('#profilemodal').attr('src', "{{ asset($id->foto) }}");
+                $('#img').replaceWith($('#img2').clone());
+            });
+        });
+
+        var clone = {};
+
+        // FileClicked()
+        function fileClicked(event) {
+            var fileElement = event.target;
+            if (fileElement.value != "") {
+                clone[fileElement.id] = $(fileElement).clone(); //'Saving Clone'
+            }
+            //What ever else you want to do when File Chooser Clicked
+        }
+
+        // FileChanged()
+        function fileChanged(event) {
+            var fileElement = event.target;
+            if (fileElement.value == "") {
+                clone[fileElement.id].insertBefore(fileElement); //'Restoring Clone'
+                $(fileElement).remove(); //'Removing Original'
+                if (eventMoreListeners) {
+                    addEventListenersTo(clone[fileElement.id])
+                } //If Needed Re-attach additional Event Listeners
+            }
+            //What ever else you want to do when File Chooser Changed
+        }
+
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+@endpush
+@push('css')
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @endpush

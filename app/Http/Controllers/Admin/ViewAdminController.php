@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\guru;
+use App\Models\kelas;
 use App\Models\siswa;
 
 class ViewAdminController extends Controller
@@ -44,6 +45,6 @@ class ViewAdminController extends Controller
 
     public function editDetailGuru(guru $id)
     {
-        return view('pages.guru.editdetail', ['id' => $id]);
+        return view('pages.guru.editdetail', ['id' => $id,'kelas'=>kelas::orderBy('kelas', 'ASC')->get()]);
     }
 }

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('vendor/phosphor-icons/phosphor.css') }}">
+    <link rel="shortcut icon" href="{{ asset('photos/logo_starbhak.ico') }}">
     <!-- CSS Libraries -->
     @stack('css')
 
@@ -70,9 +71,9 @@
     <script src="{{ asset('js/ajax.js') }}"></script>
 
     <!-- Stisla -->
+    <script src="{{ asset('vendor/stisla/js/scripts.js') }}"></script>
     <script src="{{ asset('vendor/stisla/js/custom.js') }}"></script>
     <script src="{{ asset('vendor/stisla/js/stisla.js') }}"></script>
-    <script src="{{ asset('vendor/stisla/js/scripts.js') }}"></script>
     <!-- Vendor -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     @include('sweetalert::alert')

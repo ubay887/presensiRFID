@@ -92,4 +92,5 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/guru', [ViewAdminController::class, 'tableGuru']);
     Route::get('/admin/guru/{id}/detail', [ViewAdminController::class, 'detailGuru']);
     Route::get('/admin/guru/{id}/detail/edit', [ViewAdminController::class, 'editDetailGuru']);
+    Route::post('/admin/guru/{id}/detail/edit', [EditAdminController::class, 'updateDetailGuru']);
 });

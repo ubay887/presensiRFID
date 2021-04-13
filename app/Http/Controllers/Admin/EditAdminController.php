@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
+use App\Models\guru;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Image;
@@ -59,5 +60,10 @@ class EditAdminController extends Controller
         $admin->update([
             'foto' => "photos/default/no-avatar.png",
         ]);
+    }
+
+    public function updateDetailGuru(Request $request,guru $id){
+        dump($request->photo);
+        dd($id);
     }
 }
